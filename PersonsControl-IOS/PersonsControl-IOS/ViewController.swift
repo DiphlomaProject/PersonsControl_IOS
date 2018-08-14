@@ -15,8 +15,8 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
-         // setupGoogleButtons()
+        //  GIDSignIn.sharedInstance().signIn()
+        // setupGoogleButtons()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,27 +28,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
         GIDSignIn.sharedInstance()?.uiDelegate = self
     }
     */
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let error = error {
-            // ...
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        // ...
-        
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let error = error {
-                // ...
-                return
-            }
-            // User is signed in
-            // ...
-        }
-    }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

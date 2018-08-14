@@ -10,6 +10,8 @@
 		33E62FC76BD15A5C3A5EAB0A /* Pods_PersonsControl_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75230B217E55B93456637F45 /* Pods_PersonsControl_IOSTests.framework */; };
 		CC04DFDDC02AB864417E4C2F /* Pods_PersonsControl_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7528AB187049E5D07CCBE8C7 /* Pods_PersonsControl_IOSUITests.framework */; };
 		CFD23254C54ABC12C6DFEFE6 /* Pods_PersonsControl_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE7A9DAF040576B5D5A4CDB /* Pods_PersonsControl_IOS.framework */; };
+		F415C0D72123176500F30D66 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* MainVC.swift */; };
+		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* ViewController.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		AA36150C59EF71B54F12A48B /* Pods-PersonsControl-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOSTests/Pods-PersonsControl-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D52EB788F187569AFE7A96CF /* Pods-PersonsControl-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOSTests/Pods-PersonsControl-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PersonsControl-IOS.entitlements"; sourceTree = "<group>"; };
+		F415C0D62123176500F30D66 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4449F2B21225F8300EB0600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +148,9 @@
 			children = (
 				F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */,
 				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
+				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
 				F4449F2B21225F8300EB0600 /* ViewController.swift */,
+				F415C0D62123176500F30D66 /* MainVC.swift */,
 				F4449F2D21225F8300EB0600 /* Main.storyboard */,
 				F4449F3321225F8600EB0600 /* Assets.xcassets */,
 				F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */,
@@ -419,6 +425,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
+				F415C0D72123176500F30D66 /* MainVC.swift in Sources */,
+				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */,
 				F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */,
 			);

@@ -11,7 +11,7 @@ import CoreData
 import Firebase
 import GoogleSignIn
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINavigationControllerDelegate {
 
 
     var window: UIWindow?
@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+       
         // Override point for customization after application launch.
         return true
     }
@@ -28,8 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
  
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
-        if let error = error {
+        if error != nil {
             // ...
+            print("error connect ",error as Any)
             return
         }
         
@@ -37,8 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         // ...
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let err = error {
+                // ...
+                print("error connect ",err)
+                return
+            }
+            // User is signed in
+            // ...
+            print("login access");
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+            let rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(loginPageView, animated: true)
+            
+        }
     }
-    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
