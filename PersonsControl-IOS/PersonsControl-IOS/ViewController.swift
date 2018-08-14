@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import ADAL
 class ViewController: UIViewController,GIDSignInUIDelegate {
 @IBOutlet weak var signInButton: GIDSignInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         GIDSignIn.sharedInstance().uiDelegate = self
         //  GIDSignIn.sharedInstance().signIn()
         // setupGoogleButtons()

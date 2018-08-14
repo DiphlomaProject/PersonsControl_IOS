@@ -20,7 +20,8 @@
 		F4449F3721225F8600EB0600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */; };
 		F4449F4221225F8600EB0600 /* PersonsControl_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4121225F8600EB0600 /* PersonsControl_IOSTests.swift */; };
 		F4449F4D21225F8600EB0600 /* PersonsControl_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */; };
-		F4449F5B21225FCC00EB0600 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4449F5A21225FCC00EB0600 /* GoogleService-Info.plist */; };
+		F4D92EA4212393C800C8BA61 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D92EA3212393C800C8BA61 /* ADAL.framework */; };
+		F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,8 @@
 		F4449F4821225F8600EB0600 /* PersonsControl-IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PersonsControl-IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsControl_IOSUITests.swift; sourceTree = "<group>"; };
 		F4449F4E21225F8600EB0600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4449F5A21225FCC00EB0600 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4D92EA3212393C800C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE2EA38EC11B4AB9EE288EEF /* Pods-PersonsControl-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOS/Pods-PersonsControl-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D92EA4212393C800C8BA61 /* ADAL.framework in Frameworks */,
 				CFD23254C54ABC12C6DFEFE6 /* Pods_PersonsControl_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +104,7 @@
 		03DDD262A6B7417F659897B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4D92EA3212393C800C8BA61 /* ADAL.framework */,
 				6EE7A9DAF040576B5D5A4CDB /* Pods_PersonsControl_IOS.framework */,
 				75230B217E55B93456637F45 /* Pods_PersonsControl_IOSTests.framework */,
 				7528AB187049E5D07CCBE8C7 /* Pods_PersonsControl_IOSUITests.framework */,
@@ -156,7 +160,7 @@
 				F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */,
 				F4449F3821225F8600EB0600 /* Info.plist */,
 				F4449F3021225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld */,
-				F4449F5A21225FCC00EB0600 /* GoogleService-Info.plist */,
+				F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */,
 			);
 			path = "PersonsControl-IOS";
 			sourceTree = "<group>";
@@ -294,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4449F3721225F8600EB0600 /* LaunchScreen.storyboard in Resources */,
-				F4449F5B21225FCC00EB0600 /* GoogleService-Info.plist in Resources */,
+				F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */,
 				F4449F3421225F8600EB0600 /* Assets.xcassets in Resources */,
 				F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */,
 			);
