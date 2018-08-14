@@ -6,10 +6,18 @@ target 'PersonsControl-IOS' do
   use_frameworks!
 
   # Pods for PersonsControl-IOS
-	pod 'Firebase/Core'
+    pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
+    pod 'Firebase/Crash'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
     pod 'GoogleSignIn'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
   target 'PersonsControl-IOSTests' do
     inherit! :search_paths
     # Pods for testing

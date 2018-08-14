@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ADAL/ADAL.xcodeproj">
+      location = "group:ADAL.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:PersonsControl-IOS.xcodeproj">
