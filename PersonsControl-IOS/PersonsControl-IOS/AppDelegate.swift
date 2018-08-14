@@ -44,14 +44,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
                 // ...
                 print("error connect ",err)
                 return
+            }else
+            {
+                let userId = user.userID                  // For client-side use only!
+                let idToken = user.authentication.idToken  // Safe to send to the server
+                let fullName = user.profile.name
+                let givenName = user.profile.givenName
+                let familyName = user.profile.familyName
+                let email = user.profile.email
+                SingletonManager.sharedCenter.userId = userId!
+                SingletonManager.sharedCenter.idToken = idToken!
+                SingletonManager.sharedCenter.fullName = fullName!
+                SingletonManager.sharedCenter.givenName = givenName!
+                SingletonManager.sharedCenter.familyName = familyName!
+                SingletonManager.sharedCenter.email = email!
+                print("info shared singleton")
+                print("login access");
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+                let rootViewController = self.window!.rootViewController as! UINavigationController
+                rootViewController.pushViewController(loginPageView, animated: true)
             }
             // User is signed in
             // ...
-            print("login access");
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-            let rootViewController = self.window!.rootViewController as! UINavigationController
-            rootViewController.pushViewController(loginPageView, animated: true)
+         
             
         }
     }

@@ -10,9 +10,20 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var familyNameLabel: UILabel!
+    @IBOutlet weak var givenNameLabel: UILabel!
+    @IBOutlet weak var TokenLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.idLabel.text! = SingletonManager.sharedCenter.userId
+        self.TokenLabel.text! = SingletonManager.sharedCenter.idToken
+        self.nameLabel.text! = SingletonManager.sharedCenter.fullName
+        self.givenNameLabel.text! =  SingletonManager.sharedCenter.givenName
+        self.familyNameLabel.text! = SingletonManager.sharedCenter.familyName
+        self.emailLabel.text! = SingletonManager.sharedCenter.email
         // Do any additional setup after loading the view.
     }
     

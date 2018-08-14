@@ -8,8 +8,24 @@
 
 import Foundation
 class SingletonManager {
-static let sharedCenter = SingletonManager()
+
     
+    // Can't init is singleton
+    private init() { }
     
-    private init(){}
+    // MARK: Shared Instance
+    
+   static let sharedCenter = SingletonManager()
+    
+    // MARK: Local Variable
+    //Google ingo account
+    var userId = ""                
+    var idToken = ""
+    var fullName = ""
+    var givenName = ""
+    var familyName = ""
+    var email = ""
+    
 }
+
+
