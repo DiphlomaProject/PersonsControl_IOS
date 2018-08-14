@@ -64,6 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
                 let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
                 let rootViewController = self.window!.rootViewController as! UINavigationController
                 rootViewController.pushViewController(loginPageView, animated: true)
+                //rootViewController.popToViewController(loginPageView, animated: true)
+                //rootViewController.show(loginPageView, sender: true)
+
             }
             // User is signed in
             // ...

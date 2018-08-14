@@ -13,7 +13,7 @@
         <!--Log in-->
         <scene sceneID="W9e-td-ir7">
             <objects>
-                <viewController id="yZl-bO-HmE" customClass="ViewController" customModule="PersonControl_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yZl-bO-HmE" customClass="ViewController" customModule="PersonControl_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vxt-TF-hQV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +94,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4ka-WO-GvM">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4ka-WO-GvM">
                                 <rect key="frame" x="81" y="533" width="213" height="14.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR LOG IN WITH SOCIAL ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-VN-LwN">
@@ -145,14 +145,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivf-kn-lw4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="iZP-n3-4Iz"/>
-                                    <tabBarItem systemItem="more" id="mxK-IQ-lUZ"/>
-                                </items>
-                            </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGV-Dq-s4i">
                                 <rect key="frame" x="137" y="97" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -195,32 +187,39 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dc-87-cfq">
+                                <rect key="frame" x="288" y="20" width="76" height="30"/>
+                                <state key="normal" title="SignOut"/>
+                                <connections>
+                                    <action selector="SignOut:" destination="8C0-a9-kM9" eventType="touchUpInside" id="s5x-qL-gH1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JWZ-02-uo9" firstAttribute="leading" secondItem="Zma-ft-OQZ" secondAttribute="leading" id="2oQ-KJ-eFi"/>
-                            <constraint firstItem="UM4-Db-ggy" firstAttribute="top" secondItem="Zma-ft-OQZ" secondAttribute="bottom" constant="8" symbolic="YES" id="3Cr-Iv-O7u"/>
-                            <constraint firstItem="uGV-Dq-s4i" firstAttribute="top" secondItem="ivf-kn-lw4" secondAttribute="bottom" constant="48" id="5yo-zg-c19"/>
-                            <constraint firstItem="JWZ-02-uo9" firstAttribute="trailing" secondItem="Zma-ft-OQZ" secondAttribute="trailing" id="6vG-X8-wEF"/>
-                            <constraint firstItem="Zma-ft-OQZ" firstAttribute="leading" secondItem="UM4-Db-ggy" secondAttribute="leading" id="7tq-vm-Xl2"/>
-                            <constraint firstItem="UM4-Db-ggy" firstAttribute="trailing" secondItem="2gB-go-tMx" secondAttribute="trailing" id="BoN-Io-TrA"/>
-                            <constraint firstItem="0Ut-5l-53Y" firstAttribute="top" secondItem="6gQ-nK-vzF" secondAttribute="bottom" constant="8" symbolic="YES" id="BvO-rI-OTc"/>
-                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="leading" secondItem="0Ut-5l-53Y" secondAttribute="leading" id="FqF-SF-RS3"/>
-                            <constraint firstItem="ivf-kn-lw4" firstAttribute="leading" secondItem="hUC-7K-Jh8" secondAttribute="leading" id="Nrw-xZ-kgU"/>
-                            <constraint firstItem="2gB-go-tMx" firstAttribute="top" secondItem="UM4-Db-ggy" secondAttribute="bottom" constant="8" symbolic="YES" id="Ok3-wz-xdW"/>
-                            <constraint firstItem="0Ut-5l-53Y" firstAttribute="leading" secondItem="JWZ-02-uo9" secondAttribute="leading" id="PZd-Vh-NAo"/>
-                            <constraint firstItem="ivf-kn-lw4" firstAttribute="top" secondItem="hUC-7K-Jh8" secondAttribute="top" id="RsP-ew-rQ1"/>
-                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="top" secondItem="uGV-Dq-s4i" secondAttribute="bottom" constant="8" symbolic="YES" id="TXf-1Y-m7O"/>
-                            <constraint firstItem="Zma-ft-OQZ" firstAttribute="top" secondItem="JWZ-02-uo9" secondAttribute="bottom" constant="8" symbolic="YES" id="U4M-Zf-wf2"/>
-                            <constraint firstAttribute="trailing" secondItem="ivf-kn-lw4" secondAttribute="trailing" id="Wni-Sy-yzu"/>
-                            <constraint firstItem="JWZ-02-uo9" firstAttribute="top" secondItem="0Ut-5l-53Y" secondAttribute="bottom" constant="8" symbolic="YES" id="buw-Fe-rMf"/>
-                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="trailing" secondItem="0Ut-5l-53Y" secondAttribute="trailing" id="coE-p1-eCc"/>
-                            <constraint firstItem="0Ut-5l-53Y" firstAttribute="trailing" secondItem="JWZ-02-uo9" secondAttribute="trailing" id="l3V-IN-CKm"/>
-                            <constraint firstItem="Zma-ft-OQZ" firstAttribute="trailing" secondItem="UM4-Db-ggy" secondAttribute="trailing" id="mLO-F7-EYE"/>
-                            <constraint firstItem="UM4-Db-ggy" firstAttribute="leading" secondItem="2gB-go-tMx" secondAttribute="leading" id="s6j-AL-viZ"/>
-                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="leading" secondItem="sUG-px-dkv" secondAttribute="leading" constant="37" id="tvQ-J6-nIf"/>
-                            <constraint firstItem="uGV-Dq-s4i" firstAttribute="leading" secondItem="sUG-px-dkv" secondAttribute="leading" constant="137" id="wVU-GK-183"/>
-                            <constraint firstItem="sUG-px-dkv" firstAttribute="trailing" secondItem="6gQ-nK-vzF" secondAttribute="trailing" constant="57" id="zp6-We-CYb"/>
+                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="leading" secondItem="0Ut-5l-53Y" secondAttribute="leading" id="1sD-iK-zZS"/>
+                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="top" secondItem="uGV-Dq-s4i" secondAttribute="bottom" constant="8" symbolic="YES" id="4i1-6x-Cns"/>
+                            <constraint firstItem="1dc-87-cfq" firstAttribute="top" secondItem="sUG-px-dkv" secondAttribute="top" id="Cco-U9-UwG"/>
+                            <constraint firstItem="uGV-Dq-s4i" firstAttribute="leading" secondItem="sUG-px-dkv" secondAttribute="leading" constant="137" id="FVf-uF-zhV"/>
+                            <constraint firstItem="JWZ-02-uo9" firstAttribute="leading" secondItem="Zma-ft-OQZ" secondAttribute="leading" id="Fdf-Ch-lnG"/>
+                            <constraint firstItem="0Ut-5l-53Y" firstAttribute="leading" secondItem="JWZ-02-uo9" secondAttribute="leading" id="HNr-nC-iZz"/>
+                            <constraint firstItem="UM4-Db-ggy" firstAttribute="leading" secondItem="2gB-go-tMx" secondAttribute="leading" id="I9Q-2B-aGP"/>
+                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="leading" secondItem="sUG-px-dkv" secondAttribute="leading" constant="37" id="KaK-oa-1wz"/>
+                            <constraint firstItem="uGV-Dq-s4i" firstAttribute="top" secondItem="sUG-px-dkv" secondAttribute="top" constant="77" id="Kbo-FA-u3d"/>
+                            <constraint firstItem="1dc-87-cfq" firstAttribute="leading" secondItem="sUG-px-dkv" secondAttribute="leading" constant="288" id="LVF-3V-Fnf"/>
+                            <constraint firstItem="Zma-ft-OQZ" firstAttribute="top" secondItem="JWZ-02-uo9" secondAttribute="bottom" constant="8" symbolic="YES" id="P8f-mJ-0IK"/>
+                            <constraint firstItem="0Ut-5l-53Y" firstAttribute="trailing" secondItem="JWZ-02-uo9" secondAttribute="trailing" id="RiP-dq-Nt4"/>
+                            <constraint firstItem="JWZ-02-uo9" firstAttribute="trailing" secondItem="Zma-ft-OQZ" secondAttribute="trailing" id="U2Y-hS-c2V"/>
+                            <constraint firstItem="sUG-px-dkv" firstAttribute="trailing" secondItem="1dc-87-cfq" secondAttribute="trailing" constant="11" id="eDS-kU-i9v"/>
+                            <constraint firstItem="JWZ-02-uo9" firstAttribute="top" secondItem="0Ut-5l-53Y" secondAttribute="bottom" constant="8" symbolic="YES" id="f0o-FR-2xm"/>
+                            <constraint firstItem="2gB-go-tMx" firstAttribute="top" secondItem="UM4-Db-ggy" secondAttribute="bottom" constant="8" symbolic="YES" id="ims-Ib-9xN"/>
+                            <constraint firstItem="sUG-px-dkv" firstAttribute="trailing" secondItem="6gQ-nK-vzF" secondAttribute="trailing" constant="57" id="pme-SQ-jht"/>
+                            <constraint firstItem="Zma-ft-OQZ" firstAttribute="leading" secondItem="UM4-Db-ggy" secondAttribute="leading" id="pso-kg-Ju9"/>
+                            <constraint firstItem="UM4-Db-ggy" firstAttribute="top" secondItem="Zma-ft-OQZ" secondAttribute="bottom" constant="8" symbolic="YES" id="s3o-aZ-4SC"/>
+                            <constraint firstItem="6gQ-nK-vzF" firstAttribute="trailing" secondItem="0Ut-5l-53Y" secondAttribute="trailing" id="sSJ-Zi-1LL"/>
+                            <constraint firstItem="UM4-Db-ggy" firstAttribute="trailing" secondItem="2gB-go-tMx" secondAttribute="trailing" id="sWD-Da-hRZ"/>
+                            <constraint firstItem="0Ut-5l-53Y" firstAttribute="top" secondItem="6gQ-nK-vzF" secondAttribute="bottom" constant="8" symbolic="YES" id="uPF-jo-FK6"/>
+                            <constraint firstItem="Zma-ft-OQZ" firstAttribute="trailing" secondItem="UM4-Db-ggy" secondAttribute="trailing" id="wuj-bG-9iY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sUG-px-dkv"/>
                     </view>
