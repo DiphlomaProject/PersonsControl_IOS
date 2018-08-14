@@ -7,6 +7,9 @@ target 'PersonsControl-IOS' do
 
   # Pods for PersonsControl-IOS
 	pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'GoogleSignIn'
   target 'PersonsControl-IOSTests' do
     inherit! :search_paths
     # Pods for testing
