@@ -26,6 +26,14 @@
 				<string>com.googleusercontent.apps.349960856204-ibbqdrj04cen7faj4v2nk7ctbc0n0t2n</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>DiphlomaProject.PersonsControl-IOS</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
