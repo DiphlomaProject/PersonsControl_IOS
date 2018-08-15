@@ -27,9 +27,9 @@ class SingletonManager {
     var email = ""
     
     // Configurations Microsoft Identity
-    let AUTHORITY_URL = "https://login.microsoftonline.com/common" //COMMON OR YOUR TENANT ID
-    let CLIENT_ID = "a4ded5c0-25ac-4cf9-b281-72056aa24159" //This is your client ID
-    let REDIRECT_URI = "http://localhost" //This is your redirect URI
+    let AUTHORITY_URL = "https://login.microsoftonline.com/common/oauth2/nativeclient" //COMMON OR YOUR TENANT ID
+    let CLIENT_ID = "a4b7974c-4a7c-475e-91b8-a82d67b0d9a8" //This is your client ID
+    let REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob" //This is your redirect URI
     
 }
 

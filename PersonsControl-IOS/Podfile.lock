@@ -1,4 +1,9 @@
 PODS:
+  - ADAL (2.6.5):
+    - ADAL/app-lib (= 2.6.5)
+  - ADAL/app-lib (2.6.5):
+    - ADAL/tokencacheheader
+  - ADAL/tokencacheheader (2.6.5)
   - Crashlytics (3.10.7):
     - Fabric (~> 1.7.11)
   - Fabric (1.7.11)
@@ -115,6 +120,7 @@ PODS:
   - Protobuf (3.6.1)
 
 DEPENDENCIES:
+  - ADAL
   - Crashlytics
   - Fabric
   - Firebase/Auth
@@ -128,6 +134,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ADAL
     - Crashlytics
     - Fabric
     - Firebase
@@ -152,6 +159,7 @@ SPEC REPOS:
     - Protobuf
 
 SPEC CHECKSUMS:
+  ADAL: 52b4a067e477dc5876512778796e95d6b450ec7e
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   Firebase: 8c957f9cb3852b519180fb378801b7eeeba4d288
@@ -175,6 +183,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 3f5391bb00a9b4ca741942a847c8d5abb149338b
+PODFILE CHECKSUM: dfe2b3952cf70fbda0e556237521e510a048a4c9
 
 COCOAPODS: 1.5.3

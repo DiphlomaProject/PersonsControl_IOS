@@ -1,6 +1,0 @@
-//
-//  adal__test__mac.xcconfig
-//
-
-#include "adal__common__mac.xcconfig"
-#include "adal__test__common.xcconfig"
