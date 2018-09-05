@@ -10,15 +10,22 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import ADAL
+//import PlaygroundSupport
 class ViewController: UIViewController,GIDSignInUIDelegate {
-@IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var passwordLabel: UITextField!
+    @IBOutlet weak var emailLabel: UITextField!
+    @IBAction func LoginButton(_ sender: Any) {
+        
+        GoogleSingInApiPOST.SingIn(email: emailLabel.text!, password: passwordLabel.text!)
+    }
+//    @IBOutlet weak var signInButton: GIDSigInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         //  GIDSignIn.sharedInstance().signIn()
         // setupGoogleButtons()
         // Do any additional setup after loading the view, typically from a nib.
-        GoogleSingInApiPOST.RestApiHelper()
+       GoogleSingInApiPOST.RestApiHelper()
     }
 
 /* fileprivate func setupGoogleButtons()

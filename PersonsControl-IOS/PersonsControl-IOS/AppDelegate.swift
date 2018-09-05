@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
                 print("info shared singleton")
                 print("login access");
                
-                 GoogleSingInApiPOST.GoogleSingInApiConnect(email: email!, phone: "", name: fullName!)
+                 GoogleSingInApiPOST.GoogleSingIn(email: email!, phone: "", name: fullName!)
                
                 print("GoogleSingInApi")
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
