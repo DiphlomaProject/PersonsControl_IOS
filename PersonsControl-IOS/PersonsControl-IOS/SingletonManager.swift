@@ -34,3 +34,64 @@ class SingletonManager {
 }
 
 
+/*static func PostSearchOffers(
+    offerType: OfferType,
+    searchParams: newOfferTemplate,
+    success: @escaping(OfferSearchResult?) -> Void,
+    failure: @escaping(CError?) -> Void) {
+    
+    let url:String = "offers/search"
+    //searchParams.type = offerType
+    print(searchParams.toJsonCustom())
+    var json = searchParams.toJsonCustom()
+    json.removeValue(forKey: "id")
+    json.removeValue(forKey: "name")
+    //json.removeValue(forKey: "type")
+    //json.removeValue(forKey: "page")
+    Network.manager.request(URL(string: url.baseUrl())!,
+                            method: .post,
+                            parameters: json,
+                            encoding: JSONEncoding.default)
+        
+        
+        .responseObject(completionHandler: { (response: DataResponse<OfferSearchResult>) in
+            
+            if ( response.result.isSuccess && response.value?.apiError == nil ){
+                success(response.value)
+            }
+            else{
+                let error = CError(nsError: response.result.error, apiError: response.value?.apiError)
+                Network.handleApiError(error: error)
+                failure(error)
+            }
+        })
+}
+
+SearchRequests.PostSearchOffers(offerType: (modeForCell == 0 ? OfferType.Cargo : OfferType.Truck), searchParams: newOfferTempl!/*OfferSearchRequest()*/, success: {(response) in
+    if response != nil {
+        self.offerResultByFilterId = response
+        self.navigationItem.title = "results".localized() + (self.offerResultByFilterId?.quantity?.toString() ?? "")!
+        
+        self.tableView.reloadNoScroll()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            CGProgressHUD.showTaskCompleted()
+        }
+    }else {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            CGProgressHUD.showTaskCompleted()
+        }
+    }
+}, failure: {(error) in
+    print("getSearchResult error :", error ?? "OOOOOO NEEEEEETTTTT.")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        CGProgressHUD.showTaskCompleted()
+    }
+} )
+ */
+/*
+NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+    var err: NSError
+    var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+    println("Asynchronous\(jsonResult)")
+})
+*/

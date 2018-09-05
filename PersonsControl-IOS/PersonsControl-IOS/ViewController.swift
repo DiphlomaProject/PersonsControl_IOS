@@ -18,6 +18,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
         //  GIDSignIn.sharedInstance().signIn()
         // setupGoogleButtons()
         // Do any additional setup after loading the view, typically from a nib.
+        GoogleSingInApiPOST.RestApiHelper()
     }
 
 /* fileprivate func setupGoogleButtons()
