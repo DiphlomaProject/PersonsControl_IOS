@@ -14,9 +14,10 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
     {
       
         let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(name, forKey: "displayName")
         jsonDictionary.setValue(email, forKey: "email")
         jsonDictionary.setValue(phone, forKey: "phone")
-        jsonDictionary.setValue(name, forKey: "displayName")
+       
         // prepare json data
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
         let configuration = URLSessionConfiguration.default
@@ -26,6 +27,9 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         request.httpMethod = "POST"
         
         // insert json data to the request
+        request.addValue("application/json",forHTTPHeaderField: "Accept")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+
         request.httpBody = jsonData
         let session = URLSession(configuration: configuration, delegate: GoogleSingInApiPOST(), delegateQueue: nil)
         let task = session.dataTask(with: request) { data, response, error in
@@ -70,8 +74,11 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         urlRequest.httpMethod = "POST"
         
         // insert json data to the request
-        urlRequest.httpBody = jsonData
         
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+
         let session = URLSession(configuration: configuration, delegate: GoogleSingInApiPOST(), delegateQueue: nil)
         let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
             
@@ -88,6 +95,8 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
+                    
+                    
                 }
             } catch let error {
                 print(error.localizedDescription)

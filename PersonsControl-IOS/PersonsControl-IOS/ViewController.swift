@@ -25,7 +25,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
         //  GIDSignIn.sharedInstance().signIn()
         // setupGoogleButtons()
         // Do any additional setup after loading the view, typically from a nib.
-       GoogleSingInApiPOST.RestApiHelper()
+       //GoogleSingInApiPOST.RestApiHelper()
     }
 
 /* fileprivate func setupGoogleButtons()
@@ -70,6 +70,18 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
             let status = String(format: "Access token: %@\nexpiration:%@", result!.accessToken, expiresOnString)
             //self.updateStatusField(status)
         }
+    }
+    func MoveTo()
+    { ///appdelegate
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+//        let rootViewController = self.window!.rootViewController as! UINavigationController
+//        rootViewController.pushViewController(loginPageView, animated: true)
+        //defoult
+        
+        let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as? MainVC
+        self.navigationController?.pushViewController(secondVC!, animated: true)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

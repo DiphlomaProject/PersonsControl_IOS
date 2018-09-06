@@ -154,7 +154,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="gvc-ey-IBW"/>
                     <connections>
-                        <outlet property="emailLabel" destination="aot-pI-00p" id="ZlI-ht-CTe"/>
+                        <outlet property="emailLabel" destination="oy6-CE-BSP" id="djd-k4-LaA"/>
                         <outlet property="passwordLabel" destination="aot-pI-00p" id="eda-9a-AHf"/>
                     </connections>
                 </viewController>
