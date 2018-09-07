@@ -54,7 +54,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         //        https://178.209.88.110:443/api/RestApiHelper/helpinfo
         //    https://jsonplaceholder.typicode.com/todos/1
         
-        
+        var resultDictonary:NSDictionary?
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(email, forKey: "email")
         jsonDictionary.setValue(password, forKey: "password")
@@ -93,9 +93,17 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
             
             do {
                 //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                    
+//                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+//                    print(json)
+//                }
+//                let json = try? JSONDecoder().decode(JSONData.self, from: data)
+                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as! NSDictionary
+                
+                if let myDictionary = resultDictonary
+                {
+                    print(" code: \(myDictionary["code"]!)")
+                    print(" message: \(myDictionary["message"]!)")
+                    print(" time: \(myDictionary["time"]!)")
                     
                 }
             } catch let error {
