@@ -35,7 +35,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
             guard error == nil else {
-                print(error)
+                print(error as Any)
                 return
             }
             
@@ -44,15 +44,21 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
             }
             
             do {
-                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
+//                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
+//
+//                if let myDictionary = resultDictonary
+//                {
+//                    print(" code: \(myDictionary["code"]!)")
+//                    print(" message: \(myDictionary["message"]!)")
+                //                    print(" time: \(myDictionary["time"]!)")}
+                let jsonDecoder = JSONDecoder()
+                let jsonData = try jsonDecoder.decode(JsonData_Base.self, from: data)
+                print(jsonData.code as Any)
+                print(jsonData.message as Any)
+                print(jsonData.time as Any)
                 
-                if let myDictionary = resultDictonary
-                {
-                    print(" code: \(myDictionary["code"]!)")
-                    print(" message: \(myDictionary["message"]!)")
-                    print(" time: \(myDictionary["time"]!)")
-                    
-                }
+                print( jsonData.data?.displayName as Any)
+                //print(jsonData)
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -69,7 +75,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         //        https://178.209.88.110:443/api/RestApiHelper/helpinfo
         //    https://jsonplaceholder.typicode.com/todos/1
         
-        var resultDictonary:NSDictionary?
+        //var resultDictonary:NSDictionary?
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(email, forKey: "email")
         jsonDictionary.setValue(password, forKey: "password")
@@ -98,7 +104,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
             
             guard error == nil else {
-                print(error)
+                print(error as Any)
                 return
             }
             
@@ -148,7 +154,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
         let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
             
                                 guard error == nil else {
-                                    print(error)
+                                    print(error as Any)
                                     return
                                 }
             
