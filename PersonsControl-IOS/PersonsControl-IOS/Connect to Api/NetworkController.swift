@@ -53,11 +53,24 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
                 //                    print(" time: \(myDictionary["time"]!)")}
                 let jsonDecoder = JSONDecoder()
                 let jsonData = try jsonDecoder.decode(JsonData_Base.self, from: data)
-                print(jsonData.code as Any)
-                print(jsonData.message as Any)
-                print(jsonData.time as Any)
+                SingletonManager.sharedCenter.code = jsonData.code!
+                SingletonManager.sharedCenter.message = jsonData.message!
+                SingletonManager.sharedCenter.time = jsonData.time!
                 
-                print( jsonData.data?.displayName as Any)
+                if(jsonData.code! <= 202)
+                {
+                    SingletonManager.sharedCenter.DisplayName = (jsonData.data?.displayName)!
+                    print(SingletonManager.sharedCenter.DisplayName)
+                    print(SingletonManager.sharedCenter.code)
+                    print(SingletonManager.sharedCenter.message)
+                    print(SingletonManager.sharedCenter.time)
+                    
+                }else if(jsonData.code! >= 406)
+                {
+                    print(SingletonManager.sharedCenter.code)
+                    print(SingletonManager.sharedCenter.message)
+                    print(SingletonManager.sharedCenter.time)
+                }
                 //print(jsonData)
             } catch let error {
                 print(error.localizedDescription)
@@ -125,12 +138,25 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 //                }
                 let jsonDecoder = JSONDecoder()
                 let jsonData = try jsonDecoder.decode(JsonData_Base.self, from: data)
-                print(jsonData.code as Any)
-                print(jsonData.message as Any)
-                print(jsonData.time as Any)
-                
-               print( jsonData.data?.displayName as Any)
-                //print(jsonData)
+                SingletonManager.sharedCenter.code = jsonData.code!
+                SingletonManager.sharedCenter.message = jsonData.message!
+                SingletonManager.sharedCenter.time = jsonData.time!
+               
+                if(jsonData.code! <= 202)
+                {
+                    SingletonManager.sharedCenter.DisplayName = (jsonData.data?.displayName)!
+                    print(SingletonManager.sharedCenter.DisplayName)
+                    print(SingletonManager.sharedCenter.code)
+                    print(SingletonManager.sharedCenter.message)
+                    print(SingletonManager.sharedCenter.time)
+
+                }else if(jsonData.code! >= 406)
+                {
+                    print(SingletonManager.sharedCenter.code)
+                    print(SingletonManager.sharedCenter.message)
+                    print(SingletonManager.sharedCenter.time)
+                }
+                                //print(jsonData)
             } catch let error {
                 print(error.localizedDescription)
             }

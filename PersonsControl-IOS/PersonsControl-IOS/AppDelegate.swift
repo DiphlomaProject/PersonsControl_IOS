@@ -46,18 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
                 return
             }else
             {
-                let userId = user.userID                  // For client-side use only!
-                let idToken = user.authentication.idToken  // Safe to send to the server
+//                let userId = user.userID                  // For client-side use only!
+//                let idToken = user.authentication.idToken  // Safe to send to the server
                 let fullName = user.profile.name
-                let givenName = user.profile.givenName
-                let familyName = user.profile.familyName
+//                let givenName = user.profile.givenName
+//                let familyName = user.profile.familyName
                 let email = user.profile.email
-                SingletonManager.sharedCenter.userId = userId!
-                SingletonManager.sharedCenter.idToken = idToken!
-                SingletonManager.sharedCenter.fullName = fullName!
-                SingletonManager.sharedCenter.givenName = givenName!
-                SingletonManager.sharedCenter.familyName = familyName!
-                SingletonManager.sharedCenter.email = email!
+////                SingletonManager.sharedCenter.userId = userId!
+////                SingletonManager.sharedCenter.idToken = idToken!
+////                SingletonManager.sharedCenter.fullName = fullName!
+////                SingletonManager.sharedCenter.givenName = givenName!
+////                SingletonManager.sharedCenter.familyName = familyName!
+////                SingletonManager.sharedCenter.email = email!
                 print("info shared singleton")
                 print("login access");
                  GoogleSingInApiPOST.GoogleSingIn(email: email!, phone: "", name: fullName!)
