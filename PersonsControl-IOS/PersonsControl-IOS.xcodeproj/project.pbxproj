@@ -25,7 +25,6 @@
 		F4449F4221225F8600EB0600 /* PersonsControl_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4121225F8600EB0600 /* PersonsControl_IOSTests.swift */; };
 		F4449F4D21225F8600EB0600 /* PersonsControl_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */; };
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
-		F478D6852141F06000780664 /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478D6842141F06000780664 /* JSONData.swift */; };
 		F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */; };
 		F4D92EAC21239CA200C8BA61 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D92EAB21239CA200C8BA61 /* ADAL.framework */; };
 /* End PBXBuildFile section */
@@ -78,7 +77,6 @@
 		F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsControl_IOSUITests.swift; sourceTree = "<group>"; };
 		F4449F4E21225F8600EB0600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
-		F478D6842141F06000780664 /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
 		F4D92EA3212393C800C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4D92EAB21239CA200C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,7 +220,6 @@
 			children = (
 				F40AE05B21431FC300766EF5 /* struct json */,
 				F478213321400A1C0064E7BC /* NetworkController.swift */,
-				F478D6842141F06000780664 /* JSONData.swift */,
 			);
 			path = "Connect to Api";
 			sourceTree = "<group>";
@@ -484,7 +481,6 @@
 				F40AE0632143202700766EF5 /* Data.swift in Sources */,
 				F415C0D72123176500F30D66 /* MainVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* JsonData_Base.swift in Sources */,
-				F478D6852141F06000780664 /* JSONData.swift in Sources */,
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
