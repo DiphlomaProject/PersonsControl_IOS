@@ -12,7 +12,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 {
     static  func GoogleSingIn(email:String,phone:String,name:String)  -> (String, String,String)
     {
-      
+        var resultDictonary:NSDictionary?
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(name, forKey: "displayName")
         jsonDictionary.setValue(email, forKey: "email")
@@ -32,16 +32,31 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 
         request.httpBody = jsonData
         let session = URLSession(configuration: configuration, delegate: GoogleSingInApiPOST(), delegateQueue: nil)
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                print(error)
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
+            
+            guard let data = data else {
+                return
             }
-        }
+            
+            do {
+                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
+                
+                if let myDictionary = resultDictonary
+                {
+                    print(" code: \(myDictionary["code"]!)")
+                    print(" message: \(myDictionary["message"]!)")
+                    print(" time: \(myDictionary["time"]!)")
+                    
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        })
         
         task.resume()
 //
@@ -97,7 +112,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 //                    print(json)
 //                }
 //                let json = try? JSONDecoder().decode(JSONData.self, from: data)
-                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as! NSDictionary
+                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
                 
                 if let myDictionary = resultDictonary
                 {

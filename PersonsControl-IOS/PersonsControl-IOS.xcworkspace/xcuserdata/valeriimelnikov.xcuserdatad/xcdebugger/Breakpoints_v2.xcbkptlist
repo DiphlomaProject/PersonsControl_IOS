@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "557975176.515811"
+            timestampString = "557975889.043905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "RestApiHelper()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,23 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "557975176.516255"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "GoogleSingIn(email:phone:name:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "557975176.516567"
+            timestampString = "557975889.0443439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -138,43 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "557975176.516857"
+            timestampString = "557975889.044609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "SingIn(email:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "557975176.5171421"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "SingIn(email:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "557975176.517399"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "SingIn(email:password:)"
             landmarkType = "7">
          </BreakpointContent>
