@@ -1,5 +1,5 @@
 import Foundation
-struct JsonData_Base : Codable {
+struct SignIn_Base : Codable {
 	let code : Int?
 	let message : String?
 	let token : String?

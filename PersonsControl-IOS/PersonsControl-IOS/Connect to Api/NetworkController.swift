@@ -52,7 +52,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 //                    print(" message: \(myDictionary["message"]!)")
                 //                    print(" time: \(myDictionary["time"]!)")}
                 let jsonDecoder = JSONDecoder()
-                let jsonData = try jsonDecoder.decode(JsonData_Base.self, from: data)
+                let jsonData = try jsonDecoder.decode(SignIn_Base.self, from: data)
                 SingletonManager.sharedCenter.code = jsonData.code!
                 SingletonManager.sharedCenter.message = jsonData.message!
                 SingletonManager.sharedCenter.time = jsonData.time!
@@ -71,7 +71,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
                     print(SingletonManager.sharedCenter.message)
                     print(SingletonManager.sharedCenter.time)
                 }
-                //print(jsonData)
+
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -137,11 +137,11 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 //
 //                }
                 let jsonDecoder = JSONDecoder()
-                let jsonData = try jsonDecoder.decode(JsonData_Base.self, from: data)
+                let jsonData = try jsonDecoder.decode(SignIn_Base.self, from: data)
                 SingletonManager.sharedCenter.code = jsonData.code!
                 SingletonManager.sharedCenter.message = jsonData.message!
                 SingletonManager.sharedCenter.time = jsonData.time!
-               
+            
                 if(jsonData.code! <= 202)
                 {
                     SingletonManager.sharedCenter.DisplayName = (jsonData.data?.displayName)!
@@ -156,7 +156,7 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
                     print(SingletonManager.sharedCenter.message)
                     print(SingletonManager.sharedCenter.time)
                 }
-                                //print(jsonData)
+                
             } catch let error {
                 print(error.localizedDescription)
             }
