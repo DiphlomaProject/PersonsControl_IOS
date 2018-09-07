@@ -108,19 +108,23 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
             
             do {
                 //create json object from data
-//                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-//                    print(json)
+//                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
+//
+//                if let myDictionary = resultDictonary
+//                {
+//                    print(" code: \(myDictionary["code"]!)")
+//                    print(" message: \(myDictionary["message"]!)")
+//                    print(" time: \(myDictionary["time"]!)")
+//
 //                }
-//                let json = try? JSONDecoder().decode(JSONData.self, from: data)
-                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
+                let jsonDecoder = JSONDecoder()
+                let jsonData = try jsonDecoder.decode(JsonData_Base.self, from: data)
+                print(jsonData.code as Any)
+                print(jsonData.message as Any)
+                print(jsonData.time as Any)
                 
-                if let myDictionary = resultDictonary
-                {
-                    print(" code: \(myDictionary["code"]!)")
-                    print(" message: \(myDictionary["message"]!)")
-                    print(" time: \(myDictionary["time"]!)")
-                    
-                }
+               print( jsonData.data?.displayName as Any)
+                //print(jsonData)
             } catch let error {
                 print(error.localizedDescription)
             }

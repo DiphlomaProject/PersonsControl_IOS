@@ -10,6 +10,10 @@
 		33E62FC76BD15A5C3A5EAB0A /* Pods_PersonsControl_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75230B217E55B93456637F45 /* Pods_PersonsControl_IOSTests.framework */; };
 		CC04DFDDC02AB864417E4C2F /* Pods_PersonsControl_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7528AB187049E5D07CCBE8C7 /* Pods_PersonsControl_IOSUITests.framework */; };
 		CFD23254C54ABC12C6DFEFE6 /* Pods_PersonsControl_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE7A9DAF040576B5D5A4CDB /* Pods_PersonsControl_IOS.framework */; };
+		F40AE0612143202700766EF5 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE05D2143202700766EF5 /* Roles.swift */; };
+		F40AE0622143202700766EF5 /* Logins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE05E2143202700766EF5 /* Logins.swift */; };
+		F40AE0632143202700766EF5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE05F2143202700766EF5 /* Data.swift */; };
+		F40AE0642143202700766EF5 /* JsonData_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0602143202700766EF5 /* JsonData_Base.swift */; };
 		F415C0D72123176500F30D66 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* MainVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
@@ -52,6 +56,10 @@
 		A61AF8B7DA6725DE52BF74E9 /* Pods-PersonsControl-IOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOSUITests/Pods-PersonsControl-IOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AA36150C59EF71B54F12A48B /* Pods-PersonsControl-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOSTests/Pods-PersonsControl-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D52EB788F187569AFE7A96CF /* Pods-PersonsControl-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOSTests/Pods-PersonsControl-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F40AE05D2143202700766EF5 /* Roles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
+		F40AE05E2143202700766EF5 /* Logins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logins.swift; sourceTree = "<group>"; };
+		F40AE05F2143202700766EF5 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F40AE0602143202700766EF5 /* JsonData_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonData_Base.swift; sourceTree = "<group>"; };
 		F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PersonsControl-IOS.entitlements"; sourceTree = "<group>"; };
 		F415C0D62123176500F30D66 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
@@ -131,6 +139,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F40AE05B21431FC300766EF5 /* struct json */ = {
+			isa = PBXGroup;
+			children = (
+				F40AE05C21431FE900766EF5 /* Login */,
+			);
+			path = "struct json";
+			sourceTree = "<group>";
+		};
+		F40AE05C21431FE900766EF5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F40AE05F2143202700766EF5 /* Data.swift */,
+				F40AE0602143202700766EF5 /* JsonData_Base.swift */,
+				F40AE05E2143202700766EF5 /* Logins.swift */,
+				F40AE05D2143202700766EF5 /* Roles.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F4449F1D21225F8300EB0600 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +220,7 @@
 		F478213521400A2A0064E7BC /* Connect to Api */ = {
 			isa = PBXGroup;
 			children = (
+				F40AE05B21431FC300766EF5 /* struct json */,
 				F478213321400A1C0064E7BC /* NetworkController.swift */,
 				F478D6842141F06000780664 /* JSONData.swift */,
 			);
@@ -453,8 +481,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
+				F40AE0632143202700766EF5 /* Data.swift in Sources */,
 				F415C0D72123176500F30D66 /* MainVC.swift in Sources */,
+				F40AE0642143202700766EF5 /* JsonData_Base.swift in Sources */,
 				F478D6852141F06000780664 /* JSONData.swift in Sources */,
+				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
+				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */,
