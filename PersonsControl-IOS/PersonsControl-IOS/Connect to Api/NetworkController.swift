@@ -12,7 +12,8 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
 {
     static  func GoogleSingIn(email:String,phone:String,name:String)  -> (String, String,String)
     {
-        var resultDictonary:NSDictionary?
+//        var resultDictonary:NSDictionary?
+        let resultDictionary = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(name, forKey: "displayName")
         jsonDictionary.setValue(email, forKey: "email")
@@ -44,27 +45,36 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
             }
             
             do {
-//                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
-//
-//                if let myDictionary = resultDictonary
-//                {
-//                    print(" code: \(myDictionary["code"]!)")
-//                    print(" message: \(myDictionary["message"]!)")
-                //                    print(" time: \(myDictionary["time"]!)")}
+                //create json object from data
                 let jsonDecoder = JSONDecoder()
                 let jsonData = try jsonDecoder.decode(SignIn_Base.self, from: data)
                 SingletonManager.sharedCenter.code = jsonData.code!
                 SingletonManager.sharedCenter.message = jsonData.message!
                 SingletonManager.sharedCenter.time = jsonData.time!
-                
                 if(jsonData.code! <= 202)
                 {
+                    resultDictionary.setValue(jsonData.data?.id, forKey: "Id")
+                    resultDictionary.setValue(jsonData.data?.userName, forKey: "UserName")
+                    resultDictionary.setValue(jsonData.data?.img, forKey: "img")
+                    resultDictionary.setValue(jsonData.data?.displayName, forKey: "DisplayName")
+                    resultDictionary.setValue(jsonData.data?.email, forKey: "Email")
+                    resultDictionary.setValue(jsonData.data?.emailConfirmed, forKey: "EmailConfirmed")
+                    resultDictionary.setValue(jsonData.data?.address, forKey: "Address")
+                    resultDictionary.setValue(jsonData.data?.city, forKey: "City")
+                    resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
+                    resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
+                    (jsonData.data?.roles)!.forEach{ item in
+                        resultDictionary.setValue(item.userId, forKey: "RoleUserId")
+                        resultDictionary.setValue(item.roleId, forKey: "RoleId")
+                    }
+                    DataManager.dataValue(dictionary: resultDictionary)
                     SingletonManager.sharedCenter.DisplayName = (jsonData.data?.displayName)!
                     print(SingletonManager.sharedCenter.DisplayName)
                     print(SingletonManager.sharedCenter.code)
                     print(SingletonManager.sharedCenter.message)
                     print(SingletonManager.sharedCenter.time)
-                    
+
+
                 }else if(jsonData.code! >= 406)
                 {
                     print(SingletonManager.sharedCenter.code)
@@ -127,15 +137,6 @@ class GoogleSingInApiPOST: NSObject, URLSessionDelegate
             
             do {
                 //create json object from data
-//                resultDictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as NSDictionary?
-//
-//                if let myDictionary = resultDictonary
-//                {
-//                    print(" code: \(myDictionary["code"]!)")
-//                    print(" message: \(myDictionary["message"]!)")
-//                    print(" time: \(myDictionary["time"]!)")
-//
-//                }
                 let jsonDecoder = JSONDecoder()
                 let jsonData = try jsonDecoder.decode(SignIn_Base.self, from: data)
                 SingletonManager.sharedCenter.code = jsonData.code!

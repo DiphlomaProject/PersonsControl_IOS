@@ -14,6 +14,7 @@
 		F40AE0622143202700766EF5 /* Logins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE05E2143202700766EF5 /* Logins.swift */; };
 		F40AE0632143202700766EF5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE05F2143202700766EF5 /* Data.swift */; };
 		F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0602143202700766EF5 /* SignIn_Base.swift */; };
+		F40AE0662143F6B200766EF5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0652143F6B200766EF5 /* DataManager.swift */; };
 		F415C0D72123176500F30D66 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* MainVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		F40AE05E2143202700766EF5 /* Logins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logins.swift; sourceTree = "<group>"; };
 		F40AE05F2143202700766EF5 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F40AE0602143202700766EF5 /* SignIn_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn_Base.swift; sourceTree = "<group>"; };
+		F40AE0652143F6B200766EF5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PersonsControl-IOS.entitlements"; sourceTree = "<group>"; };
 		F415C0D62123176500F30D66 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
@@ -182,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				F478213521400A2A0064E7BC /* Connect to Api */,
-				F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */,
 				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
 				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
 				F4449F2B21225F8300EB0600 /* ViewController.swift */,
@@ -193,6 +194,7 @@
 				F4449F3821225F8600EB0600 /* Info.plist */,
 				F4449F3021225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld */,
 				F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */,
+				F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */,
 			);
 			path = "PersonsControl-IOS";
 			sourceTree = "<group>";
@@ -220,6 +222,7 @@
 			children = (
 				F40AE05B21431FC300766EF5 /* struct json */,
 				F478213321400A1C0064E7BC /* NetworkController.swift */,
+				F40AE0652143F6B200766EF5 /* DataManager.swift */,
 			);
 			path = "Connect to Api";
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
+				F40AE0662143F6B200766EF5 /* DataManager.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */,
 				F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */,
 			);
