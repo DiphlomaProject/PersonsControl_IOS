@@ -15,8 +15,8 @@ class MainVC: UIViewController {
         try! Auth.auth().signOut()
         print("logout")
         if self.storyboard != nil {
-        //    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? ViewController
-            self.navigationController?.popToRootViewController(animated: true)
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? ViewController
+//            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     @IBOutlet weak var emailLabel: UILabel!

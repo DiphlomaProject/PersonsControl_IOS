@@ -16,26 +16,38 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
     @IBOutlet weak var emailLabel: UITextField!
     @IBAction func LoginButton(_ sender: Any) {
         
-        GoogleSingInApiPOST.SingIn(email: emailLabel.text!, password: passwordLabel.text!)
+      //  GoogleSingInApiPOST.SingIn(email: emailLabel.text!, password: passwordLabel.text!)
+//        Service.instance.loginUser(withUserName: emailField.text!, andPassword: passwordField.text!, loginComplete: { (success, loginError) in
+//            if success {
+//                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NextVC")
+//                self.present(nextVC!, animated: true, completion: nil)
+//            } else {
+//                DispatchQueue.main.async {
+//                    self.alertLbl.isHidden = false
+//                }
+//            }
+//        })
+        
+        ServiceApiPost.SingIn(email: emailLabel.text!, password: passwordLabel.text!,loginComplete: { (success, loginError) in
+                        if success {
+//                            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC")
+//                            self.present(nextVC!, animated: true, completion: nil)
+                          
+                            print("Login access")
+                        } else {
+                            DispatchQueue.main.async {
+//                                self.alertLbl.isHidden = false
+                                print("login false")
+                            }
+                        }
+                    })
     }
-//    @IBOutlet weak var signInButton: GIDSigInButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        //  GIDSignIn.sharedInstance().signIn()
-        // setupGoogleButtons()
-        // Do any additional setup after loading the view, typically from a nib.
-       //GoogleSingInApiPOST.RestApiHelper()
     }
 
-/* fileprivate func setupGoogleButtons()
-    { // создаем кнопку гугла
-        let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x:60,y:500, width:view.frame.width - 115, height :50)
-        view.addSubview(googleButton)
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-    }
-    */
     @IBAction func acquireToken(_ sender:UIButton) {
         let authContext = ADAuthenticationContext(authority: SingletonManager.sharedCenter.AUTHORITY_URL,
                                                   error: nil)
@@ -49,15 +61,8 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
             if (result!.status != AD_SUCCEEDED)
             {
                 if result!.error.domain == ADAuthenticationErrorDomain
-                    && result!.error.code == ADErrorCode.ERROR_UNEXPECTED.rawValue {
-                    
-                    //   self.updateStatusField("Unexpected internal error occured");
-                    
-                } else {
-                    
-                    //  self.updateStatusField(result!.error.description)
+                    && result!.error.code == ADErrorCode.ERROR_UNEXPECTED.rawValue {} else {
                 }
-                
                 return;
             }
             
@@ -68,20 +73,8 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
             }
             
             let status = String(format: "Access token: %@\nexpiration:%@", result!.accessToken, expiresOnString)
-            //self.updateStatusField(status)
+
         }
-    }
-    func MoveTo()
-    { ///appdelegate
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-//        let rootViewController = self.window!.rootViewController as! UINavigationController
-//        rootViewController.pushViewController(loginPageView, animated: true)
-        //defoult
-        
-        let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as? MainVC
-        self.navigationController?.pushViewController(secondVC!, animated: true)
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

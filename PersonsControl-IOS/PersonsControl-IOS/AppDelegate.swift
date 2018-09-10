@@ -60,8 +60,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
 ////                SingletonManager.sharedCenter.email = email!
                 print("info shared singleton")
                 print("login access");
-                 GoogleSingInApiPOST.GoogleSingIn(email: email!, phone: "", name: fullName!)
-                print("GoogleSingInApi")
+                 //GoogleSingInApiPOST.GoogleSingIn(email: email!, phone: "", name: fullName!)
+                ServiceApiPost.GoogleSingIn(email: email!, phone: "", name: fullName!,loginComplete: { (success, loginError) in
+                    if success {
+//                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                                            let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+//                                            let rootViewController = self.window!.rootViewController as! UINavigationController
+//                                            rootViewController.pushViewController(loginPageView, animated: true)
+//                        rootViewController.popToViewController(loginPageView, animated: true)
+//                        rootViewController.show(loginPageView, sender: true)
+                        print("Login with Google")
+                    } else {
+                        DispatchQueue.main.async {
+                            //self.alertLbl.isHidden = false
+                            print("login false")
+                        }
+                    }
+                })
                 
                 
                 //                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
