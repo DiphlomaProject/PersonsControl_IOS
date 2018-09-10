@@ -1,3 +1,9 @@
+//
+//  PersonsControl-IOS
+//
+//  Created by Валерий Мельников on 08.09.2018.
+//  Copyright © 2018 Валерий Мельников. All rights reserved.
+//
 import Foundation
 struct SignIn_Base : Codable {
 	let code : Int?

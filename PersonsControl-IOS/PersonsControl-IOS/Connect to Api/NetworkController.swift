@@ -12,7 +12,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
 {
     
     static  func SingIn(email:String,password:String,loginComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
-        //var resultDictonary:NSDictionary?
+        let resultDictionary = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(email, forKey: "email")
         jsonDictionary.setValue(password, forKey: "password")
@@ -44,9 +44,25 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 let jsonData = try JSONDecoder().decode(SignIn_Base.self, from: data)
                 DispatchQueue.main.async {
                     if(jsonData.token != nil)
-                    {    print(jsonData)
+                    {
+                        resultDictionary.setValue(jsonData.data?.id, forKey: "Id")
+                        resultDictionary.setValue(jsonData.data?.userName, forKey: "UserName")
+                        resultDictionary.setValue(jsonData.data?.img, forKey: "img")
+                        resultDictionary.setValue(jsonData.data?.displayName, forKey: "DisplayName")
+                        resultDictionary.setValue(jsonData.data?.email, forKey: "Email")
+                        resultDictionary.setValue(jsonData.data?.emailConfirmed, forKey: "EmailConfirmed")
+                        resultDictionary.setValue(jsonData.data?.address, forKey: "Address")
+                        resultDictionary.setValue(jsonData.data?.city, forKey: "City")
+                        resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
+                        resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
+                        (jsonData.data?.roles)!.forEach{ item in
+                            resultDictionary.setValue(item.userId, forKey: "RoleUserId")
+                            resultDictionary.setValue(item.roleId, forKey: "RoleId")
+                        }
+                        DataManager.dataValue(dictionary: resultDictionary)
                         loginComplete(true, nil)
-                    }else if(jsonData.token == nil)
+                    }
+                    else if(jsonData.token == nil)
                     {
                         loginComplete(false, error)
                     }
@@ -95,10 +111,25 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         do {
             let jsonData = try JSONDecoder().decode(SignIn_Base.self, from: data)
             DispatchQueue.main.async {
-                print(jsonData)
-//                UserDefaults.standard.set(gottenData.refresh_token, forKey: "refreshToken")
-//                UserDefaults.standard.set(gottenData.access_token, forKey: "accessToken")
-                loginComplete(true, nil)
+                if(jsonData.token != nil)
+                {
+                    resultDictionary.setValue(jsonData.data?.id, forKey: "Id")
+                    resultDictionary.setValue(jsonData.data?.userName, forKey: "UserName")
+                    resultDictionary.setValue(jsonData.data?.img, forKey: "img")
+                    resultDictionary.setValue(jsonData.data?.displayName, forKey: "DisplayName")
+                    resultDictionary.setValue(jsonData.data?.email, forKey: "Email")
+                    resultDictionary.setValue(jsonData.data?.emailConfirmed, forKey: "EmailConfirmed")
+                    resultDictionary.setValue(jsonData.data?.address, forKey: "Address")
+                    resultDictionary.setValue(jsonData.data?.city, forKey: "City")
+                    resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
+                    resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
+                    (jsonData.data?.roles)!.forEach{ item in
+                        resultDictionary.setValue(item.userId, forKey: "RoleUserId")
+                        resultDictionary.setValue(item.roleId, forKey: "RoleId")
+                    }
+                    DataManager.dataValue(dictionary: resultDictionary)
+                    loginComplete(true, nil)
+                }
             }
         } catch let jsonError {
             loginComplete(false, error)
