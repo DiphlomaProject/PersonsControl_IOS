@@ -11,7 +11,7 @@ import CoreData
 import Firebase
 import GoogleSignIn
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINavigationControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UINavigationControllerDelegate {
 
 
     var window: UIWindow?
@@ -20,84 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-       
+       // GIDSignIn.sharedInstance().delegate = self
+        
         // Override point for customization after application launch.
         return true
     }
    
- 
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if error != nil {
-            // ...
-            print("error connect ",error as Any)
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        // ...
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let err = error {
-                // ...
-                print("error connect ",err)
-                return
-            }else
-            {
-//                let userId = user.userID                  // For client-side use only!
-//                let idToken = user.authentication.idToken  // Safe to send to the server
-                let fullName = user.profile.name
-//                let givenName = user.profile.givenName
-//                let familyName = user.profile.familyName
-                let email = user.profile.email
-////                SingletonManager.sharedCenter.userId = userId!
-////                SingletonManager.sharedCenter.idToken = idToken!
-////                SingletonManager.sharedCenter.fullName = fullName!
-////                SingletonManager.sharedCenter.givenName = givenName!
-////                SingletonManager.sharedCenter.familyName = familyName!
-////                SingletonManager.sharedCenter.email = email!
-                print("info shared singleton")
-                print("login access");
-                 //GoogleSingInApiPOST.GoogleSingIn(email: email!, phone: "", name: fullName!)
-                ServiceApiPost.GoogleSingIn(email: email!, phone: "", name: fullName!,loginComplete: { (success, loginError) in
-                    if success {
-//                                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                                            let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-//                                            let rootViewController = self.window!.rootViewController as! UINavigationController
-//                                            rootViewController.pushViewController(loginPageView, animated: true)
-//                        rootViewController.popToViewController(loginPageView, animated: true)
-//                        rootViewController.show(loginPageView, sender: true)
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "HomeVC")
-                        let rootViewController = self.window!.rootViewController as! UINavigationController
-                        rootViewController.pushViewController(loginPageView, animated: true)
-                        print("Login with Google")
-                    } else {
-                        DispatchQueue.main.async {
-                            //self.alertLbl.isHidden = false
-                            
-                            print("login false")
-                        }
-                    }
-                })
-                
-                
-                //                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                //                    let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-                //                    let rootViewController = self.window!.rootViewController as! UINavigationController
-                //                    rootViewController.pushViewController(loginPageView, animated: true)
-                //rootViewController.popToViewController(loginPageView, animated: true)
-                //rootViewController.show(loginPageView, sender: true)               
-
-            }
-            // User is signed in
-            // ...
-         
-            
-        }
-    }
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
@@ -105,10 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
                                                      sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: [:])
     }
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        // Perform any operations when the user disconnects from app here.
+//        // ...
+//    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

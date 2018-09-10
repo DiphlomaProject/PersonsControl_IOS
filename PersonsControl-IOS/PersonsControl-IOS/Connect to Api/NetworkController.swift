@@ -46,6 +46,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     if(jsonData.token != nil)
                     {
                         resultDictionary.setValue(jsonData.data?.id, forKey: "Id")
+                        resultDictionary.setValue(jsonData.token, forKey: "token")
                         resultDictionary.setValue(jsonData.data?.userName, forKey: "UserName")
                         resultDictionary.setValue(jsonData.data?.img, forKey: "img")
                         resultDictionary.setValue(jsonData.data?.displayName, forKey: "DisplayName")
@@ -59,7 +60,9 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                             resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                             resultDictionary.setValue(item.roleId, forKey: "RoleId")
                         }
-                        DataManager.dataValue(dictionary: resultDictionary)
+                        
+                       
+                         User().dataValue(dictionary: resultDictionary)
                         loginComplete(true, nil)
                     }
                     else if(jsonData.token == nil)
@@ -114,6 +117,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 if(jsonData.token != nil)
                 {
                     resultDictionary.setValue(jsonData.data?.id, forKey: "Id")
+                    resultDictionary.setValue(jsonData.token, forKey: "token")
                     resultDictionary.setValue(jsonData.data?.userName, forKey: "UserName")
                     resultDictionary.setValue(jsonData.data?.img, forKey: "img")
                     resultDictionary.setValue(jsonData.data?.displayName, forKey: "DisplayName")
@@ -127,7 +131,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                         resultDictionary.setValue(item.roleId, forKey: "RoleId")
                     }
-                    DataManager.dataValue(dictionary: resultDictionary)
+                    User().dataValue(dictionary: resultDictionary)
                     loginComplete(true, nil)
                 }else if(jsonData.token == nil)
                 {

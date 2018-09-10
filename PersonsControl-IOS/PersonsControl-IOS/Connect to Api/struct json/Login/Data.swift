@@ -6,7 +6,7 @@
 //
 import Foundation
 struct Data : Codable {
-	let roleNames : String?
+	let roleNames : [String]?
 	let img : String?
 	let claims : [String]?
 	let logins : [Logins]?
@@ -55,7 +55,7 @@ struct Data : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-        roleNames = try values.decodeIfPresent(String.self, forKey: .roleNames)
+        roleNames = try values.decodeIfPresent([String].self, forKey: .roleNames)
 		img = try values.decodeIfPresent(String.self, forKey: .img)
         claims = try values.decodeIfPresent([String].self, forKey: .claims)
         logins = try values.decodeIfPresent([Logins].self, forKey: .logins)

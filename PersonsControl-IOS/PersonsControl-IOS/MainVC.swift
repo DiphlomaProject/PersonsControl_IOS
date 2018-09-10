@@ -13,6 +13,8 @@ class MainVC: UIViewController {
 
     @IBAction func SignOut(_ sender: Any) {
         try! Auth.auth().signOut()
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        self.present(nextVC!, animated: true, completion: nil)
         print("logout")
         if self.storyboard != nil {
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? ViewController
