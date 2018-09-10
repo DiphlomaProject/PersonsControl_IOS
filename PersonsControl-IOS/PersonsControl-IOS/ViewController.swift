@@ -30,8 +30,8 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
         
         ServiceApiPost.SingIn(email: emailLabel.text!, password: passwordLabel.text!,loginComplete: { (success, loginError) in
                         if success {
-//                            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC")
-//                            self.present(nextVC!, animated: true, completion: nil)
+                            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                            self.present(nextVC!, animated: true, completion: nil)
                           
                             print("Login access")
                         } else {

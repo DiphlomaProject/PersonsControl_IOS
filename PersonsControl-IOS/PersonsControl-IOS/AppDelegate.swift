@@ -69,6 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
 //                                            rootViewController.pushViewController(loginPageView, animated: true)
 //                        rootViewController.popToViewController(loginPageView, animated: true)
 //                        rootViewController.show(loginPageView, sender: true)
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "HomeVC")
+                        let rootViewController = self.window!.rootViewController as! UINavigationController
+                        rootViewController.pushViewController(loginPageView, animated: true)
                         print("Login with Google")
                     } else {
                         DispatchQueue.main.async {

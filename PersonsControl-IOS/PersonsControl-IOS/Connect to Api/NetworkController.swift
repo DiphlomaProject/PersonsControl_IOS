@@ -129,6 +129,9 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     }
                     DataManager.dataValue(dictionary: resultDictionary)
                     loginComplete(true, nil)
+                }else if(jsonData.token == nil)
+                {
+                    loginComplete(false, error)
                 }
             }
         } catch let jsonError {
