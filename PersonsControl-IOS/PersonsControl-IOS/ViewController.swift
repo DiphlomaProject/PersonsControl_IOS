@@ -12,6 +12,7 @@ import GoogleSignIn
 import ADAL
 //import PlaygroundSupport
 class ViewController: UIViewController,GIDSignInUIDelegate {
+    @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
     @IBAction func LoginButton(_ sender: Any) {
@@ -37,6 +38,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
                         } else {
                             DispatchQueue.main.async {
 //                                self.alertLbl.isHidden = false
+                                self.alertLabel.isHidden = false
                                 print("login false")
                             }
                         }

@@ -24,6 +24,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-mE-WIm">
                                 <rect key="frame" x="25" y="175" width="300" height="221"/>
                                 <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email or Password incorrect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scw-bt-hXi">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.97518879179999995" green="0.26947923629999998" blue="0.2273723004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wfI-JH-mtt">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="173"/>
                                         <subviews>
@@ -154,6 +160,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="gvc-ey-IBW"/>
                     <connections>
+                        <outlet property="alertLabel" destination="Scw-bt-hXi" id="P5m-7q-dMw"/>
                         <outlet property="emailLabel" destination="oy6-CE-BSP" id="djd-k4-LaA"/>
                         <outlet property="passwordLabel" destination="aot-pI-00p" id="eda-9a-AHf"/>
                     </connections>

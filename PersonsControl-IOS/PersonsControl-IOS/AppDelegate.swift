@@ -77,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,UINaviga
                     } else {
                         DispatchQueue.main.async {
                             //self.alertLbl.isHidden = false
+                            
                             print("login false")
                         }
                     }
