@@ -54,6 +54,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         if error != nil {
             // ...
             print("error connect ",error as Any)
+            self.myActivityIndicator.stopAnimating()
             return
         }
         
@@ -65,6 +66,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             if let err = error {
                 // ...
                 print("error connect ",err)
+                self.myActivityIndicator.stopAnimating()
                 return
             }else
             {
@@ -80,6 +82,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                     } else {
                         DispatchQueue.main.async {
                              self.alertLabel.isHidden = false
+                            self.myActivityIndicator.stopAnimating()
                             print("login false")
                         }
                     }
