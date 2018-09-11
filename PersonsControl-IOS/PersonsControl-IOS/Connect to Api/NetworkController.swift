@@ -62,8 +62,11 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                             resultDictionary.setValue(item.roleId, forKey: "RoleId")
                         }
                         
+                    
+                        
                        
-                         User().dataValue(dictionary: resultDictionary)
+                       //  User().dataValue(dictionary: resultDictionary)
+                       // User.dataValue(dictionary: resultDictionary)
                         loginComplete(true, nil)
                     }
                     else if(jsonData.token == nil)
@@ -133,7 +136,8 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                         resultDictionary.setValue(item.roleId, forKey: "RoleId")
                     }
-                    User().dataValue(dictionary: resultDictionary)
+                   
+                    
                     loginComplete(true, nil)
                 }else if(jsonData.token == nil)
                 {

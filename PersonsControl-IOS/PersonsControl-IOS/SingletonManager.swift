@@ -43,6 +43,7 @@ class SingletonManager {
     var UserIdRoles = ""
     var RoleIdRoles = ""
     
+    //let User = UserDefaults.standard.value(forKey: "User") as? [String: String]
 
 
     

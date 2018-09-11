@@ -27,6 +27,8 @@ class MainVC: UIViewController {
 //        self.familyNameLabel.text! = SingletonManager.sharedCenter.familyName
 //        self.emailLabel.text! = SingletonManager.sharedCenter.email
         // Do any additional setup after loading the view.
+
+      
     }
     
     @IBAction func SignOut(_ sender: Any) {
