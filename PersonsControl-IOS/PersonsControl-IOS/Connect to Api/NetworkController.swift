@@ -56,12 +56,10 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         resultDictionary.setValue(jsonData.data?.city, forKey: "City")
                         resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
                         resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
-                        resultDictionary.setValue(jsonData.data?.roleNames, forKey: "RoleName")
-                        (jsonData.data?.roles)!.forEach{ item in
-                            resultDictionary.setValue(item.userId, forKey: "RoleUserId")
-                            resultDictionary.setValue(item.roleId, forKey: "RoleId")
+                        if(jsonData.data?.roleNames != nil && jsonData.data?.roleNames?.count ?? 0 > 0)
+                        {
+                             resultDictionary.setValue(jsonData.data?.roleNames![0], forKey: "RoleName")
                         }
-                             
                         SingletonManager.sharedCenter.UserClass = User.init(json: resultDictionary)
                         let encodedData = NSKeyedArchiver.archivedData(withRootObject: SingletonManager.sharedCenter.UserClass as Any)
                         UserDefaults.standard.set(encodedData, forKey: "User")
@@ -130,17 +128,21 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     resultDictionary.setValue(jsonData.data?.city, forKey: "City")
                     resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
                     resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
-                    resultDictionary.setValue(jsonData.data?.roleNames, forKey: "RoleName")
-                    (jsonData.data?.roles)!.forEach{ item in
-                        resultDictionary.setValue(item.userId, forKey: "RoleUserId")
-                        resultDictionary.setValue(item.roleId, forKey: "RoleId")
+                    if(jsonData.data?.roleNames != nil && jsonData.data?.roleNames?.count ?? 0 > 0)
+                    {
+                        resultDictionary.setValue(jsonData.data?.roleNames![0], forKey: "RoleName")
                     }
-                    User.init(json: resultDictionary)
+                    SingletonManager.sharedCenter.UserClass = User.init(json: resultDictionary)
+                    let encodedData = NSKeyedArchiver.archivedData(withRootObject: SingletonManager.sharedCenter.UserClass as Any)
+                    UserDefaults.standard.set(encodedData, forKey: "User")
+                    // UserDefaults.synchronize()
                     loginComplete(true, nil)
-                }else if(jsonData.token == nil)
+                }
+                else if(jsonData.token == nil)
                 {
                     loginComplete(false, error)
                 }
+                
             }
         } catch let jsonError {
             loginComplete(false, error)

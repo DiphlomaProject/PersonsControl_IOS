@@ -35,7 +35,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         
             let contactDictionary2  = (NSKeyedUnarchiver.unarchiveObject(with: data) as! User)
             
-            if(contactDictionary2 != nil && contactDictionary2.token != nil && contactDictionary2.id != nil)
+            if(contactDictionary2.token != nil && contactDictionary2.id != nil)
             {
                 SingletonManager.sharedCenter.UserClass = contactDictionary2
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")

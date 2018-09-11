@@ -18,34 +18,6 @@ class SingletonManager {
     // MARK: Shared Instance
     
    static let sharedCenter = SingletonManager()
-    
-    //json
-    var code : Int = 0
-    var message = ""
-    var token = ""
-    var time = ""
-    //data
-    var RoleNames = ""
-    var img = ""
-    var Claims = ""
-    var Address = ""
-    var Country = ""
-    var City = ""
-    var DisplayName = ""
-    var Email = ""
-    var EmailConfirmed = ""
-    var PhoneNumber = ""
-    var Id = ""
-    var UserName = ""
-        //logins
-    var LoginProvider = ""
-    var ProviderKey = ""
-    var UserIDLogin = ""
-        //roles
-    var UserIdRoles = ""
-    var RoleIdRoles = ""
-    
-    
     var UserClass : User?
    
 
