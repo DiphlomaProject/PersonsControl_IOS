@@ -44,7 +44,22 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             }  
         }
         else{
-            print("nope")
+            
+            let alert = UIAlertController(title: "Fatal Error", message: "Please Reinstall Application", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                    
+                }}))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -76,6 +91,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             // ...
             print("error connect ",error as Any)
             self.myActivityIndicator.stopAnimating()
+            AlertMessage()
             return
         }
         
@@ -88,6 +104,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 // ...
                 print("error connect ",err)
                 self.myActivityIndicator.stopAnimating()
+                self.AlertMessage()
                 return
             }else
             {
@@ -149,6 +166,24 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-
+        func AlertMessage()
+        {
+            let alert = UIAlertController(title: "Login fail", message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                    
+                }}))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
 }
 

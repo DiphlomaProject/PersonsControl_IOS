@@ -18,6 +18,7 @@ class MoreVC: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func SignOut(_ sender: Any) {

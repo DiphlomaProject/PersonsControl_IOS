@@ -153,11 +153,6 @@ class ServiceApiPost: NSObject, URLSessionDelegate
     }
     
     static func RestApiHelper()  {
-        //        https://178.209.88.110:443/api/RestApiHelper/helpinfo
-        //    https://jsonplaceholder.typicode.com/todos/1
-        
-        
-        
         let configuration = URLSessionConfiguration.default
         let url = URL(string: "https://178.209.88.110:443/api/RestApiHelper/helpinfo")! //change the url
         let urlRequest: NSURLRequest = NSURLRequest(url: url)
