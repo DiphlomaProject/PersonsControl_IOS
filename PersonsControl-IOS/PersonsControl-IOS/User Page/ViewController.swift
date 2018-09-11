@@ -20,15 +20,36 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     //Create Activity Indicator
     let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
-    
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         myActivityIndicator.center = view.center
         view.addSubview(myActivityIndicator)
         
+        if let data = UserDefaults.standard.data(forKey: "User") {
+            print("yep")
+        
+            let contactDictionary2  = (NSKeyedUnarchiver.unarchiveObject(with: data) as! User)
+            
+            if(contactDictionary2 != nil && contactDictionary2.token != nil && contactDictionary2.id != nil)
+            {
+                SingletonManager.sharedCenter.UserClass = contactDictionary2
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                self.present(nextVC!, animated: true, completion: nil)
+                
+            }  
+        }
+        else{
+            print("nope")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     

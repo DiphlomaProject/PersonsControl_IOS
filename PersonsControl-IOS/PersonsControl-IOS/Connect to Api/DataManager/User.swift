@@ -22,7 +22,7 @@ class User : NSObject,NSCoding
     var RoleName : [String]?
     
     init(json: NSMutableDictionary) { // Dictionary object
-        self.id = (json["id"] as? String)
+        self.id = (json["Id"] as? String)
         self.token = (json["token"] as? String)
         self.UserName = (json["UserName"] as? String)
         self.DisplayName = (json["DisplayName"] as? String)
@@ -36,7 +36,7 @@ class User : NSObject,NSCoding
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.id = (aDecoder.decodeObject(forKey: "id") as? String)
+        self.id = (aDecoder.decodeObject(forKey: "Id") as? String)
         self.token = (aDecoder.decodeObject(forKey: "token") as? String)
         self.UserName = (aDecoder.decodeObject(forKey: "UserName") as? String)
         self.DisplayName = (aDecoder.decodeObject(forKey: "DisplayName") as? String)
@@ -50,7 +50,7 @@ class User : NSObject,NSCoding
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.id, forKey: "id")
+        aCoder.encode(self.id, forKey: "Id")
         aCoder.encode(self.token, forKey: "token")
         aCoder.encode(self.UserName, forKey: "UserName")
         aCoder.encode(self.DisplayName, forKey: "DisplayName")
@@ -62,15 +62,32 @@ class User : NSObject,NSCoding
         aCoder.encode(self.RoleName, forKey: "RoleName")
         aCoder.encode(self.Address, forKey: "Address")
     }
-
-    func dataSave(dictionary:NSMutableDictionary) ->()
-    {
-//        let data  = NSKeyedArchiver.archivedData(withRootObject: dictionary)
-//        let defaults = UserDefaults.standard
-//        defaults.set(data, forKey:"User" )
-        print(dictionary)
-        
-    }
+//    func initWithCoder(aDecoder: NSCoder) -> User {
+//        self.id = (aDecoder.decodeObject(forKey: "Id") as? String)
+//        self.token = (aDecoder.decodeObject(forKey: "token") as? String)
+//        self.UserName = (aDecoder.decodeObject(forKey: "UserName") as? String)
+//        self.DisplayName = (aDecoder.decodeObject(forKey: "DisplayName") as? String)
+//        self.Email = (aDecoder.decodeObject(forKey: "Email") as? String)!
+//        self.EmailConfirmed = (aDecoder.decodeObject(forKey: "EmailConfirmed") as? Bool)
+//        self.City = (aDecoder.decodeObject(forKey: "City") as? String)
+//        self.Country = (aDecoder.decodeObject(forKey: "Country") as? String)
+//        self.PhoneNumber = (aDecoder.decodeObject(forKey: "PhoneNumber") as? String)
+//        self.RoleName = [(aDecoder.decodeObject(forKey: "RoleName") as? String)] as? [String]
+//        self.Address = (aDecoder.decodeObject(forKey: "Address") as? String)
+//        return self
+//    }
+//    
+//    func encodeWithCoder(aCoder: NSCoder!) {
+//        aCoder.encode(self.id, forKey: "Id")
+//        aCoder.encode(self.token, forKey: "token")
+//        aCoder.encode(self.UserName, forKey: "UserName")
+//        aCoder.encode(self.DisplayName, forKey: "DisplayName")
+//        aCoder.encode(self.Email, forKey: "Email")
+//        aCoder.encode(self.EmailConfirmed, forKey: "EmailConfirmed")
+//        aCoder.encode(self.City, forKey: "City")
+//        aCoder.encode(self.Country, forKey: "Country")
+//        aCoder.encode(self.PhoneNumber, forKey: "PhoneNumber")
+//        aCoder.encode(self.RoleName, forKey: "RoleName")
+//        aCoder.encode(self.Address, forKey: "Address")
+//    }
 }
-
-//

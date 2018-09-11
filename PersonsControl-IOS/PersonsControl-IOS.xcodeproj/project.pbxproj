@@ -25,6 +25,7 @@
 		F4449F3721225F8600EB0600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */; };
 		F4449F4221225F8600EB0600 /* PersonsControl_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4121225F8600EB0600 /* PersonsControl_IOSTests.swift */; };
 		F4449F4D21225F8600EB0600 /* PersonsControl_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */; };
+		F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD77F2148728E00EC4675 /* RegistrationVC.swift */; };
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
 		F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */; };
 		F4D92EAC21239CA200C8BA61 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D92EAB21239CA200C8BA61 /* ADAL.framework */; };
@@ -78,6 +79,7 @@
 		F4449F4821225F8600EB0600 /* PersonsControl-IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PersonsControl-IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsControl_IOSUITests.swift; sourceTree = "<group>"; };
 		F4449F4E21225F8600EB0600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46CD77F2148728E00EC4675 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		F4D92EA3212393C800C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				F4449F2B21225F8300EB0600 /* ViewController.swift */,
 				F415C0D62123176500F30D66 /* MainVC.swift */,
+				F46CD77F2148728E00EC4675 /* RegistrationVC.swift */,
 			);
 			path = "User Page";
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
+				F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */,
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F40AE0662143F6B200766EF5 /* User.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */,

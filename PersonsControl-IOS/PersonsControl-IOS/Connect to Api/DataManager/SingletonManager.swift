@@ -11,7 +11,9 @@ class SingletonManager {
 
     
     // Can't init is singleton
-    private init() { }
+    private init() {
+        
+    }
     
     // MARK: Shared Instance
     
@@ -43,7 +45,9 @@ class SingletonManager {
     var UserIdRoles = ""
     var RoleIdRoles = ""
     
-    //let User = UserDefaults.standard.value(forKey: "User") as? [String: String]
+    
+    var UserClass : User?
+   
 
 
     

@@ -31,8 +31,15 @@ class MainVC: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     @IBAction func SignOut(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "User")
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        //self.navigationController?.popToViewController(nextVC!, animated: true)
+       // self.navigationController?.pushViewController(nextVC!, animated: true)
         self.present(nextVC!, animated: true, completion: nil)
         try! Auth.auth().signOut()
         print("logout")

@@ -61,29 +61,12 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                             resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                             resultDictionary.setValue(item.roleId, forKey: "RoleId")
                         }
-                        
-                    
-                        
-                       
-//                      // User.init(json: resultDictionary)
-                        
-                        let encodedData = NSKeyedArchiver.archivedData(withRootObject: resultDictionary)
+                             
+                        SingletonManager.sharedCenter.UserClass = User.init(json: resultDictionary)
+                        let encodedData = NSKeyedArchiver.archivedData(withRootObject: SingletonManager.sharedCenter.UserClass as Any)
                         UserDefaults.standard.set(encodedData, forKey: "User")
-                        
-                        if let data = UserDefaults.standard.data(forKey: "User")
-                        {
-                            print("yep")
-                         
-                                if let dict = NSKeyedUnarchiver.unarchiveObject(with: data) as? User{
-                                    print(dict)
-                                }
-                            
-                            
-                        }
-                        else{
-                            print("nope")
-                        }
-                        loginComplete(true, nil)
+                       // UserDefaults.synchronize()
+                       loginComplete(true, nil)
                     }
                     else if(jsonData.token == nil)
                     {
