@@ -6,57 +6,57 @@
 //
 import Foundation
 struct Data : Codable {
-	let roleNames : [String]?
-	let img : String?
-	let claims : [String]?
-	let logins : [Logins]?
-	let roles : [Roles]?
-	let address : String?
-	let country : String?
-	let city : String?
-	let displayName : String?
-	let email : String?
-	let emailConfirmed : Bool?
-	let passwordHash : String?
-	let securityStamp : String?
-	let phoneNumber : String?
-	let phoneNumberConfirmed : Bool?
-	let twoFactorEnabled : Bool?
-	let lockoutEndDateUtc : String?
-	let lockoutEnabled : Bool?
-	let accessFailedCount : Int?
-	let id : String?
-	let userName : String?
-
-	enum CodingKeys: String, CodingKey {
-
-		case roleNames = "RoleNames"
-		case img = "img"
-		case claims = "Claims"
-		case logins = "Logins"
-		case roles = "Roles"
-		case address = "Address"
-		case country = "Country"
-		case city = "City"
-		case displayName = "DisplayName"
-		case email = "Email"
-		case emailConfirmed = "EmailConfirmed"
-		case passwordHash = "PasswordHash"
-		case securityStamp = "SecurityStamp"
-		case phoneNumber = "PhoneNumber"
-		case phoneNumberConfirmed = "PhoneNumberConfirmed"
-		case twoFactorEnabled = "TwoFactorEnabled"
-		case lockoutEndDateUtc = "LockoutEndDateUtc"
-		case lockoutEnabled = "LockoutEnabled"
-		case accessFailedCount = "AccessFailedCount"
-		case id = "Id"
-		case userName = "UserName"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
+    let roleNames : [String]?
+    let img : String?
+    let claims : [String]?
+    let logins : [Logins]?
+    let roles : [Roles]?
+    let address : String?
+    let country : String?
+    let city : String?
+    let displayName : String?
+    let email : String?
+    let emailConfirmed : Bool?
+    let passwordHash : String?
+    let securityStamp : String?
+    let phoneNumber : String?
+    let phoneNumberConfirmed : Bool?
+    let twoFactorEnabled : Bool?
+    let lockoutEndDateUtc : String?
+    let lockoutEnabled : Bool?
+    let accessFailedCount : Int?
+    let id : String?
+    let userName : String?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case roleNames = "RoleNames"
+        case img = "img"
+        case claims = "Claims"
+        case logins = "Logins"
+        case roles = "Roles"
+        case address = "Address"
+        case country = "Country"
+        case city = "City"
+        case displayName = "DisplayName"
+        case email = "Email"
+        case emailConfirmed = "EmailConfirmed"
+        case passwordHash = "PasswordHash"
+        case securityStamp = "SecurityStamp"
+        case phoneNumber = "PhoneNumber"
+        case phoneNumberConfirmed = "PhoneNumberConfirmed"
+        case twoFactorEnabled = "TwoFactorEnabled"
+        case lockoutEndDateUtc = "LockoutEndDateUtc"
+        case lockoutEnabled = "LockoutEnabled"
+        case accessFailedCount = "AccessFailedCount"
+        case id = "Id"
+        case userName = "UserName"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
         roleNames = try values.decodeIfPresent([String].self, forKey: .roleNames)
-		img = try values.decodeIfPresent(String.self, forKey: .img)
+        img = try values.decodeIfPresent(String.self, forKey: .img)
         claims = try values.decodeIfPresent([String].self, forKey: .claims)
         logins = try values.decodeIfPresent([Logins].self, forKey: .logins)
         roles = try values.decodeIfPresent([Roles].self, forKey: .roles)
@@ -66,16 +66,16 @@ struct Data : Codable {
         displayName = try values.decodeIfPresent(String.self, forKey: .displayName)
         email = try values.decodeIfPresent(String.self, forKey: .email)
         emailConfirmed = try values.decodeIfPresent(Bool.self, forKey: .emailConfirmed)
-		passwordHash = try values.decodeIfPresent(String.self, forKey: .passwordHash)
-		securityStamp = try values.decodeIfPresent(String.self, forKey: .securityStamp)
-		phoneNumber = try values.decodeIfPresent(String.self, forKey: .phoneNumber)
-		phoneNumberConfirmed = try values.decodeIfPresent(Bool.self, forKey: .phoneNumberConfirmed)
-		twoFactorEnabled = try values.decodeIfPresent(Bool.self, forKey: .twoFactorEnabled)
-		lockoutEndDateUtc = try values.decodeIfPresent(String.self, forKey: .lockoutEndDateUtc)
-		lockoutEnabled = try values.decodeIfPresent(Bool.self, forKey: .lockoutEnabled)
-		accessFailedCount = try values.decodeIfPresent(Int.self, forKey: .accessFailedCount)
-		id = try values.decodeIfPresent(String.self, forKey: .id)
-		userName = try values.decodeIfPresent(String.self, forKey: .userName)
-	}
-
+        passwordHash = try values.decodeIfPresent(String.self, forKey: .passwordHash)
+        securityStamp = try values.decodeIfPresent(String.self, forKey: .securityStamp)
+        phoneNumber = try values.decodeIfPresent(String.self, forKey: .phoneNumber)
+        phoneNumberConfirmed = try values.decodeIfPresent(Bool.self, forKey: .phoneNumberConfirmed)
+        twoFactorEnabled = try values.decodeIfPresent(Bool.self, forKey: .twoFactorEnabled)
+        lockoutEndDateUtc = try values.decodeIfPresent(String.self, forKey: .lockoutEndDateUtc)
+        lockoutEnabled = try values.decodeIfPresent(Bool.self, forKey: .lockoutEnabled)
+        accessFailedCount = try values.decodeIfPresent(Int.self, forKey: .accessFailedCount)
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        userName = try values.decodeIfPresent(String.self, forKey: .userName)
+    }
+    
 }

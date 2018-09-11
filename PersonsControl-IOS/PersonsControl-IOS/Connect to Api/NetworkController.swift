@@ -56,6 +56,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         resultDictionary.setValue(jsonData.data?.city, forKey: "City")
                         resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
                         resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
+                        resultDictionary.setValue(jsonData.data?.roleNames, forKey: "RoleName")
                         (jsonData.data?.roles)!.forEach{ item in
                             resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                             resultDictionary.setValue(item.roleId, forKey: "RoleId")
@@ -127,6 +128,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     resultDictionary.setValue(jsonData.data?.city, forKey: "City")
                     resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
                     resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
+                    resultDictionary.setValue(jsonData.data?.roleNames, forKey: "RoleName")
                     (jsonData.data?.roles)!.forEach{ item in
                         resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                         resultDictionary.setValue(item.roleId, forKey: "RoleId")

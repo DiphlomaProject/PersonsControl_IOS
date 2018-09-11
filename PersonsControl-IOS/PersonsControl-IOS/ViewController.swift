@@ -43,28 +43,14 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                         } else {
                             DispatchQueue.main.async {
                                 self.alertLabel.isHidden = false
-                                self.activityProgressStop()
+                                self.myActivityIndicator.stopAnimating()
                                 print("login false")
                             }
                         }
                     })
     }
-    
-    
-
-    
-     func activityProgressStart()
-    {
-       myActivityIndicator.startAnimating()
-    }
-    func activityProgressStop()
-    {
-        myActivityIndicator.stopAnimating()
-    }
-    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        let view = ViewController()
-        view.activityProgressStart()
+        myActivityIndicator.startAnimating()
         if error != nil {
             // ...
             print("error connect ",error as Any)
@@ -82,28 +68,18 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 return
             }else
             {
-                //                let userId = user.userID                  // For client-side use only!
-                //                let idToken = user.authentication.idToken  // Safe to send to the server
                 let fullName = user.profile.name
-                //                let givenName = user.profile.givenName
-                //                let familyName = user.profile.familyName
                 let email = user.profile.email
-                ////                SingletonManager.sharedCenter.userId = userId!
-                ////                SingletonManager.sharedCenter.idToken = idToken!
-                ////                SingletonManager.sharedCenter.fullName = fullName!
-                ////                SingletonManager.sharedCenter.givenName = givenName!
-                ////                SingletonManager.sharedCenter.familyName = familyName!
-                ////                SingletonManager.sharedCenter.email = email!
+                
                 ServiceApiPost.GoogleSingIn(email: email!, phone: "", name: fullName!,loginComplete: { (success, loginError) in
                     if success {
-                        //                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        //                        let loginPageView = mainStoryboard.instantiateViewController(withIdentifier: "HomeVC")
-                        //                        let rootViewController = self.window!.rootViewController as! UINavigationController
-                        //                        rootViewController.pushViewController(loginPageView, animated: true)
+                        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                        self.present(nextVC!, animated: true, completion: nil)
                         print("Login with Google")
-                        view.activityProgressStop()
+                        self.myActivityIndicator.stopAnimating()
                     } else {
                         DispatchQueue.main.async {
+                             self.alertLabel.isHidden = false
                             print("login false")
                         }
                     }
@@ -113,33 +89,33 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     }
     
     @IBAction func acquireToken(_ sender:UIButton) {
-        //        myActivityIndicator.startAnimating()
-        //        let authContext = ADAuthenticationContext(authority: SingletonManager.sharedCenter.AUTHORITY_URL,
-        //                                                  error: nil)
-        //
-        //        authContext!.acquireToken(withResource: "hmsala4b7974c-4a7c-475e-91b8-a82d67b0d9a8://auth",
-        //                                  clientId: SingletonManager.sharedCenter.CLIENT_ID,
-        //                                  redirectUri: URL(string: SingletonManager.sharedCenter.REDIRECT_URI))
-        //        {
-        //            (result) in
-        //
-        //            if (result!.status != AD_SUCCEEDED)
-        //            {
-        //                if result!.error.domain == ADAuthenticationErrorDomain
-        //                    && result!.error.code == ADErrorCode.ERROR_UNEXPECTED.rawValue {} else {
-        //                }
-        //                return;
-        //            }
-        //
-        //            var expiresOnString = "(nil)"
-        //
-        //            if let expiresOn = result!.tokenCacheItem.expiresOn {
-        //                expiresOnString = String(describing: expiresOn)
-        //            }
-        //
-        //            let status = String(format: "Access token: %@\nexpiration:%@", result!.accessToken, expiresOnString)
-        //
-        //        }
+                myActivityIndicator.startAnimating()
+                let authContext = ADAuthenticationContext(authority: SingletonManager.sharedCenter.AUTHORITY_URL,
+                                                          error: nil)
+        
+                authContext!.acquireToken(withResource: "hmsala4b7974c-4a7c-475e-91b8-a82d67b0d9a8://auth",
+                                          clientId: SingletonManager.sharedCenter.CLIENT_ID,
+                                          redirectUri: URL(string: SingletonManager.sharedCenter.REDIRECT_URI))
+                {
+                    (result) in
+        
+                    if (result!.status != AD_SUCCEEDED)
+                    {
+                        if result!.error.domain == ADAuthenticationErrorDomain
+                            && result!.error.code == ADErrorCode.ERROR_UNEXPECTED.rawValue {} else {
+                        }
+                        return;
+                    }
+        
+                    var expiresOnString = "(nil)"
+        
+                    if let expiresOn = result!.tokenCacheItem.expiresOn {
+                        expiresOnString = String(describing: expiresOn)
+                    }
+        
+                    let status = String(format: "Access token: %@\nexpiration:%@", result!.accessToken, expiresOnString)
+        
+                }
         
         
     }

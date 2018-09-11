@@ -184,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				F478213521400A2A0064E7BC /* Connect to Api */,
-				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
 				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
 				F4449F2B21225F8300EB0600 /* ViewController.swift */,
 				F415C0D62123176500F30D66 /* MainVC.swift */,
@@ -195,6 +194,7 @@
 				F4449F3021225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld */,
 				F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */,
 				F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */,
+				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
 			);
 			path = "PersonsControl-IOS";
 			sourceTree = "<group>";

@@ -11,16 +11,7 @@ import Firebase
 import GoogleSignIn
 class MainVC: UIViewController {
 
-    @IBAction func SignOut(_ sender: Any) {
-        try! Auth.auth().signOut()
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
-        self.present(nextVC!, animated: true, completion: nil)
-        print("logout")
-        if self.storyboard != nil {
-            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginVC") as? ViewController
-//            self.navigationController?.popToRootViewController(animated: true)
-        }
-    }
+  
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var familyNameLabel: UILabel!
     @IBOutlet weak var givenNameLabel: UILabel!
@@ -38,7 +29,12 @@ class MainVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func SignOut(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        self.present(nextVC!, animated: true, completion: nil)
+        try! Auth.auth().signOut()
+        print("logout")
+    }
     /*
     // MARK: - Navigation
 
