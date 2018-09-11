@@ -65,8 +65,19 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     
                         
                        
-                       //  User().dataValue(dictionary: resultDictionary)
-                       // User.dataValue(dictionary: resultDictionary)
+//                      // User.init(json: resultDictionary)
+                        
+                        let encodedData = NSKeyedArchiver.archivedData(withRootObject: resultDictionary)
+                        UserDefaults.standard.set(encodedData, forKey: "User")
+                        
+                        if let data = UserDefaults.standard.data(forKey: "User") {
+                            print("yep")
+                          // let final = NSKeyedUnarchiver.unarchiveObject(with: data) as! [User]
+                           // print(final)
+                        }
+                        else{
+                            print("nope")
+                        }
                         loginComplete(true, nil)
                     }
                     else if(jsonData.token == nil)
@@ -136,8 +147,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         resultDictionary.setValue(item.userId, forKey: "RoleUserId")
                         resultDictionary.setValue(item.roleId, forKey: "RoleId")
                     }
-                   
-                    
+                    User.init(json: resultDictionary)
                     loginComplete(true, nil)
                 }else if(jsonData.token == nil)
                 {

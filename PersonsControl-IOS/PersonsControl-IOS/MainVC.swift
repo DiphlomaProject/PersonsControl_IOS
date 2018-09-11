@@ -20,15 +20,15 @@ class MainVC: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.idLabel.text! = SingletonManager.sharedCenter.userId
-//        self.TokenLabel.text! = SingletonManager.sharedCenter.idToken
-//        self.nameLabel.text! = SingletonManager.sharedCenter.fullName
-//        self.givenNameLabel.text! =  SingletonManager.sharedCenter.givenName
-//        self.familyNameLabel.text! = SingletonManager.sharedCenter.familyName
-//        self.emailLabel.text! = SingletonManager.sharedCenter.email
-        // Do any additional setup after loading the view.
 
-      
+//        if let data = UserDefaults().data(forKey: "User"),
+//            let custom = NSKeyedUnarchiver.unarchiveObject(with: data) as? [User] {
+//            // Do something with retrieved data
+//            for item in custom {
+//                print(item)
+//            }
+//        }
+
     }
     
     @IBAction func SignOut(_ sender: Any) {
