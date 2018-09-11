@@ -184,9 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				F478213521400A2A0064E7BC /* Connect to Api */,
-				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
-				F4449F2B21225F8300EB0600 /* ViewController.swift */,
-				F415C0D62123176500F30D66 /* MainVC.swift */,
+				F46CD77D21481FD500EC4675 /* User Page */,
 				F4449F2D21225F8300EB0600 /* Main.storyboard */,
 				F4449F3321225F8600EB0600 /* Assets.xcassets */,
 				F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */,
@@ -220,9 +218,19 @@
 		F46CD77B214739C900EC4675 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
 				F40AE0652143F6B200766EF5 /* User.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		F46CD77D21481FD500EC4675 /* User Page */ = {
+			isa = PBXGroup;
+			children = (
+				F4449F2B21225F8300EB0600 /* ViewController.swift */,
+				F415C0D62123176500F30D66 /* MainVC.swift */,
+			);
+			path = "User Page";
 			sourceTree = "<group>";
 		};
 		F478213521400A2A0064E7BC /* Connect to Api */ = {

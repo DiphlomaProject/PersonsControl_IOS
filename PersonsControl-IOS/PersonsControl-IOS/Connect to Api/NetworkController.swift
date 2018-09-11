@@ -70,10 +70,15 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         let encodedData = NSKeyedArchiver.archivedData(withRootObject: resultDictionary)
                         UserDefaults.standard.set(encodedData, forKey: "User")
                         
-                        if let data = UserDefaults.standard.data(forKey: "User") {
+                        if let data = UserDefaults.standard.data(forKey: "User")
+                        {
                             print("yep")
-                          // let final = NSKeyedUnarchiver.unarchiveObject(with: data) as! [User]
-                           // print(final)
+                         
+                                if let dict = NSKeyedUnarchiver.unarchiveObject(with: data) as? User{
+                                    print(dict)
+                                }
+                            
+                            
                         }
                         else{
                             print("nope")
