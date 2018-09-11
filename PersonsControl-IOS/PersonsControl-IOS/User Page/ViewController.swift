@@ -69,7 +69,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                             }
                         }
                     })
-    }
+    }// login buuton
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         myActivityIndicator.startAnimating()
         if error != nil {
@@ -110,7 +110,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 })
             }
         }
-    }
+    }// google signIn
     
     @IBAction func acquireToken(_ sender:UIButton) {
                 myActivityIndicator.startAnimating()
@@ -142,7 +142,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 }
         
         
-    }
+    }//microsoft singin
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
