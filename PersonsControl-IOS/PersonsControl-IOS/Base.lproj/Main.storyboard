@@ -172,7 +172,7 @@
         <!--Registration-->
         <scene sceneID="R1Z-Qx-1ia">
             <objects>
-                <viewController storyboardIdentifier="RegVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOe-uw-Uzv" customClass="RegistrationVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOe-uw-Uzv" customClass="RegistrationVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rbe-sV-JIa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

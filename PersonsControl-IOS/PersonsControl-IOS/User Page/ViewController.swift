@@ -33,11 +33,11 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         if let data = UserDefaults.standard.data(forKey: "User") {
             print("yep")
         
-            let contactDictionary2  = (NSKeyedUnarchiver.unarchiveObject(with: data) as! User)
+            let dataUser  = (NSKeyedUnarchiver.unarchiveObject(with: data) as! User)
             
-            if(contactDictionary2.token != nil && contactDictionary2.id != nil)
+            if(dataUser.token != nil && dataUser.id != nil)
             {
-                SingletonManager.sharedCenter.UserClass = contactDictionary2
+                SingletonManager.sharedCenter.UserClass = dataUser
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
                 self.present(nextVC!, animated: false, completion: nil)
                 
