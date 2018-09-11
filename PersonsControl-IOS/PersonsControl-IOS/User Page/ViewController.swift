@@ -39,7 +39,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             {
                 SingletonManager.sharedCenter.UserClass = contactDictionary2
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-                self.present(nextVC!, animated: true, completion: nil)
+                self.present(nextVC!, animated: false, completion: nil)
                 
             }  
         }

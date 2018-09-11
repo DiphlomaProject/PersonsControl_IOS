@@ -26,6 +26,7 @@
 		F4449F4221225F8600EB0600 /* PersonsControl_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4121225F8600EB0600 /* PersonsControl_IOSTests.swift */; };
 		F4449F4D21225F8600EB0600 /* PersonsControl_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */; };
 		F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD77F2148728E00EC4675 /* RegistrationVC.swift */; };
+		F46CD782214886A300EC4675 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD781214886A300EC4675 /* MoreVC.swift */; };
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
 		F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */; };
 		F4D92EAC21239CA200C8BA61 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D92EAB21239CA200C8BA61 /* ADAL.framework */; };
@@ -80,6 +81,7 @@
 		F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsControl_IOSUITests.swift; sourceTree = "<group>"; };
 		F4449F4E21225F8600EB0600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46CD77F2148728E00EC4675 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		F46CD781214886A300EC4675 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		F4D92EA3212393C800C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -230,10 +232,19 @@
 			isa = PBXGroup;
 			children = (
 				F4449F2B21225F8300EB0600 /* ViewController.swift */,
-				F415C0D62123176500F30D66 /* MainVC.swift */,
 				F46CD77F2148728E00EC4675 /* RegistrationVC.swift */,
+				F46CD783214886CA00EC4675 /* Tab Bar Item */,
 			);
 			path = "User Page";
+			sourceTree = "<group>";
+		};
+		F46CD783214886CA00EC4675 /* Tab Bar Item */ = {
+			isa = PBXGroup;
+			children = (
+				F415C0D62123176500F30D66 /* MainVC.swift */,
+				F46CD781214886A300EC4675 /* MoreVC.swift */,
+			);
+			path = "Tab Bar Item";
 			sourceTree = "<group>";
 		};
 		F478213521400A2A0064E7BC /* Connect to Api */ = {
@@ -500,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
+				F46CD782214886A300EC4675 /* MoreVC.swift in Sources */,
 				F40AE0632143202700766EF5 /* Data.swift in Sources */,
 				F415C0D72123176500F30D66 /* MainVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */,
