@@ -181,6 +181,51 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         task.resume()
     }
     
+    
+    static  func SingUp(email:String,password:String,userName:String,phone:String,regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(email, forKey: "email")
+        jsonDictionary.setValue(password, forKey: "password")
+        jsonDictionary.setValue(userName, forKey: "displayName")
+        jsonDictionary.setValue(userName, forKey: "phone")         // prepare json data
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        let url = URL(string: "https://178.209.88.110:443/api/Users/SignUp")! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                regComplete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                regComplete(false, error)
+                return
+            }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(SignIn_Base.self, from: data)
+                DispatchQueue.main.async {
+                    print(jsonData)
+                    regComplete(true, nil)
+                    
+                }
+            } catch let jsonError {
+                regComplete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+        
+    }//singIn
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
         completionHandler(.useCredential, urlCredential)
