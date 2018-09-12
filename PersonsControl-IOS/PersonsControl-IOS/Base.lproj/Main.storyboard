@@ -98,18 +98,11 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't have an account yet?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgK-sw-BBQ">
-                                <rect key="frame" x="57" y="518" width="207" height="30"/>
+                                <rect key="frame" x="16" y="518" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-d4-X28">
-                                <rect key="frame" x="264" y="518" width="56" height="30"/>
-                                <state key="normal" title="Sign up."/>
-                                <connections>
-                                    <segue destination="qOe-uw-Uzv" kind="push" id="Uzb-LY-GGZ"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="6O5-AN-gUe">
                                 <rect key="frame" x="163" y="64" width="24" height="80"/>
                             </imageView>
@@ -123,6 +116,13 @@
                                 <state key="normal" title="Microsoft"/>
                                 <connections>
                                     <action selector="acquireToken:" destination="yZl-bO-HmE" eventType="touchUpInside" id="0hg-lg-ZF0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-d4-X28">
+                                <rect key="frame" x="248" y="518" width="56" height="30"/>
+                                <state key="normal" title="Sign up."/>
+                                <connections>
+                                    <segue destination="qOe-uw-Uzv" kind="push" id="Uzb-LY-GGZ"/>
                                 </connections>
                             </button>
                         </subviews>
