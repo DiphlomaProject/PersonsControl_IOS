@@ -45,21 +45,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         }
         else{
             
-            let alert = UIAlertController(title: "Fatal Error", message: "Please Reinstall Application", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                switch action.style{
-                case .default:
-                    print("default")
-                    
-                case .cancel:
-                    print("cancel")
-                    
-                case .destructive:
-                    print("destructive")
-                    
-                    
-                }}))
-            self.present(alert, animated: true, completion: nil)
+           print("error")
         }
     }
     
