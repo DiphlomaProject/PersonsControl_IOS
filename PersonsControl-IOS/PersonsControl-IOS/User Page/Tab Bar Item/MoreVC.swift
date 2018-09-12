@@ -27,8 +27,10 @@ class MoreVC: UIViewController
         UserDefaults.standard.removeObject(forKey: "User")
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
         //self.navigationController?.popToViewController(nextVC!, animated: true)
-        // self.navigationController?.pushViewController(nextVC!, animated: true)
-        self.present(nextVC!, animated: true, completion: nil)
+         self.navigationController?.pushViewController(nextVC!, animated: true)
+       // self.present(nextVC!, animated: true, completion: nil)
+    //   self.navigationController?.popToRootViewController(animated: true)
+        
         try! Auth.auth().signOut()
         print("logout")
     }
