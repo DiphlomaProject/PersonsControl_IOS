@@ -27,10 +27,12 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var city: UITextField!
     
     @IBOutlet weak var Country: UITextField!
+    @IBOutlet weak var imgProf: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+            imgProf.layer.cornerRadius = imgProf.frame.size.width/2
+            imgProf.clipsToBounds = true
             displayName.text = SingletonManager.sharedCenter.UserClass?.DisplayName
             email.text = SingletonManager.sharedCenter.UserClass?.Email
             Role.text = SingletonManager.sharedCenter.UserClass?.RoleName
