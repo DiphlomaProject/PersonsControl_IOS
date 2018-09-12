@@ -150,7 +150,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         }
         }.resume()
     
-    }
+    }//GoogleSignIn
     
     static func RestApiHelper()  {
         let configuration = URLSessionConfiguration.default
@@ -179,16 +179,16 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         })
         
         task.resume()
-    }
+    }//RestApiHelper
     
     
     static  func SingUp(email:String,password:String,userName:String,phone:String,regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
-        let resultDictionary = NSMutableDictionary()
+//        let resultDictionary = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(email, forKey: "email")
         jsonDictionary.setValue(password, forKey: "password")
         jsonDictionary.setValue(userName, forKey: "displayName")
-        jsonDictionary.setValue(userName, forKey: "phone")         // prepare json data
+        jsonDictionary.setValue(phone, forKey: "phone")         // prepare json data
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
         // create post request
         let configuration = URLSessionConfiguration.default
@@ -225,7 +225,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             }
             }.resume()
         
-    }//singIn
+    }//singUp
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
         completionHandler(.useCredential, urlCredential)
