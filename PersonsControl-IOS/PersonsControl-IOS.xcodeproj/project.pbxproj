@@ -15,7 +15,7 @@
 		F40AE0632143202700766EF5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE05F2143202700766EF5 /* Data.swift */; };
 		F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0602143202700766EF5 /* SignIn_Base.swift */; };
 		F40AE0662143F6B200766EF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0652143F6B200766EF5 /* User.swift */; };
-		F415C0D72123176500F30D66 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* MainVC.swift */; };
+		F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* ProfileVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* ViewController.swift */; };
@@ -25,6 +25,9 @@
 		F4449F3721225F8600EB0600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */; };
 		F4449F4221225F8600EB0600 /* PersonsControl_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4121225F8600EB0600 /* PersonsControl_IOSTests.swift */; };
 		F4449F4D21225F8600EB0600 /* PersonsControl_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */; };
+		F44BFD52214963FB003DBAC9 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFD51214963FB003DBAC9 /* GroupsVC.swift */; };
+		F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFD5421496421003DBAC9 /* ProjectsVC.swift */; };
+		F44BFD5721496431003DBAC9 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFD5621496431003DBAC9 /* TaskVC.swift */; };
 		F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD77F2148728E00EC4675 /* RegistrationVC.swift */; };
 		F46CD782214886A300EC4675 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD781214886A300EC4675 /* MoreVC.swift */; };
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
@@ -64,7 +67,7 @@
 		F40AE0602143202700766EF5 /* SignIn_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn_Base.swift; sourceTree = "<group>"; };
 		F40AE0652143F6B200766EF5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PersonsControl-IOS.entitlements"; sourceTree = "<group>"; };
-		F415C0D62123176500F30D66 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		F415C0D62123176500F30D66 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +83,9 @@
 		F4449F4821225F8600EB0600 /* PersonsControl-IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PersonsControl-IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsControl_IOSUITests.swift; sourceTree = "<group>"; };
 		F4449F4E21225F8600EB0600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F44BFD51214963FB003DBAC9 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
+		F44BFD5421496421003DBAC9 /* ProjectsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsVC.swift; sourceTree = "<group>"; };
+		F44BFD5621496431003DBAC9 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		F46CD77F2148728E00EC4675 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		F46CD781214886A300EC4675 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -241,7 +247,10 @@
 		F46CD783214886CA00EC4675 /* Tab Bar Item */ = {
 			isa = PBXGroup;
 			children = (
-				F415C0D62123176500F30D66 /* MainVC.swift */,
+				F44BFD5621496431003DBAC9 /* TaskVC.swift */,
+				F44BFD5421496421003DBAC9 /* ProjectsVC.swift */,
+				F44BFD51214963FB003DBAC9 /* GroupsVC.swift */,
+				F415C0D62123176500F30D66 /* ProfileVC.swift */,
 				F46CD781214886A300EC4675 /* MoreVC.swift */,
 			);
 			path = "Tab Bar Item";
@@ -513,7 +522,10 @@
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
 				F46CD782214886A300EC4675 /* MoreVC.swift in Sources */,
 				F40AE0632143202700766EF5 /* Data.swift in Sources */,
-				F415C0D72123176500F30D66 /* MainVC.swift in Sources */,
+				F44BFD5721496431003DBAC9 /* TaskVC.swift in Sources */,
+				F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */,
+				F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */,
+				F44BFD52214963FB003DBAC9 /* GroupsVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */,
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,

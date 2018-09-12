@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Firebase
 import GoogleSignIn
-class MainVC: UIViewController {
+class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,16 +18,5 @@ class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
-    
- 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

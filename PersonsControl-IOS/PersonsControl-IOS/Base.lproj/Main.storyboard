@@ -340,7 +340,7 @@
         <!--Profile-->
         <scene sceneID="62s-Li-Ycf">
             <objects>
-                <viewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="olV-Y3-sYY" customClass="MainVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="olV-Y3-sYY" customClass="ProfileVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l0n-CY-vrh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Project-->
         <scene sceneID="pYk-ld-Sce">
             <objects>
-                <viewController id="gcj-Zd-Ssz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gcj-Zd-Ssz" customClass="ProjectsVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xvn-7o-syc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -426,7 +426,7 @@
         <!--Groups-->
         <scene sceneID="Icg-We-Gxa">
             <objects>
-                <viewController id="kbI-lY-RvW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbI-lY-RvW" customClass="GroupsVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DPZ-Ew-x8p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +452,7 @@
         <!--Task-->
         <scene sceneID="G0C-Hp-S7k">
             <objects>
-                <viewController id="BSt-KU-3gc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskVC" id="BSt-KU-3gc" customClass="TaskVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1iK-ed-kNe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
