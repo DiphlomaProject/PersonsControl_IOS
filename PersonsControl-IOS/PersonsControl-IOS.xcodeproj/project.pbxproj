@@ -18,7 +18,7 @@
 		F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* ProfileVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
-		F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* ViewController.swift */; };
+		F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* LoginVC.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
 		F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4449F3021225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld */; };
 		F4449F3421225F8600EB0600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4449F3321225F8600EB0600 /* Assets.xcassets */; };
@@ -71,7 +71,7 @@
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4449F2B21225F8300EB0600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4449F2B21225F8300EB0600 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F4449F2E21225F8300EB0600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4449F3121225F8300EB0600 /* PersonsControl_IOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonsControl_IOS.xcdatamodel; sourceTree = "<group>"; };
 		F4449F3321225F8600EB0600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 		F46CD77D21481FD500EC4675 /* User Page */ = {
 			isa = PBXGroup;
 			children = (
-				F4449F2B21225F8300EB0600 /* ViewController.swift */,
+				F4449F2B21225F8300EB0600 /* LoginVC.swift */,
 				F46CD77F2148728E00EC4675 /* RegistrationVC.swift */,
 				F46CD783214886CA00EC4675 /* Tab Bar Item */,
 			);
@@ -533,7 +533,7 @@
 				F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */,
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F40AE0662143F6B200766EF5 /* User.swift in Sources */,
-				F4449F2C21225F8300EB0600 /* ViewController.swift in Sources */,
+				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,
 				F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
