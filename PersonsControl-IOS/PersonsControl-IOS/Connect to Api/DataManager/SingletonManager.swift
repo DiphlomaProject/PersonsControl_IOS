@@ -16,10 +16,8 @@ class SingletonManager {
     }
     
     // MARK: Shared Instance
-    
-   static let sharedCenter = SingletonManager()
+    static let sharedCenter = SingletonManager()
     var UserClass : User?
-
     //Configurations Api
     let SignIn_URL = "https://178.209.88.110:443/api/Users/SignIn"
     let GoogleSignIn_URL = "https://178.209.88.110/api/Users/GoogleSignIn"
@@ -29,7 +27,5 @@ class SingletonManager {
     let AUTHORITY_URL = "https://login.microsoftonline.com/common/oauth2/nativeclient" //COMMON OR YOUR TENANT ID
     let CLIENT_ID = "a4b7974c-4a7c-475e-91b8-a82d67b0d9a8" //This is your client ID
     let REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob" //This is your redirect URI
-    
-  
-    //Funcion
+
 }

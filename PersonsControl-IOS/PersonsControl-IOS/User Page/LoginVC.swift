@@ -41,7 +41,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
                 self.present(nextVC!, animated: false, completion: nil)
                 let home =  TaskVC()
-                home.setFlagEthernet(true)
+                home.setFaceID_TouchID(true)
                // self.navigationController?.pushViewController(nextVC!, animated: true)
                 
             }  
@@ -66,7 +66,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                             print("Login access")
                             self.myActivityIndicator.stopAnimating()
                             let home =  TaskVC()
-                            home.setFlagEthernet(true)
+                            home.setFaceID_TouchID(true)
                         } else {
                             DispatchQueue.main.async {
                                 self.alertLabel.isHidden = false
@@ -109,7 +109,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                         print("Login with Google")
                         self.myActivityIndicator.stopAnimating()
                         let home =  TaskVC()
-                        home.setFlagEthernet(true)
+                        home.setFaceID_TouchID(true)
                     } else {
                         DispatchQueue.main.async {
                              self.alertLabel.isHidden = false

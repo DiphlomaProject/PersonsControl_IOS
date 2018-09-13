@@ -15,10 +15,6 @@ class TaskVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  TouchID()
-      //  setFlagEthernet(true)
-      
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,41 +22,31 @@ class TaskVC: UIViewController {
         
     }
     
-    func setFlagEthernet(_ flag: Bool) {
+    func setFaceID_TouchID(_ flag: Bool) {
        TouchID()
     }
 
     func TouchID()
     {
-        let context = LAContext()
-        context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Please authenticate to proceed.") { [weak self] (success, error) in
-            
-            guard success else {
-                DispatchQueue.main.async() {
-                    // show something here to block the user from continuing
+        let context : LAContext = LAContext()
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate to proceed.", reply: { ( wasCorrect, error) in
+                if wasCorrect
+                {
+                    print("access")
+                }else
+                {
                     print("error")
-                    //self?.TouchID()
                     let home =  TaskVC()
-                    home.setFlagEthernet(true)
+                    home.setFaceID_TouchID(true)
                 }
-                
-                return
-            }
-            
-            DispatchQueue.main.async() {
-            
-                
-                DispatchQueue.main.async {
-                    
-                   
-                     print("Enter access")
-                }
-                
-                
-                // do something here to continue loading your app, e.g. call a delegate method
-            }
+            })
+        }else
+        {
+            //else
+         print("no used")
         }
-        
     }
 }
 
