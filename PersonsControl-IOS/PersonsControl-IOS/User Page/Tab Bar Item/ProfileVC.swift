@@ -30,18 +30,22 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var imgProf: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-            imgProf.layer.cornerRadius = imgProf.frame.size.width/2
-            imgProf.clipsToBounds = true
-            displayName.text = SingletonManager.sharedCenter.UserClass?.DisplayName
-            email.text = SingletonManager.sharedCenter.UserClass?.Email
-            Role.text = SingletonManager.sharedCenter.UserClass?.RoleName
-            Phone.text = SingletonManager.sharedCenter.UserClass?.PhoneNumber
-            address.text = SingletonManager.sharedCenter.UserClass?.Address
-            city.text = SingletonManager.sharedCenter.UserClass?.City
-            Country.text = SingletonManager.sharedCenter.UserClass?.Country
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.imgProf.layer.cornerRadius = self.imgProf.frame.size.width/2
+            self.imgProf.clipsToBounds = true
+            self.displayName.text = SingletonManager.sharedCenter.UserClass?.DisplayName
+            self.email.text = SingletonManager.sharedCenter.UserClass?.Email
+            self.Role.text = SingletonManager.sharedCenter.UserClass?.RoleName
+            self.Phone.text = SingletonManager.sharedCenter.UserClass?.PhoneNumber
+            self.address.text = SingletonManager.sharedCenter.UserClass?.Address
+            self.city.text = SingletonManager.sharedCenter.UserClass?.City
+            self.Country.text = SingletonManager.sharedCenter.UserClass?.Country
+        }
+           
         
     }
+   
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }

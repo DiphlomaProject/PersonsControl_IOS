@@ -20,7 +20,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
         // create post request
         let configuration = URLSessionConfiguration.default
-        let url = URL(string: "https://178.209.88.110:443/api/Users/SignIn")! //change the url
+        let url = URL(string: SingletonManager.sharedCenter.SignIn_URL)! //change the url
         var urlRequest: URLRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         // insert json data to the request
@@ -91,7 +91,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
     let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
     let configuration = URLSessionConfiguration.default
     // create post request
-    let url = URL(string: "https://178.209.88.110/api/Users/GoogleSignIn")!
+    let url = URL(string: SingletonManager.sharedCenter.GoogleSignIn_URL)!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     
@@ -154,7 +154,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
     
     static func RestApiHelper()  {
         let configuration = URLSessionConfiguration.default
-        let url = URL(string: "https://178.209.88.110:443/api/RestApiHelper/helpinfo")! //change the url
+        let url = URL(string: SingletonManager.sharedCenter.HelpInfo_URL)! //change the url
         let urlRequest: NSURLRequest = NSURLRequest(url: url)
         let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
         let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
@@ -192,7 +192,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
         // create post request
         let configuration = URLSessionConfiguration.default
-        let url = URL(string: "https://178.209.88.110:443/api/Users/SignUp")! //change the url
+        let url = URL(string: SingletonManager.sharedCenter.SignUp_URL)! //change the url
         var urlRequest: URLRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         // insert json data to the request

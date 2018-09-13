@@ -39,8 +39,10 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             {
                 SingletonManager.sharedCenter.UserClass = dataUser
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-               // self.present(nextVC!, animated: false, completion: nil)
-                self.navigationController?.pushViewController(nextVC!, animated: true)
+               self.present(nextVC!, animated: false, completion: nil)
+                let home =  TaskVC()
+                home.setFlagEthernet(true)
+               // self.navigationController?.pushViewController(nextVC!, animated: true)
                 
             }  
         }
@@ -63,11 +65,13 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                             self.present(nextVC!, animated: true, completion: nil)
                             print("Login access")
                             self.myActivityIndicator.stopAnimating()
+                            let home =  TaskVC()
+                            home.setFlagEthernet(true)
                         } else {
                             DispatchQueue.main.async {
                                 self.alertLabel.isHidden = false
                                 self.myActivityIndicator.stopAnimating()
-                                print("login false")
+                                self.AlertMessage()
                             }
                         }
                     })
@@ -104,11 +108,13 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                         self.present(nextVC!, animated: true, completion: nil)
                         print("Login with Google")
                         self.myActivityIndicator.stopAnimating()
+                        let home =  TaskVC()
+                        home.setFlagEthernet(true)
                     } else {
                         DispatchQueue.main.async {
                              self.alertLabel.isHidden = false
                             self.myActivityIndicator.stopAnimating()
-                            print("login false")
+                            self.AlertMessage()
                         }
                     }
                 })
