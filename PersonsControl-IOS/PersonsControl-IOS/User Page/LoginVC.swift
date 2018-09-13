@@ -39,7 +39,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             {
                 SingletonManager.sharedCenter.UserClass = dataUser
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-               self.present(nextVC!, animated: false, completion: nil)
+                self.present(nextVC!, animated: false, completion: nil)
                 let home =  TaskVC()
                 home.setFlagEthernet(true)
                // self.navigationController?.pushViewController(nextVC!, animated: true)

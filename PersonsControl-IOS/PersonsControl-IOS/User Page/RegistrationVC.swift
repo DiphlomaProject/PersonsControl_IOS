@@ -46,9 +46,6 @@ class RegistrationVC: UIViewController
                         self.present(nextVC!, animated: true, completion: nil)
                         print("Login access")
                         self.myActivityIndicator.stopAnimating()
-//                        //TaskVC.setFlagEthernet(false)
-//                        let home =  TaskVC()
-//                        home.setFlagEthernet(false)
                     } else {
                         DispatchQueue.main.async {
                             self.myActivityIndicator.stopAnimating()
