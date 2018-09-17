@@ -31,8 +31,8 @@
 		F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD77F2148728E00EC4675 /* RegistrationVC.swift */; };
 		F46CD782214886A300EC4675 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD781214886A300EC4675 /* MoreVC.swift */; };
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
-		F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */; };
-		F4D92EAC21239CA200C8BA61 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D92EAB21239CA200C8BA61 /* ADAL.framework */; };
+		F49DD3DA215069FA00C982C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */; };
+		F49DD3DC21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json in Resources */ = {isa = PBXBuildFile; fileRef = F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,9 +89,8 @@
 		F46CD77F2148728E00EC4675 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		F46CD781214886A300EC4675 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
-		F4D92EA3212393C800C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F4D92EAB21239CA200C8BA61 /* ADAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ADAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json"; sourceTree = "<group>"; };
 		FE2EA38EC11B4AB9EE288EEF /* Pods-PersonsControl-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOS/Pods-PersonsControl-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D92EAC21239CA200C8BA61 /* ADAL.framework in Frameworks */,
 				CFD23254C54ABC12C6DFEFE6 /* Pods_PersonsControl_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,8 +125,6 @@
 		03DDD262A6B7417F659897B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4D92EAB21239CA200C8BA61 /* ADAL.framework */,
-				F4D92EA3212393C800C8BA61 /* ADAL.framework */,
 				6EE7A9DAF040576B5D5A4CDB /* Pods_PersonsControl_IOS.framework */,
 				75230B217E55B93456637F45 /* Pods_PersonsControl_IOSTests.framework */,
 				7528AB187049E5D07CCBE8C7 /* Pods_PersonsControl_IOSUITests.framework */,
@@ -200,7 +196,8 @@
 				F4449F3521225F8600EB0600 /* LaunchScreen.storyboard */,
 				F4449F3821225F8600EB0600 /* Info.plist */,
 				F4449F3021225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld */,
-				F4D92EA52123965000C8BA61 /* GoogleService-Info.plist */,
+				F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */,
+				F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */,
 				F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */,
 				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
 			);
@@ -279,6 +276,8 @@
 				F4449F2421225F8300EB0600 /* Resources */,
 				FED4253150CAAAC97EB13186 /* [CP] Embed Pods Frameworks */,
 				0D13076786C29555F182FC06 /* [CP] Copy Pods Resources */,
+				F4C7643E2150609F00B73F5D /* Update  sumbols to Crash Reporting */,
+				F4C7643F215066F300B73F5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,7 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4449F3721225F8600EB0600 /* LaunchScreen.storyboard in Resources */,
-				F4D92EA62123965000C8BA61 /* GoogleService-Info.plist in Resources */,
+				F49DD3DA215069FA00C982C6 /* GoogleService-Info.plist in Resources */,
+				F49DD3DC21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json in Resources */,
 				F4449F3421225F8600EB0600 /* Assets.xcassets in Resources */,
 				F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */,
 			);
@@ -480,6 +480,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F4C7643E2150609F00B73F5D /* Update  sumbols to Crash Reporting */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update  sumbols to Crash Reporting";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:525481537619:ios:4952f2a28d2b2048\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PROJECT_DIR}/PersonsControl-IOS/personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json\"\n";
+		};
+		F4C7643F215066F300B73F5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		FED4253150CAAAC97EB13186 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,7 +515,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonsControl-IOS/Pods-PersonsControl-IOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ADAL/ADAL.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -498,7 +525,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADAL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -710,6 +736,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PersonsControl-IOS/PersonsControl-IOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VRTL65JL49;
 				INFOPLIST_FILE = "PersonsControl-IOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

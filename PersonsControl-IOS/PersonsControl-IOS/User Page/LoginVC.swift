@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import ADAL
 class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     
@@ -124,34 +123,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBAction func acquireToken(_ sender:UIButton) {
                 myActivityIndicator.startAnimating()
-                let authContext = ADAuthenticationContext(authority: SingletonManager.sharedCenter.AUTHORITY_URL,
-                                                          error: nil)
-        
-                authContext!.acquireToken(withResource: "hmsala4b7974c-4a7c-475e-91b8-a82d67b0d9a8://auth",
-                                          clientId: SingletonManager.sharedCenter.CLIENT_ID,
-                                          redirectUri: URL(string: SingletonManager.sharedCenter.REDIRECT_URI))
-                {
-                    (result) in
-        
-                    if (result!.status != AD_SUCCEEDED)
-                    {
-                        if result!.error.domain == ADAuthenticationErrorDomain
-                            && result!.error.code == ADErrorCode.ERROR_UNEXPECTED.rawValue {} else {
-                        }
-                        return;
-                    }
-        
-                    var expiresOnString = "(nil)"
-        
-                    if let expiresOn = result!.tokenCacheItem.expiresOn {
-                        expiresOnString = String(describing: expiresOn)
-                    }
-        
-                    let status = String(format: "Access token: %@\nexpiration:%@", result!.accessToken, expiresOnString)
-        
-                }
-        
-        
+            
     }//microsoft singin
     
     override func didReceiveMemoryWarning() {

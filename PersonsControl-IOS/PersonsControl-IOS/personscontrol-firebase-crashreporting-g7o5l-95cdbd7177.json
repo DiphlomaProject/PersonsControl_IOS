@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "personscontrol",
+  "private_key_id": "95cdbd717793c528bf8d2d460faff753a280a7c7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDjQMVaX0GcImdI\nqbKkQaeNgN92MTCcGnig8EA40DXF6Hc7s9+bYWhW0jqhSDoxiZR3fC2QbzDRqX06\nmI3XQgJ1N/oJwtSyfQ1ypVTJaeVT79AnfBDUWoE7BgEoP25WhcLzAd9Alj4+zglG\nMujfY/NkxuIk3elAuhMA00WYWkJ2vjGR0vGAnS4tF24LE+3BYDWhhKjP6rr/0gPX\njTlI8aodJwl206arA0OlH0K4b7iG2ZDfnwSoL5p5zTgzxogUyjcxSiywby8xBIEL\nR/tCnHpsgJewN9rsF0wbujHwYoAGNhgFB9Q8l67adGS8mau74nu0abAtz8nMAUL3\nX+o44nYBAgMBAAECggEAAlw5MIJuGK8Kyj2+Sz0bU7mTmJNTi+uCdo7IO/l9oCaV\nRnDMe71RQMWXh6FLvsP3tMinYylPJSj7fKZPotK0BSpQVdWeMT8MlV+TjTFPs8V5\nMKUgj565BOHqan6Y03E5ix3pMa8zH6KIL3XL5rYPtcDoYbWkUeByM2n+U7dsRUtu\nDQ1PERA0GvXeuw50ma0gEWR6CoO9jaQLdXPkVdYkXiD/wSNjm0Qy6vF2nIGsUVk0\nf5qmz06hJs1amEib8poxW41+hckgEFC8nN7PtEnAHqLIlQgZzPrwXtnh+DnqzOUb\nca1l62Z0v8lvmr5x1VI3o1bE3J+9VsTXc5YMPFkV+QKBgQD/JEz+xu98WyIKqRsn\nvU2EZfn1T1vCfYTIdcx1PN/jGNHexbw6kDlwnrkikH5RFsUmv+MLvJHrwUiMtXN+\ndlkqEi4hrSlebJc1Jkm5i4h/P6UX+RQh9Dsn4VL73CejLAhUlATLw/v1pBQuYKG3\nUPQE+UTgr90uy4H3V+uhipNbzwKBgQDkBHSaU6c8ynIelW1+gctURBzXfGDPXtk6\n0ZL2C6Ogzaj0u3FoGNsORTCizNHAkNrNnKtEqGEVO/a67LI6zwgCL1Zvk9QJ5Pjb\ndmKVzJh3ZO7ZTBHbqhrRkI+FhVqSFCIaJrp4wC1YFjZRXvV7JnZAfQ8r/ZibD7li\nBzIoL/F1LwKBgCBVCFDNAvI+Vj0FmwRZL+aUSa21hcpKv7Xrf6JnuXN85LOXWTgO\nqMjFxG5F40wBV7CGZo5JMjCvCLOUFvOyqa/0J9ZqrDBkEHFSzcrujLibZx93l/6J\nhamTG0IBbyB1ZwTY0RbFWjuRtGEAK94gKxwqPnk+sAfLEEg44wpQlkXvAoGBALNu\nHiPjeFMKLEuM4yEOGmcxQlD/+160ENWMXc1o01aTAEW1y0RTau4L3H4AF38lfkkW\n5F+e8Oa4zSvDX22PxYmSnr4m4lD28i4hNusSmVg7AQnWJqdpcLlAvPAhRGh3l25k\n05B6CjSrJgtaYmqKlbuhrfK8GP7MnOFbMEkXkTbZAoGBAN3s+2Qupkb19lbxsu86\niiyys6B2XydT10QcZ1kvCkaPyp0huFVxPR1H34zP9nmL/FQjlN/4HBN6lN5gXK0H\nM2aqMn0d1CzUkQtR5cCyceMInR5uaQzf5rWhB1mP7dyjC2lp6+fvtALOQ0cJ64Fa\nFrArH5yFCP1nBe0N4y8zZ5tN\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-crashreporting-g7o5l@personscontrol.iam.gserviceaccount.com",
+  "client_id": "110142783893730017002",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-crashreporting-g7o5l%40personscontrol.iam.gserviceaccount.com"
+}

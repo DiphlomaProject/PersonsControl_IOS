@@ -19,9 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UINavigationControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        Fabric.sharedSDK().debug = true
+        Fabric.with([Crashlytics.self])
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
        // GIDSignIn.sharedInstance().delegate = self
-        
+       
         // Override point for customization after application launch.
         return true
     }
