@@ -276,8 +276,8 @@
 				F4449F2421225F8300EB0600 /* Resources */,
 				FED4253150CAAAC97EB13186 /* [CP] Embed Pods Frameworks */,
 				0D13076786C29555F182FC06 /* [CP] Copy Pods Resources */,
-				F4C7643E2150609F00B73F5D /* Update  sumbols to Crash Reporting */,
 				F4C7643F215066F300B73F5D /* ShellScript */,
+				F4729A7C2150736400D10F13 /* Run Crash */,
 			);
 			buildRules = (
 			);
@@ -480,19 +480,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F4C7643E2150609F00B73F5D /* Update  sumbols to Crash Reporting */ = {
+		F4729A7C2150736400D10F13 /* Run Crash */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Update  sumbols to Crash Reporting";
+			name = "Run Crash";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:525481537619:ios:4952f2a28d2b2048\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PROJECT_DIR}/PersonsControl-IOS/personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:525481537619:ios:4952f2a28d2b2048\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PROJECT_DIR}/PersonsControl-IOS/personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json\"\n";
 		};
 		F4C7643F215066F300B73F5D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -500,13 +500,13 @@
 			files = (
 			);
 			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "
+";
 		};
 		FED4253150CAAAC97EB13186 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

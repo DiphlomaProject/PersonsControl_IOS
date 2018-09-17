@@ -23,8 +23,7 @@ class ProjectsVC: UIViewController {
         view.addSubview(button)
     }
     @IBAction func crashButtonTapped(_ sender: AnyObject) {
-        var array : [String] = []
-        array.remove(at: 0)
+      fatalError("CRASH PIDOR")
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
