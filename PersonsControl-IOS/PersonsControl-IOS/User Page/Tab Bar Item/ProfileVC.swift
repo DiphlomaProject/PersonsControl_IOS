@@ -41,13 +41,22 @@ class ProfileVC: UIViewController {
             self.address.text = SingletonManager.sharedCenter.UserClass?.Address
             self.city.text = SingletonManager.sharedCenter.UserClass?.City
             self.Country.text = SingletonManager.sharedCenter.UserClass?.Country
-        }
+            self.imgProf.image = SingletonManager.sharedCenter.ImageProfile
+            //self.myactivityindecator.startAnimating()
+            
+            
+         
            
-        
+        }
     }
    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        completionHandler(.useCredential, urlCredential)
+    }
 
 }
+

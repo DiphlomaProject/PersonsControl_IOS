@@ -15,6 +15,21 @@ class TaskVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        ServiceApiPost.GetImageUser(regComplete: { (success, loginError) in
+            if success {
+
+                print("images")
+
+            } else {
+                DispatchQueue.main.async {
+                            print("error")
+                }
+            }
+        })
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,5 +63,8 @@ class TaskVC: UIViewController {
          print("no used")
         }
     }
+    
+    
 }
+
 

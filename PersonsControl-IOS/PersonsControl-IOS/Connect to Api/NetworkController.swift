@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 class ServiceApiPost: NSObject, URLSessionDelegate
 {
     
@@ -226,6 +226,49 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             }.resume()
         
     }//singUp
+    
+    
+    
+    static  func GetImageUser(regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+
+        let user_email = SingletonManager.sharedCenter.UserClass?.Email
+        let URL_IMAGE = URL(string: "https://178.209.88.110:443/api/Users/getUserImg?email="+user_email!)
+        let configuration = URLSessionConfiguration.default
+        //let url = URL(string: SingletonManager.sharedCenter.SignUp_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: URL_IMAGE!)
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("image/jpeg", forHTTPHeaderField: "Content-Type")
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                regComplete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                regComplete(false, error)
+                return
+            }
+            
+            do {
+
+                DispatchQueue.main.async {
+                    //print(jsonData)
+                    let image = UIImage(data: data)
+                    SingletonManager.sharedCenter.ImageProfile = image
+                    regComplete(true, nil)
+                    
+                }
+            } catch let jsonError {
+                regComplete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+    }//getimege
+    
+    
+    
+  
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
         completionHandler(.useCredential, urlCredential)
