@@ -15,7 +15,7 @@ class ProjectsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Crash.sharedInstance()?.isCrashCollectionEnabled = true
         let button = UIButton(type: .roundedRect)
         button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
         button.setTitle("Crash", for: [])

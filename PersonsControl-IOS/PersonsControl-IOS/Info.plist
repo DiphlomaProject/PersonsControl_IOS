@@ -78,5 +78,7 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>firebase_crash_collection_enabled</key>
+	<string>true</string>
 </dict>
 </plist>

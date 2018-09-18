@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UINavigationControllerDele
         FirebaseApp.configure()
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
+        Crash.sharedInstance()?.isCrashCollectionEnabled = true
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
        // GIDSignIn.sharedInstance().delegate = self
        
