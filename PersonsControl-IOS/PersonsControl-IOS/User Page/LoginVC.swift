@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import Fabric
+import Crashlytics
 class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     
@@ -68,6 +70,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                             home.setFaceID_TouchID(true)
                         } else {
                             DispatchQueue.main.async {
+                               
                                 self.alertLabel.isHidden = false
                                 self.myActivityIndicator.stopAnimating()
                                 self.AlertMessage()

@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import GoogleSignIn
+import Fabric
+import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UINavigationControllerDelegate {
 
