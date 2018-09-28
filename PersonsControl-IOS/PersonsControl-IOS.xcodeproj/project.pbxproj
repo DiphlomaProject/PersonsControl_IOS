@@ -73,7 +73,6 @@
 		F40AE05F2143202700766EF5 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F40AE0602143202700766EF5 /* SignIn_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn_Base.swift; sourceTree = "<group>"; };
 		F40AE0652143F6B200766EF5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PersonsControl-IOS.entitlements"; sourceTree = "<group>"; };
 		F415C0D62123176500F30D66 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +104,7 @@
 		F4DB79C5215E3A7E000C7DB3 /* LoginsGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginsGroups.swift; sourceTree = "<group>"; };
 		F4DB79C6215E3A7E000C7DB3 /* RolesGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesGroups.swift; sourceTree = "<group>"; };
 		F4DB79CE215E5118000C7DB3 /* UserGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroups.swift; sourceTree = "<group>"; };
+		F4DB79D1215E7730000C7DB3 /* PersonsControl-IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PersonsControl-IOS.entitlements"; sourceTree = "<group>"; };
 		FE2EA38EC11B4AB9EE288EEF /* Pods-PersonsControl-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonsControl-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonsControl-IOS/Pods-PersonsControl-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,8 +213,8 @@
 				F4449F3021225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld */,
 				F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */,
 				F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */,
-				F415C0D12122EEFE00F30D66 /* PersonsControl-IOS.entitlements */,
 				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
+				F4DB79D1215E7730000C7DB3 /* PersonsControl-IOS.entitlements */,
 			);
 			path = "PersonsControl-IOS";
 			sourceTree = "<group>";

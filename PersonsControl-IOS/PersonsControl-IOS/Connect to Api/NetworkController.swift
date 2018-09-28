@@ -267,29 +267,11 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 DispatchQueue.main.async {
                     print(jsonData)
                 
-//                    jsonData.groups_model?.groups?.forEach
-//                        {
-//                            items in
-//                            print(items)
-//                        }
-//                    resultDictionary.setValue(jsonData.data?.id, forKey: "Id")
-//                    resultDictionary.setValue(jsonData.token, forKey: "token")
-//                    resultDictionary.setValue(jsonData.data?.userName, forKey: "UserName")
-//                    resultDictionary.setValue(jsonData.data?.img, forKey: "img")
-//                    resultDictionary.setValue(jsonData.data?.displayName, forKey: "DisplayName")
-//                    resultDictionary.setValue(jsonData.data?.email, forKey: "Email")
-//                    resultDictionary.setValue(jsonData.data?.emailConfirmed, forKey: "EmailConfirmed")
-//                    resultDictionary.setValue(jsonData.data?.address, forKey: "Address")
-//                    resultDictionary.setValue(jsonData.data?.city, forKey: "City")
-//                    resultDictionary.setValue(jsonData.data?.country, forKey: "Country")
-//                    resultDictionary.setValue(jsonData.data?.phoneNumber, forKey: "PhoneNumber")
-//                    if(jsonData.data?.roleNames != nil && jsonData.data?.roleNames?.count ?? 0 > 0)
-//                    {
-//                        resultDictionary.setValue(jsonData.data?.roleNames![0], forKey: "RoleName")
-//                    }
-//                    SingletonManager.sharedCenter.UserClass = User.init(json: resultDictionary)
-//                    let encodedData = NSKeyedArchiver.archivedData(withRootObject: SingletonManager.sharedCenter.UserClass as Any)
-//                    UserDefaults.standard.set(encodedData, forKey: "User")
+                    resultDictionary.setValue(jsonData.groups_model?.groups, forKey: "groups")
+                    resultDictionary.setValue(jsonData.groups_model?.owners, forKey: "owners")
+                    
+                   
+  
                     Complete(true, nil)
                     
                 }

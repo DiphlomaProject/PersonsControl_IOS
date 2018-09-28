@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UINavigationControllerDele
         // Override point for customization after application launch.
         return true
     }
+    
+//    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+//       
+//    }
    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
