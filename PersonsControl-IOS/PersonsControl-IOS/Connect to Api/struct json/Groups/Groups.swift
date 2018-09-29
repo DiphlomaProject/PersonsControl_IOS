@@ -10,6 +10,7 @@ struct Groups : Codable {
 	let title : String?
 	let owner : String?
 	let description : String?
+//    let owner_info : Owners?
 
 	enum CodingKeys: String, CodingKey {
 

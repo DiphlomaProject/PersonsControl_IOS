@@ -265,13 +265,30 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             do {
                 let jsonData = try JSONDecoder().decode(Groups_Base.self, from: data)
                 DispatchQueue.main.async {
-                    print(jsonData)
-                
-                    resultDictionary.setValue(jsonData.groups_model?.groups, forKey: "groups")
-                    resultDictionary.setValue(jsonData.groups_model?.owners, forKey: "owners")
+                   // print(jsonData)
+                  //  print(jsonData.groups_model?.groups?)
+                    for result in (jsonData.groups_model?.groups)!
+                    {
+                        var group : Group = Group()
+                        group.id = result.id
+                        group.title = result.title
+                        group.desc = result.description
+                        
+                        for owners in (jsonData.groups_model?.owners)!
+                        {
+                            if(owners.id == result.owner)
+                            {
+                              group.ownerInfo = owners
+                            }
+                            
+                        }
+                        resultDictionary.setValue(group, forKey: String (group.id!))
+                        
+                    }
+                    SingletonManager.sharedCenter.contentGroup = resultDictionary
                     
-                   
-  
+//                    print((resultDictionary.object(forKey: "25") as! Group).title)
+                    
                     Complete(true, nil)
                     
                 }
