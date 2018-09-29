@@ -21,8 +21,27 @@ class GroupsVC: UIViewController {
         ServiceApiPost.GetGroupsUser(Complete: { (success, loginError) in
             if success {
                 
-
-      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).title ?? "error" )
+               
+                
+//      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).title ?? "error" )
+//      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).desc ?? "error" )
+//      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).ownerInfo?.displayName ?? "error" )
+                for key in SingletonManager.sharedCenter.contentGroup {
+//                    print(key.key)
+                    
+                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).title ?? "error" )
+                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).desc ?? "error" )
+                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).ownerInfo?.displayName ?? "error" )
+                    }
+                
+//     for test in (SingletonManager.sharedCenter.contentGroup.allKeys as! Group as Any)
+//     {
+//        print(((test as! Group).title) as Any)
+//        print(((test as! Group).desc) as Any)
+//        print(((test as! Group).ownerInfo?.displayName) as Any)
+ 
+            
+             // SingletonManager.sharedCenter.contentGroup.allKeys
             } else {
                 DispatchQueue.main.async {
                     
