@@ -71,18 +71,11 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
-
-//        for value in SingletonManager.sharedCenter.contentGroup
-//        {
-//
-//            cell.title.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: value.key) as! Group).title ?? "error" )
-//            cell.owner.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: value.key) as! Group).ownerInfo?.displayName ?? "error" )
-//            cell.desc.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: value.key) as! Group).desc ?? "error" )
-//
-//            return cell
-//        }
+        let key =  SingletonManager.sharedCenter.contentGroup.allKeys[indexPath.row]
+        cell.title.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).title ?? "error" )
+        cell.owner.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).ownerInfo?.displayName ?? "error" )
+        cell.desc.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).desc ?? "error" )
         
-       
         return cell
 
         
