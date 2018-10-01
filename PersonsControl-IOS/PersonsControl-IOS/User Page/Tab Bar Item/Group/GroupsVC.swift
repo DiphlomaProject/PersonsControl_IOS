@@ -15,38 +15,18 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableview: UITableView!
     
+    lazy var refreshControl:UIRefreshControl =
+        {
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(GroupsVC.actualData(_:)), for: .valueChanged)
+            refreshControl.tintColor = UIColor.white
+            return refreshControl
+            
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        ServiceApiPost.GetGroupsUser(Complete: { (success, loginError) in
-            if success {
-                
-               
-            
-
-//      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).title ?? "error" )
-//      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).desc ?? "error" )
-//      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).ownerInfo?.displayName ?? "error" )
-                for key in SingletonManager.sharedCenter.contentGroup
-                {
-
-                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).title ?? "error" )
-
-
-                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).desc ?? "error" )
-                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).ownerInfo?.displayName ?? "error" )
-                    }
-//
-                
-                 self.ReloadData()
- 
-            } else {
-                DispatchQueue.main.async {
-                    
-                    
-                }
-            }
-        })
-      
+        LoadingNewData()
+        self.tableview.addSubview(self.refreshControl)
         tableview.delegate = self
         tableview.dataSource = self
     }
@@ -58,6 +38,62 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
        
     }
     
+    func LoadingNewData()
+    {
+        ServiceApiPost.GetGroupsUser(Complete: { (success, loginError) in
+            if success {
+                
+                
+                
+                
+                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).title ?? "error" )
+                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).desc ?? "error" )
+                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).ownerInfo?.displayName ?? "error" )
+                //                for key in SingletonManager.sharedCenter.contentGroup
+                //                {
+                //
+                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).title ?? "error" )
+                //
+                //
+                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).desc ?? "error" )
+                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).ownerInfo?.displayName ?? "error" )
+                //                    }
+                ////
+                
+               // self.ReloadData()
+                self.tableview.reloadData()
+                self.refreshControl.endRefreshing()
+                
+            } else {
+                DispatchQueue.main.async {
+                    
+                    self.AlertMessage()
+                }
+            }
+        })
+    }
+    
+    @objc func actualData(_ refreshControl:UIRefreshControl)
+    {
+//      SingletonManager.sharedCenter.contentGroup.removeAllObjects()
+//        ServiceApiPost.GetGroupsUser(Complete: { (success, loginError) in
+//            if success {
+//                self.tableview.reloadData()
+//                refreshControl.endRefreshing()
+//
+//            } else {
+//                DispatchQueue.main.async {
+//
+//
+//                }
+//            }
+//        })
+        
+        LoadingNewData()
+//        self.tableview.reloadData()
+//        refreshControl.endRefreshing()
+       
+    }
     func ReloadData()
     {
         if(self.tableview != nil)
@@ -74,6 +110,7 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let key =  SingletonManager.sharedCenter.contentGroup.allKeys[indexPath.row]
         cell.title.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).title ?? "error" )
         cell.owner.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).ownerInfo?.displayName ?? "error" )
+        
         cell.desc.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).desc ?? "error" )
         
         return cell
@@ -103,5 +140,29 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             
         }
+    
+   
+    func AlertMessage()
+    {
+        let alert = UIAlertController(title: "Server offline", message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     }
 

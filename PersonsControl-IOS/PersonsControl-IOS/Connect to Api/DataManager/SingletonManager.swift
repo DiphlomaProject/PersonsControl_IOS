@@ -20,7 +20,7 @@ class SingletonManager {
     static let sharedCenter = SingletonManager()
     var UserClass : User?
     var Groups : Groups?
-    var contentGroup = NSDictionary()
+    var contentGroup = NSMutableDictionary()
     
     var test = ""
     //Configurations Api

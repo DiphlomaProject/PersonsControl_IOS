@@ -28,6 +28,13 @@ class MoreVC: UIViewController
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
         //self.navigationController?.popToViewController(nextVC!, animated: true)
          self.navigationController?.pushViewController(nextVC!, animated: true)
+//        for key in SingletonManager.sharedCenter.contentGroup
+//        {
+//            SingletonManager.sharedCenter.contentGroup.setNilValueForKey(key.key as! String)
+//        }
+        SingletonManager.sharedCenter.contentGroup.removeAllObjects()
+        print(SingletonManager.sharedCenter.contentGroup)
+//        print(SingletonManager.sharedCenter.contentGroup)
        // self.present(nextVC!, animated: true, completion: nil)
     //   self.navigationController?.popToRootViewController(animated: true)
         
