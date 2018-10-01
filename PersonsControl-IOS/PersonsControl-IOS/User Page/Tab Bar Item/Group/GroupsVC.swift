@@ -25,6 +25,7 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        customActivityIndicatory(self.view)
         LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
         tableview.delegate = self
@@ -34,12 +35,13 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         self.ReloadData()
-        
+        self.tableview.addSubview(self.refreshControl)
        
     }
     
     func LoadingNewData()
     {
+        customActivityIndicatory(self.view, startAnimate: true)
         ServiceApiPost.GetGroupsUser(Complete: { (success, loginError) in
             if success {
                 
@@ -61,14 +63,17 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 ////
                 
                // self.ReloadData()
+                self.customActivityIndicatory(self.view, startAnimate: false)
                 self.tableview.reloadData()
                 self.refreshControl.endRefreshing()
                 
             } else {
                 DispatchQueue.main.async {
-                    
-                    self.AlertMessage()
-                }
+                     self.customActivityIndicatory(self.view, startAnimate: false)
+                    self.AlertMessage(message: "You are not in groups")
+                    self.tableview.reloadData()
+                  
+            }
             }
         })
     }
@@ -88,10 +93,10 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 //                }
 //            }
 //        })
-        
+        SingletonManager.sharedCenter.contentGroup.removeAllObjects()
         LoadingNewData()
-//        self.tableview.reloadData()
-//        refreshControl.endRefreshing()
+        self.tableview.reloadData()
+        refreshControl.endRefreshing()
        
     }
     func ReloadData()
@@ -142,9 +147,9 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     
    
-    func AlertMessage()
+    func AlertMessage(message: String )
     {
-        let alert = UIAlertController(title: "Server offline", message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: message, message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -163,6 +168,65 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     
-    
+    @discardableResult
+    func customActivityIndicatory(_ viewContainer: UIView, startAnimate:Bool? = true) -> UIActivityIndicatorView {
+        let mainContainer: UIView = UIView(frame: viewContainer.frame)
+        mainContainer.center = viewContainer.center
+       // mainContainer.backgroundColor = UIColor.init(hexString: "0xFFFFFF")
+        mainContainer.backgroundColor = UIColor.init(hexString: "#0000FF")
+        
+        mainContainer.alpha = 0.5
+        mainContainer.tag = 789456123
+        mainContainer.isUserInteractionEnabled = false
+        
+        let viewBackgroundLoading: UIView = UIView(frame: CGRect(x:0,y: 0,width: 80,height: 80))
+        viewBackgroundLoading.center = viewContainer.center
+//        viewBackgroundLoading.backgroundColor = UIColor.init(hexString: "0x444444")
+        viewBackgroundLoading.backgroundColor = UIColor.init(hexString: "#000000")
+        viewBackgroundLoading.alpha = 0.5
+        viewBackgroundLoading.clipsToBounds = true
+        viewBackgroundLoading.layer.cornerRadius = 15
+        
+        let activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.frame = CGRect(x:0.0,y: 0.0,width: 40.0, height: 40.0)
+        activityIndicatorView.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicatorView.center = CGPoint(x: viewBackgroundLoading.frame.size.width / 2, y: viewBackgroundLoading.frame.size.height / 2)
+        if startAnimate!{
+            viewBackgroundLoading.addSubview(activityIndicatorView)
+            mainContainer.addSubview(viewBackgroundLoading)
+            viewContainer.addSubview(mainContainer)
+            activityIndicatorView.startAnimating()
+        }else{
+            for subview in viewContainer.subviews{
+                if subview.tag == 789456123{
+                    subview.removeFromSuperview()
+                }
+            }
+        }
+        return activityIndicatorView
     }
+}
 
+extension UIColor {
+    convenience init?(hexString: String) {
+        var chars = Array(hexString.hasPrefix("#") ? hexString.dropFirst() : hexString[...])
+        let red, green, blue, alpha: CGFloat
+        switch chars.count {
+        case 3:
+            chars = chars.flatMap { [$0, $0] }
+            fallthrough
+        case 6:
+            chars = ["F","F"] + chars
+            fallthrough
+        case 8:
+            alpha = CGFloat(strtoul(String(chars[0...1]), nil, 16)) / 255
+            red   = CGFloat(strtoul(String(chars[2...3]), nil, 16)) / 255
+            green = CGFloat(strtoul(String(chars[4...5]), nil, 16)) / 255
+            blue  = CGFloat(strtoul(String(chars[6...7]), nil, 16)) / 255
+        default:
+            return nil
+        }
+        self.init(red: red, green: green, blue:  blue, alpha: alpha)
+    }
+}

@@ -33,22 +33,30 @@ class RegistrationVC: UIViewController
         view.addSubview(myActivityIndicator)
     }
     @IBAction func RegBtn(_ sender: Any) {
+       self.customActivityIndicatory(self.view, startAnimate: true)
+        Registration()
+        
+    }
+     func Registration()
+     {
         ServiceApiPost.SingUp(email: email.text!, password: password.text!,userName: userName.text!,phone: phone.text!,regComplete: { (success, loginError) in
             if success {
                 print("Registration Complete")
-                self.myActivityIndicator.startAnimating()
+                //self.myActivityIndicator.startAnimating()
                 
                 //Else reg complete call fun login
                 ServiceApiPost.SingIn(email: self.email.text!, password: self.password.text!,loginComplete: { (success, loginError) in
                     if success {
-                      
+                        self.myActivityIndicator.stopAnimating()
                         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
                         self.present(nextVC!, animated: true, completion: nil)
                         print("Login access")
-                        self.myActivityIndicator.stopAnimating()
+//                        // self.myActivityIndicator.stopAnimating()
+//                        self.customActivityIndicatory(self.view, startAnimate: false)
                     } else {
                         DispatchQueue.main.async {
-                            self.myActivityIndicator.stopAnimating()
+                            self.customActivityIndicatory(self.view, startAnimate: false)
+
                             self.AlertMessageLogin()
                         }
                     }
@@ -60,9 +68,7 @@ class RegistrationVC: UIViewController
                 }
             }
         })
-        
     }
-    
     func AlertMessage()
     {
         let alert = UIAlertController(title: "Registration  false", message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
@@ -106,5 +112,66 @@ class RegistrationVC: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @discardableResult
+    func customActivityIndicatory(_ viewContainer: UIView, startAnimate:Bool? = true) -> UIActivityIndicatorView {
+        let mainContainer: UIView = UIView(frame: viewContainer.frame)
+        mainContainer.center = viewContainer.center
+        // mainContainer.backgroundColor = UIColor.init(hexString: "0xFFFFFF")
+        mainContainer.backgroundColor = UIColor.init(hexString: "#0000FF")
+        
+        mainContainer.alpha = 0.5
+        mainContainer.tag = 789456123
+        mainContainer.isUserInteractionEnabled = false
+        
+        let viewBackgroundLoading: UIView = UIView(frame: CGRect(x:0,y: 0,width: 80,height: 80))
+        viewBackgroundLoading.center = viewContainer.center
+        //        viewBackgroundLoading.backgroundColor = UIColor.init(hexString: "0x444444")
+        viewBackgroundLoading.backgroundColor = UIColor.init(hexString: "#000000")
+        viewBackgroundLoading.alpha = 0.5
+        viewBackgroundLoading.clipsToBounds = true
+        viewBackgroundLoading.layer.cornerRadius = 15
+        
+        let activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.frame = CGRect(x:0.0,y: 0.0,width: 40.0, height: 40.0)
+        activityIndicatorView.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicatorView.center = CGPoint(x: viewBackgroundLoading.frame.size.width / 2, y: viewBackgroundLoading.frame.size.height / 2)
+        if startAnimate!{
+            viewBackgroundLoading.addSubview(activityIndicatorView)
+            mainContainer.addSubview(viewBackgroundLoading)
+            viewContainer.addSubview(mainContainer)
+            activityIndicatorView.startAnimating()
+        }else{
+            for subview in viewContainer.subviews{
+                if subview.tag == 789456123{
+                    subview.removeFromSuperview()
+                }
+            }
+        }
+        return activityIndicatorView
+    }
 
 }
+//extension UIColor {
+//    convenience init?(hexString: String) {
+//        var chars = Array(hexString.hasPrefix("#") ? hexString.dropFirst() : hexString[...])
+//        let red, green, blue, alpha: CGFloat
+//        switch chars.count {
+//        case 3:
+//            chars = chars.flatMap { [$0, $0] }
+//            fallthrough
+//        case 6:
+//            chars = ["F","F"] + chars
+//            fallthrough
+//        case 8:
+//            alpha = CGFloat(strtoul(String(chars[0...1]), nil, 16)) / 255
+//            red   = CGFloat(strtoul(String(chars[2...3]), nil, 16)) / 255
+//            green = CGFloat(strtoul(String(chars[4...5]), nil, 16)) / 255
+//            blue  = CGFloat(strtoul(String(chars[6...7]), nil, 16)) / 255
+//        default:
+//            return nil
+//        }
+//        self.init(red: red, green: green, blue:  blue, alpha: alpha)
+//    }
+//}

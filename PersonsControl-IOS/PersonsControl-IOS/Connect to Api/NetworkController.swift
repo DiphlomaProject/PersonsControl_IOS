@@ -267,6 +267,8 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 DispatchQueue.main.async {
                    // print(jsonData)
                   //  print(jsonData.groups_model?.groups?)
+                    if(jsonData.groups_model != nil)
+                    {
                     for result in (jsonData.groups_model?.groups)!
                     {
                         var group : Group = Group()
@@ -290,7 +292,13 @@ class ServiceApiPost: NSObject, URLSessionDelegate
 //                    print((resultDictionary.object(forKey: "25") as! Group).title)
                     
                     Complete(true, nil)
-                    
+                    }
+                    else
+                    {
+                        print("no data")
+                        Complete(false, error)
+                    }
+                
                 }
             } catch let jsonError {
                 Complete(false, error)
