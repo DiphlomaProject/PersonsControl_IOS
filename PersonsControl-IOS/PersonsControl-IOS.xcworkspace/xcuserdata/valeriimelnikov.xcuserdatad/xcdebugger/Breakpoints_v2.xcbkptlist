@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986154"
+            timestampString = "560098772.254294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986213"
+            timestampString = "560098772.254388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986322"
+            timestampString = "560098772.254436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.9863729"
+            timestampString = "560098772.254478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986413"
+            timestampString = "560098772.254519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986473"
+            timestampString = "560098772.25456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/DataManager/SingletonManager.swift"
-            timestampString = "560097294.986558"
+            timestampString = "560098772.254612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986599"
+            timestampString = "560098772.254658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "293"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.986639"
+            timestampString = "560098772.254699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "293"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.9867311"
+            timestampString = "560098772.2547621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.9867899"
+            timestampString = "560098772.2548029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -329,56 +329,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.986878"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.987359"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.987697"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/More/MoreVC.swift"
-            timestampString = "560097294.988022"
+            timestampString = "560098772.2558039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -394,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.988078"
+            timestampString = "560098772.255878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "customActivityIndicatory(_:startAnimate:)"
             landmarkType = "7">
             <Locations>
@@ -442,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.9884109"
+            timestampString = "560098772.256116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "customActivityIndicatory(_:startAnimate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.988748"
+            timestampString = "560098772.256338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "272"
@@ -506,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.988817"
+            timestampString = "560098772.256381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "297"
@@ -522,44 +474,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/Connect to Api/NetworkController.swift"
-            timestampString = "560097294.988871"
+            timestampString = "560098772.256429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "294"
             endingLineNumber = "294"
             landmarkName = "GetGroupsUser(Complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.988925"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "actualData(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Group/GroupsVC.swift"
-            timestampString = "560097294.989212"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

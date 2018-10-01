@@ -137,13 +137,9 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let image = self.articles?[indexPath.item].url {
-//            let url = URL(string: image)
-//            let safari = SFSafariViewController(url: url!)
-//            present(safari, animated: true, completion: nil)
-        
-            
-            
+        let key =  SingletonManager.sharedCenter.contentGroup.allKeys[indexPath.row]
+        print((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).id as Any)
+
         }
     
    
