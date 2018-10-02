@@ -20,7 +20,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFie
     @IBOutlet weak var emailLabel: UITextField!
     
     //Create Activity Indicator
-    let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+    let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
