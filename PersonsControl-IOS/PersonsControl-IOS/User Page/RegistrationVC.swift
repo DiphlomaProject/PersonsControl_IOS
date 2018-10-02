@@ -39,41 +39,45 @@ class RegistrationVC: UIViewController,UITextFieldDelegate
         Registration()
         
     }
+    
      func Registration()
-     {  if(password.text == confrimPassword.text)
-        {
-            self.customActivityIndicatory(self.view, startAnimate: true)
-            ServiceApiPost.SingUp(email: email.text!, password: password.text!,userName: userName.text!,regComplete: { (success, loginError) in
-                if success {
-                    print("Registration Complete")
-                    //Else reg complete call fun login
-                    ServiceApiPost.SingIn(email: self.email.text!, password: self.password.text!,loginComplete: { (success, loginError) in
-                        if success {
-                            self.myActivityIndicator.stopAnimating()
-                            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-                            self.present(nextVC!, animated: true, completion: nil)
-                            print("Login access")
-                        } else {
-                            DispatchQueue.main.async {
-                                self.customActivityIndicatory(self.view, startAnimate: false)
-                                
-                                self.AlertMessageLogin()
+     {
+        if(email.text!.isEmail){
+            print("corect")
+            if(password.text == confrimPassword.text)
+            {
+                self.customActivityIndicatory(self.view, startAnimate: true)
+                ServiceApiPost.SingUp(email: email.text!, password: password.text!,userName: userName.text!,regComplete: { (success, loginError) in
+                    if success {
+                        print("Registration Complete")
+                        //Else reg complete call fun login
+                        ServiceApiPost.SingIn(email: self.email.text!, password: self.password.text!,loginComplete: { (success, loginError) in
+                            if success {
+                                self.myActivityIndicator.stopAnimating()
+                                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                                self.present(nextVC!, animated: true, completion: nil)
+                                print("Login access")
+                            } else {
+                                DispatchQueue.main.async {
+                                    self.customActivityIndicatory(self.view, startAnimate: false)
+                                    
+                                    self.AlertMessage(message: "Login error")
+                                }
                             }
+                        })
+                    } else {
+                        DispatchQueue.main.async {
+                            self.customActivityIndicatory(self.view, startAnimate: false)
+                            self.email.layer.cornerRadius = 8.0
+                            self.email.layer.masksToBounds = true
+                            self.email.layer.borderColor = UIColor( red: 255, green: 0, blue:0, alpha: 1.0 ).cgColor
+                            self.email.layer.borderWidth = 2.0
+                            
+                            
                         }
-                    })
-                } else {
-                    DispatchQueue.main.async {
-                        self.customActivityIndicatory(self.view, startAnimate: false)
-                        self.email.layer.cornerRadius = 8.0
-                        self.email.layer.masksToBounds = true
-                        self.email.layer.borderColor = UIColor( red: 255, green: 0, blue:0, alpha: 1.0 ).cgColor
-                        self.email.layer.borderWidth = 2.0
-                    
-                        
                     }
-                }
-            })
-        }else
+                })
+            }else
             {
                 print("error")
                 
@@ -88,11 +92,17 @@ class RegistrationVC: UIViewController,UITextFieldDelegate
                 confrimPassword.layer.borderColor = UIColor( red: 255, green: 0, blue:0, alpha: 1.0 ).cgColor
                 confrimPassword.layer.borderWidth = 2.0
             }
+        }
+        else{
+            print("incorreect")
+            AlertMessage(message: "E-mail no-valid")
+        }
+       
         
     }
-    func AlertMessage()
+    func AlertMessage(message: String)
     {
-        let alert = UIAlertController(title: "Registration  false", message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: message, message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -110,25 +120,6 @@ class RegistrationVC: UIViewController,UITextFieldDelegate
         
     }
     
-    func AlertMessageLogin()
-    {
-        let alert = UIAlertController(title: "Login  error", message: "Please try Again", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            switch action.style{
-            case .default:
-                print("default")
-                
-            case .cancel:
-                print("cancel")
-                
-            case .destructive:
-                print("destructive")
-                
-                
-            }}))
-        self.present(alert, animated: true, completion: nil)
-        
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -186,4 +177,38 @@ class RegistrationVC: UIViewController,UITextFieldDelegate
     }
     
 }
-
+extension String {
+    //Validate Email
+    
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil
+        } catch {
+            return false
+        }
+    }
+    
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    
+    //validate Password
+    var isValidPassword: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)
+            if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil){
+                
+                if(self.characters.count>=6 && self.characters.count<=20){
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        } catch {
+            return false
+        }
+    }
+}
