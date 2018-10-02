@@ -8,15 +8,12 @@
 
 import Foundation
 import UIKit
-class RegistrationVC: UIViewController
+class RegistrationVC: UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var email: UITextField!
-     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confrimPassword: UITextField!
-   
     @IBOutlet weak var userName: UITextField!
-    
-    @IBOutlet weak var phone: UITextField!
     
     //Create Activity Indicator
     let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
@@ -29,45 +26,69 @@ class RegistrationVC: UIViewController
     
     override func viewDidLoad() {
          super.viewDidLoad()
+        self.email.delegate = self
+        self.password.delegate = self
+        self.confrimPassword.delegate = self
+        self.userName.delegate = self
+       
         myActivityIndicator.center = view.center
         view.addSubview(myActivityIndicator)
     }
     @IBAction func RegBtn(_ sender: Any) {
-       self.customActivityIndicatory(self.view, startAnimate: true)
+      
         Registration()
         
     }
      func Registration()
-     {
-        ServiceApiPost.SingUp(email: email.text!, password: password.text!,userName: userName.text!,phone: phone.text!,regComplete: { (success, loginError) in
-            if success {
-                print("Registration Complete")
-                //self.myActivityIndicator.startAnimating()
-                
-                //Else reg complete call fun login
-                ServiceApiPost.SingIn(email: self.email.text!, password: self.password.text!,loginComplete: { (success, loginError) in
-                    if success {
-                        self.myActivityIndicator.stopAnimating()
-                        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-                        self.present(nextVC!, animated: true, completion: nil)
-                        print("Login access")
-//                        // self.myActivityIndicator.stopAnimating()
-//                        self.customActivityIndicatory(self.view, startAnimate: false)
-                    } else {
-                        DispatchQueue.main.async {
-                            self.customActivityIndicatory(self.view, startAnimate: false)
-
-                            self.AlertMessageLogin()
+     {  if(password.text == confrimPassword.text)
+        {
+            self.customActivityIndicatory(self.view, startAnimate: true)
+            ServiceApiPost.SingUp(email: email.text!, password: password.text!,userName: userName.text!,regComplete: { (success, loginError) in
+                if success {
+                    print("Registration Complete")
+                    //Else reg complete call fun login
+                    ServiceApiPost.SingIn(email: self.email.text!, password: self.password.text!,loginComplete: { (success, loginError) in
+                        if success {
+                            self.myActivityIndicator.stopAnimating()
+                            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                            self.present(nextVC!, animated: true, completion: nil)
+                            print("Login access")
+                        } else {
+                            DispatchQueue.main.async {
+                                self.customActivityIndicatory(self.view, startAnimate: false)
+                                
+                                self.AlertMessageLogin()
+                            }
                         }
+                    })
+                } else {
+                    DispatchQueue.main.async {
+                        self.customActivityIndicatory(self.view, startAnimate: false)
+                        self.email.layer.cornerRadius = 8.0
+                        self.email.layer.masksToBounds = true
+                        self.email.layer.borderColor = UIColor( red: 255, green: 0, blue:0, alpha: 1.0 ).cgColor
+                        self.email.layer.borderWidth = 2.0
+                    
+                        
                     }
-                })
-            } else {
-                DispatchQueue.main.async {
-                    self.myActivityIndicator.stopAnimating()
-                    self.AlertMessage()
                 }
+            })
+        }else
+            {
+                print("error")
+                
+                //password.layer.borderColor = (UIColor.red as! CGColor)
+                password.layer.cornerRadius = 8.0
+                password.layer.masksToBounds = true
+                password.layer.borderColor = UIColor( red: 255, green: 0, blue:0, alpha: 1.0 ).cgColor
+                password.layer.borderWidth = 2.0
+                //confrimPassword.layer.borderColor = (UIColor.red as! CGColor)
+                confrimPassword.layer.cornerRadius = 8.0
+                confrimPassword.layer.masksToBounds = true
+                confrimPassword.layer.borderColor = UIColor( red: 255, green: 0, blue:0, alpha: 1.0 ).cgColor
+                confrimPassword.layer.borderWidth = 2.0
             }
-        })
+        
     }
     func AlertMessage()
     {
@@ -151,27 +172,18 @@ class RegistrationVC: UIViewController
         }
         return activityIndicatorView
     }
-
+    /**
+     keyboard
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
-//extension UIColor {
-//    convenience init?(hexString: String) {
-//        var chars = Array(hexString.hasPrefix("#") ? hexString.dropFirst() : hexString[...])
-//        let red, green, blue, alpha: CGFloat
-//        switch chars.count {
-//        case 3:
-//            chars = chars.flatMap { [$0, $0] }
-//            fallthrough
-//        case 6:
-//            chars = ["F","F"] + chars
-//            fallthrough
-//        case 8:
-//            alpha = CGFloat(strtoul(String(chars[0...1]), nil, 16)) / 255
-//            red   = CGFloat(strtoul(String(chars[2...3]), nil, 16)) / 255
-//            green = CGFloat(strtoul(String(chars[4...5]), nil, 16)) / 255
-//            blue  = CGFloat(strtoul(String(chars[6...7]), nil, 16)) / 255
-//        default:
-//            return nil
-//        }
-//        self.init(red: red, green: green, blue:  blue, alpha: alpha)
-//    }
-//}
+

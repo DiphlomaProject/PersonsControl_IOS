@@ -183,13 +183,12 @@ class ServiceApiPost: NSObject, URLSessionDelegate
     }//RestApiHelper
     
     
-    static  func SingUp(email:String,password:String,userName:String,phone:String,regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+    static  func SingUp(email:String,password:String,userName:String,regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
 //        let resultDictionary = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(email, forKey: "email")
         jsonDictionary.setValue(password, forKey: "password")
-        jsonDictionary.setValue(userName, forKey: "displayName")
-        jsonDictionary.setValue(phone, forKey: "phone")         // prepare json data
+        jsonDictionary.setValue(userName, forKey: "displayName")// prepare json data
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
         // create post request
         let configuration = URLSessionConfiguration.default
@@ -218,7 +217,12 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 let jsonData = try JSONDecoder().decode(SignIn_Base.self, from: data)
                 DispatchQueue.main.async {
                     print(jsonData)
-                    regComplete(true, nil)
+                    if(jsonData.code == 202)
+                    {
+                        regComplete(true, nil)
+                    }else{
+                        regComplete(false, nil)
+                    }
                     
                 }
             } catch let jsonError {

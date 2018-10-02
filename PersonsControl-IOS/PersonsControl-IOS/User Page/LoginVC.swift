@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 import Fabric
 import Crashlytics
-class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
+class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFieldDelegate {
     
     
     @IBOutlet weak var GoogleSignIn: GIDSignInButton!
@@ -25,7 +25,10 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.passwordLabel.delegate = self
+        self.emailLabel.delegate = self
         self.navigationController?.isNavigationBarHidden = true
+        //Looks for single or multiple taps.
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         myActivityIndicator.center = view.center
@@ -57,6 +60,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+  
     
     @IBAction func LoginButton(_ sender: Any) {
         myActivityIndicator.startAnimating()
@@ -153,5 +157,21 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             self.present(alert, animated: true, completion: nil)
             
         }
+    
+    /**
+     keyboard
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+
+
 }
 
