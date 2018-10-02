@@ -11,13 +11,14 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class MoreVC: UIViewController
+class MoreVC:UITableViewController
 {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
