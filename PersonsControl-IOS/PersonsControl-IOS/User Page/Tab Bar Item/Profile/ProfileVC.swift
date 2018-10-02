@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var displayName: UITextField!
     
@@ -30,6 +30,13 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var imgProf: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.email.delegate = self
+        self.Role.delegate = self
+        self.displayName.delegate = self
+        self.Phone.delegate = self
+        self.address.delegate = self
+        self.city.delegate = self
+        self.Country.delegate = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.imgProf.layer.cornerRadius = self.imgProf.frame.size.width/2
@@ -51,11 +58,24 @@ class ProfileVC: UIViewController {
     }
    
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
         completionHandler(.useCredential, urlCredential)
+    }
+    
+    /**
+     keyboard
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }
