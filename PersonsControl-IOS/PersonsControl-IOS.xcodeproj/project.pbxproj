@@ -22,6 +22,7 @@
 		F424BA652164DAFE00DD753B /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA642164DAFE00DD753B /* Customer.swift */; };
 		F424BA672164DB1700DD753B /* Group_Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA662164DB1700DD753B /* Group_Project.swift */; };
 		F424BA692164DB3000DD753B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA682164DB3000DD753B /* Project.swift */; };
+		F424BA6C2164E2B500DD753B /* UserProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA6B2164E2B500DD753B /* UserProject.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* LoginVC.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		F424BA642164DAFE00DD753B /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		F424BA662164DB1700DD753B /* Group_Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_Project.swift; sourceTree = "<group>"; };
 		F424BA682164DB3000DD753B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		F424BA6B2164E2B500DD753B /* UserProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProject.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4449F2B21225F8300EB0600 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -204,6 +206,14 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
+		F424BA6A2164E25400DD753B /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				F424BA6B2164E2B500DD753B /* UserProject.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
 		F4449F1D21225F8300EB0600 = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
+				F424BA6A2164E25400DD753B /* Projects */,
 				F4DB79D0215E51AF000C7DB3 /* User */,
 				F4DB79CD215E50DC000C7DB3 /* Groups */,
 			);
@@ -678,6 +689,7 @@
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
 				F424BA692164DB3000DD753B /* Project.swift in Sources */,
 				F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */,
+				F424BA6C2164E2B500DD753B /* UserProject.swift in Sources */,
 				F4DB79CC215E3A7E000C7DB3 /* RolesGroups.swift in Sources */,
 				F4DB79DB21601912000C7DB3 /* GroupCell.swift in Sources */,
 				F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */,

@@ -351,6 +351,14 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     print(jsonData?.data.customers as Any)
                     print(jsonData?.data.projects as Any)
                     //  print(jsonData.groups_model?.groups?)
+                    
+                    if(jsonData?.data != nil)
+                    {
+                        for result in (jsonData?.data.projects)!
+                        {
+                            
+                        }
+                    }
 //                    if(jsonData.groups_model != nil)
 //                    {
 //                        for result in (jsonData.groups_model?.groups)!
