@@ -17,10 +17,10 @@ class TaskVC: UIViewController {
         super.viewDidLoad()
         
         
-        ServiceApiPost.GetImageUser(regComplete: { (success, loginError) in
+        ServiceApiPost.GetTasksUser(Complete: { (success, loginError) in
             if success {
 
-                print("images")
+                print("tasks")
 
             } else {
                 DispatchQueue.main.async {

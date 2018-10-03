@@ -408,7 +408,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 print(jsonError)
             }
             }.resume()
-    }//getgroups
+    }//getproject
     
     
     static  func GetImageUser(regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
@@ -448,7 +448,59 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             }.resume()
     }//getimege
     
-    
+    static  func GetTasksUser(Complete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        
+        let token = SingletonManager.sharedCenter.UserClass?.token
+        let idUser = SingletonManager.sharedCenter.UserClass?.id
+        let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(token, forKey: "token")
+        jsonDictionary.setValue(idUser, forKey: "userId")
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        
+        let url = URL(string: SingletonManager.sharedCenter.base_URL + SingletonManager.sharedCenter.GetUserTasks_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                Complete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                Complete(false, error)
+                return
+            }
+            
+            do {
+                // let jsonData = try JSONDecoder().decode(Groups_Base.self, from: data)
+                let jsonData = try? JSONDecoder().decode(Tasks_Base.self, from: data)
+                DispatchQueue.main.async {
+                    if(jsonData?.code == 202)
+                    {
+                        
+                            print(jsonData)
+                            
+                        
+                        Complete(true, nil)
+                    }else{
+                        Complete(false,nil)
+                    }
+                    
+                }
+            } catch let jsonError {
+                Complete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+    }//getproject
     
   
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {

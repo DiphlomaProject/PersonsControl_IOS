@@ -26,7 +26,7 @@ struct DataTasks : Codable {
 		tasksPerson = try values.decodeIfPresent([TasksPerson].self, forKey: .tasksPerson)
 		tasksGroups = try values.decodeIfPresent([TasksGroups].self, forKey: .tasksGroups)
 		groups = try values.decodeIfPresent([Groups].self, forKey: .groups)
-		tasksProjects = try values.decodeIfPresent([TasksProjects].self, forKey: .tasksProjects)
+        tasksProjects = try values.decodeIfPresent([TasksProjects].self, forKey: .tasksProjects)
         projects = try values.decodeIfPresent([Project].self, forKey: .projects)
 	}
 
