@@ -36,6 +36,7 @@
 		F424BA9021656F3700DD753B /* GroupTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA8F21656F3700DD753B /* GroupTaskVC.swift */; };
 		F424BA9221656F4A00DD753B /* ProjectTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */; };
 		F424BA94216577AC00DD753B /* UserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA93216577AC00DD753B /* UserTask.swift */; };
+		F424BA96216588D800DD753B /* UserTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA95216588D800DD753B /* UserTaskCell.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* LoginVC.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
@@ -46,7 +47,6 @@
 		F4449F4D21225F8600EB0600 /* PersonsControl_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F4C21225F8600EB0600 /* PersonsControl_IOSUITests.swift */; };
 		F44BFD52214963FB003DBAC9 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFD51214963FB003DBAC9 /* GroupsVC.swift */; };
 		F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFD5421496421003DBAC9 /* ProjectsVC.swift */; };
-		F44BFD5721496431003DBAC9 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFD5621496431003DBAC9 /* TaskVC.swift */; };
 		F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46CD77F2148728E00EC4675 /* RegistrationVC.swift */; };
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
 		F49DD3DA215069FA00C982C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */; };
@@ -114,6 +114,7 @@
 		F424BA8F21656F3700DD753B /* GroupTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTaskVC.swift; sourceTree = "<group>"; };
 		F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskVC.swift; sourceTree = "<group>"; };
 		F424BA93216577AC00DD753B /* UserTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTask.swift; sourceTree = "<group>"; };
+		F424BA95216588D800DD753B /* UserTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTaskCell.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4449F2B21225F8300EB0600 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -130,7 +131,6 @@
 		F4449F4E21225F8600EB0600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44BFD51214963FB003DBAC9 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		F44BFD5421496421003DBAC9 /* ProjectsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsVC.swift; sourceTree = "<group>"; };
-		F44BFD5621496431003DBAC9 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		F46CD77F2148728E00EC4675 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -397,11 +397,11 @@
 		F4DB79D3216017D8000C7DB3 /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				F44BFD5621496431003DBAC9 /* TaskVC.swift */,
 				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
 				F424BA8F21656F3700DD753B /* GroupTaskVC.swift */,
 				F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */,
 				F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */,
+				F424BA95216588D800DD753B /* UserTaskCell.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -735,13 +735,13 @@
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
 				F424BA94216577AC00DD753B /* UserTask.swift in Sources */,
 				F40AE0632143202700766EF5 /* Data.swift in Sources */,
-				F44BFD5721496431003DBAC9 /* TaskVC.swift in Sources */,
 				F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */,
 				F424BA7F2165593700DD753B /* TasksProjects.swift in Sources */,
 				F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */,
 				F44BFD52214963FB003DBAC9 /* GroupsVC.swift in Sources */,
 				F4DB79D9216018A6000C7DB3 /* MoreVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */,
+				F424BA96216588D800DD753B /* UserTaskCell.swift in Sources */,
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
 				F424BA8E21656F1E00DD753B /* UserTaskVC.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,

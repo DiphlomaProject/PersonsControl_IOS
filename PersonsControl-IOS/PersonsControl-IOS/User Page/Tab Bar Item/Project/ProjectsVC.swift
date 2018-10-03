@@ -17,7 +17,7 @@ class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     lazy var refreshControl:UIRefreshControl =
         {
             let refreshControl = UIRefreshControl()
-            refreshControl.addTarget(self, action: #selector(GroupsVC.actualData(_:)), for: .valueChanged)
+            refreshControl.addTarget(self, action: #selector(ProjectsVC.actualData(_:)), for: .valueChanged)
             refreshControl.tintColor = UIColor.white
             return refreshControl
             

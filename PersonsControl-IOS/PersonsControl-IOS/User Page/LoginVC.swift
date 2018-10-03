@@ -44,7 +44,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFie
                 SingletonManager.sharedCenter.UserClass = dataUser
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
                 self.present(nextVC!, animated: false, completion: nil)
-                let home =  TaskVC()
+                let home =  UserTaskVC()
                 home.setFaceID_TouchID(true)
                // self.navigationController?.pushViewController(nextVC!, animated: true)
                 
@@ -70,7 +70,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFie
                             self.present(nextVC!, animated: true, completion: nil)
                             print("Login access")
                             self.myActivityIndicator.stopAnimating()
-                            let home =  TaskVC()
+                            let home =  UserTaskVC()
                             home.setFaceID_TouchID(true)
                         } else {
                             DispatchQueue.main.async {
@@ -114,7 +114,7 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFie
                         self.present(nextVC!, animated: true, completion: nil)
                         print("Login with Google")
                         self.myActivityIndicator.stopAnimating()
-                        let home =  TaskVC()
+                        let home =  UserTaskVC()
                         home.setFaceID_TouchID(true)
                     } else {
                         DispatchQueue.main.async {

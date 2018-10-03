@@ -485,10 +485,20 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 DispatchQueue.main.async {
                     if(jsonData?.code == 202)
                     {
-                        
-                        print(jsonData as Any)
+                        for result in (jsonData?.data?.tasksPerson)!
+                        {
+                            let task : UserTask = UserTask()
+                            task.id = result.id
+                            task.title = result.title
+                            task.desc = result.description
+                            task.dateTimeBegin = result.dateTimeBegin
+                            task.dateTimeEnd = result.dateTimeEnd
+                            task.isComplite = result.isComplite
+                            task.userFrom = result.userFrom?.displayName
                             
-                        
+                            resultDictionary.setValue(task, forKey: String(task.id!))
+                        }
+                        SingletonManager.sharedCenter.contentPersonalTask = resultDictionary
                         Complete(true, nil)
                     }else{
                         Complete(false,nil)

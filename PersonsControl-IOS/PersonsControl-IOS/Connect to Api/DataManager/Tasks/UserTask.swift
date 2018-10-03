@@ -20,8 +20,8 @@ class UserTask: NSObject,NSCoding
     var dateTimeBegin : String?
     var dateTimeEnd : String?
     var isComplite : Bool?
-    var userTo : UserTo?
-    var userFrom : UserFrom?
+//    var userTo : String?
+    var userFrom : String?
     
     
     init(json: NSMutableDictionary) { // Dictionary object
