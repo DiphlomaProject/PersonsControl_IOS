@@ -346,7 +346,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                // let jsonData = try JSONDecoder().decode(Groups_Base.self, from: data)
                 let jsonData = try? JSONDecoder().decode(Project_base.self, from: data)
                 DispatchQueue.main.async {
-                    if(jsonData?.data != nil)
+                    if(jsonData?.code == 202)
                     {
                         for result in (jsonData?.data.projects)!
                         {
@@ -398,8 +398,10 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                        // print(resultDictionary)
                         SingletonManager.sharedCenter.contentProject = resultDictionary
                         Complete(true, nil)
+                    }else{
+                        Complete(false,nil)
                     }
-                    Complete(false,nil)
+                    
                 }
             } catch let jsonError {
                 Complete(false, error)

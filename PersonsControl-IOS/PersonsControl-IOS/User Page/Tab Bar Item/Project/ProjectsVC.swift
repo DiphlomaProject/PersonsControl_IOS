@@ -82,9 +82,13 @@ class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         cell.customer_name.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).customerInfo?.contactPerson
         
         cell.company_name.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).customerInfo?.company
+        let arrayT = ((SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).GroupInfo)
         
-        cell.groups_names.text = ((SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).GroupInfo  as? String)
+        let stringRepresentation = arrayT.joined(separator: " | ")
         
+        cell.groups_names.text = stringRepresentation
+        
+     //  let stringRepresentation = "-".join(array) // "1-2-3"
         cell.data.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).untilTime
         return cell
         
