@@ -35,6 +35,7 @@
 		F424BA8E21656F1E00DD753B /* UserTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA8D21656F1E00DD753B /* UserTaskVC.swift */; };
 		F424BA9021656F3700DD753B /* GroupTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA8F21656F3700DD753B /* GroupTaskVC.swift */; };
 		F424BA9221656F4A00DD753B /* ProjectTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */; };
+		F424BA94216577AC00DD753B /* UserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA93216577AC00DD753B /* UserTask.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* LoginVC.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
@@ -112,6 +113,7 @@
 		F424BA8D21656F1E00DD753B /* UserTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTaskVC.swift; sourceTree = "<group>"; };
 		F424BA8F21656F3700DD753B /* GroupTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTaskVC.swift; sourceTree = "<group>"; };
 		F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskVC.swift; sourceTree = "<group>"; };
+		F424BA93216577AC00DD753B /* UserTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTask.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4449F2B21225F8300EB0600 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		F424BA88216566C400DD753B /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				F424BA93216577AC00DD753B /* UserTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -395,10 +398,10 @@
 			isa = PBXGroup;
 			children = (
 				F44BFD5621496431003DBAC9 /* TaskVC.swift */,
-				F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */,
 				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
 				F424BA8F21656F3700DD753B /* GroupTaskVC.swift */,
 				F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */,
+				F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				F424BA842165593700DD753B /* UserTo.swift in Sources */,
 				F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */,
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
+				F424BA94216577AC00DD753B /* UserTask.swift in Sources */,
 				F40AE0632143202700766EF5 /* Data.swift in Sources */,
 				F44BFD5721496431003DBAC9 /* TaskVC.swift in Sources */,
 				F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */,
