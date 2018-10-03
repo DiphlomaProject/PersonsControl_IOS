@@ -24,22 +24,26 @@ class ProjectsVC: UIViewController {
         
         ServiceApiPost.GetProjectsUser(Complete: { (success, loginError) in
             if success {
-                
-                
-                
-                
-                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).title ?? "error" )
-                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).desc ?? "error" )
-                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).ownerInfo?.displayName ?? "error" )
-                //                for key in SingletonManager.sharedCenter.contentGroup
-                //                {
-                //
-                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).title ?? "error" )
-                //
-                //
-                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).desc ?? "error" )
-                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).ownerInfo?.displayName ?? "error" )
-                //                    }
+                for key in SingletonManager.sharedCenter.contentProject
+                {
+                    
+                    print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).title as Any )
+                    
+                    
+                    print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).desc as Any )
+                    
+                    print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).customerInfo?.company as Any)
+                    
+                     print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).customerInfo?.contactPerson as Any)
+                    
+                     print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).untilTime as Any )
+                    
+                    print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).beginTime as Any )
+                    
+                    print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).priceInDollars as Any )
+                    
+                    print((SingletonManager.sharedCenter.contentProject.object(forKey: key.key) as! UserProject).GroupInfo as Any)
+                }
                 ////
                 
                 // self.ReloadData()

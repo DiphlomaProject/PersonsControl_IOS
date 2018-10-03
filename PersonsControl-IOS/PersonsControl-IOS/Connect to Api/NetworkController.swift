@@ -346,46 +346,67 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                // let jsonData = try JSONDecoder().decode(Groups_Base.self, from: data)
                 let jsonData = try? JSONDecoder().decode(Project_base.self, from: data)
                 DispatchQueue.main.async {
-//                    print(jsonData)
-                    print(jsonData?.data.groups as Any)
-                    print(jsonData?.data.customers as Any)
-                    print(jsonData?.data.projects as Any)
-                    //  print(jsonData.groups_model?.groups?)
-                    
                     if(jsonData?.data != nil)
                     {
                         for result in (jsonData?.data.projects)!
                         {
+                            let project : UserProject = UserProject()
+                            project.id = result.id
+                            project.customer = result.customer
+                            project.title = result.title
+                            project.desc = result.description
+                            project.priceInDollars = result.priceInDollars
+                            project.untilTime = result.untilTime
+                            project.beginTime = result.beginTime
+                            project.isComplite = result.isComplite
+                            
+                            for customer in ((jsonData?.data.customers)!)
+                            {
+                              for c in customer
+                                {
+                                    if(c.key == String( result.id))
+                                    {
+                                        //print(c.value.company)
+                                        project.customerInfo = c.value
+                                    }
+                                }
+                                
+                            }
+                            
+                            
+                            for group in ((jsonData?.data.groups)!)
+                            {
+                                for g in group
+                                {
+                                    if(g.key == String (result.id))
+                                    {
+                                         for value in g.value
+                                         {
+                                            //print(value.title)
+                                            
+                                            var GroupInfoValue: [String] = []
+                                            GroupInfoValue.append(value.title)
+                                            let string = GroupInfoValue.joined(separator: "  ")
+                                            project.GroupInfo.append(string)
+                                        }
+                                    }
+                                }
+                            }
+                            resultDictionary.setValue(project, forKey: String(project.id!))
                             
                         }
+                       // print(resultDictionary)
+                        SingletonManager.sharedCenter.contentProject = resultDictionary
+                        Complete(true, nil)
                     }
-//                    if(jsonData.groups_model != nil)
-//                    {
-//                        for result in (jsonData.groups_model?.groups)!
-//                        {
-//                            var group : Group = Group()
-//                            group.id = result.id
-//                            group.title = result.title
-//                            group.desc = result.description
-//
-//                            for owners in (jsonData.groups_model?.owners)!
-//                            {
-//                                if(owners.id == result.owner)
-//                                {
-//                                    group.ownerInfo = owners
-//                                }
-//
-//                            }
-//                            resultDictionary.setValue(group, forKey: String (group.id!))
-//
-//                        }
+                    
 //                        SingletonManager.sharedCenter.contentGroup = resultDictionary
 //
 //                        //                    print((resultDictionary.object(forKey: "25") as! Group).title)
 //
 //                        Complete(true, nil)
 //                    }
-                    Complete(true, nil)
+                   // Complete(true, nil)
                 }
             } catch let jsonError {
                 Complete(false, error)

@@ -35,6 +35,9 @@ class MoreVC:UITableViewController
 //        }
         SingletonManager.sharedCenter.contentGroup.removeAllObjects()
         print(SingletonManager.sharedCenter.contentGroup)
+        
+        SingletonManager.sharedCenter.contentProject.removeAllObjects()
+        print(SingletonManager.sharedCenter.contentProject)
 //        print(SingletonManager.sharedCenter.contentGroup)
        // self.present(nextVC!, animated: true, completion: nil)
     //   self.navigationController?.popToRootViewController(animated: true)

@@ -21,8 +21,8 @@ class UserProject: NSObject ,NSCoding
     var untilTime: String?
     var ownerInfo : Owners?
     var customerInfo : Customer?
-    var GroupInfo : Group?
-    
+    var GroupInfo: [String] = []
+    var myArray = ["Steve", "Bill", "Linus", "Bret"]
     init(json: NSMutableDictionary) { // Dictionary object
         self.id = (json["userId"] as? Int)
         self.customer = (json["customer"] as? Int)
