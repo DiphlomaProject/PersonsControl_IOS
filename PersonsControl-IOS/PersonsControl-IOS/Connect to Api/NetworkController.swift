@@ -486,7 +486,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     if(jsonData?.code == 202)
                     {
                         
-                            print(jsonData)
+                        print(jsonData as Any)
                             
                         
                         Complete(true, nil)

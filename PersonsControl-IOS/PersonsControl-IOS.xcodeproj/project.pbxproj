@@ -31,6 +31,10 @@
 		F424BA812165593700DD753B /* DataTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA762165593600DD753B /* DataTasks.swift */; };
 		F424BA822165593700DD753B /* TasksPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA772165593600DD753B /* TasksPerson.swift */; };
 		F424BA842165593700DD753B /* UserTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA792165593700DD753B /* UserTo.swift */; };
+		F424BA8C21656D9000DD753B /* TaskUIPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */; };
+		F424BA8E21656F1E00DD753B /* UserTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA8D21656F1E00DD753B /* UserTaskVC.swift */; };
+		F424BA9021656F3700DD753B /* GroupTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA8F21656F3700DD753B /* GroupTaskVC.swift */; };
+		F424BA9221656F4A00DD753B /* ProjectTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* LoginVC.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
@@ -104,6 +108,10 @@
 		F424BA762165593600DD753B /* DataTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTasks.swift; sourceTree = "<group>"; };
 		F424BA772165593600DD753B /* TasksPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksPerson.swift; sourceTree = "<group>"; };
 		F424BA792165593700DD753B /* UserTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTo.swift; sourceTree = "<group>"; };
+		F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUIPageVC.swift; sourceTree = "<group>"; };
+		F424BA8D21656F1E00DD753B /* UserTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTaskVC.swift; sourceTree = "<group>"; };
+		F424BA8F21656F3700DD753B /* GroupTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTaskVC.swift; sourceTree = "<group>"; };
+		F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskVC.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4449F2B21225F8300EB0600 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -245,6 +253,13 @@
 			path = Tasks;
 			sourceTree = "<group>";
 		};
+		F424BA88216566C400DD753B /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
 		F4449F1D21225F8300EB0600 = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				F415C0D8212317B700F30D66 /* SingletonManager.swift */,
+				F424BA88216566C400DD753B /* Tasks */,
 				F424BA6A2164E25400DD753B /* Projects */,
 				F4DB79D0215E51AF000C7DB3 /* User */,
 				F4DB79CD215E50DC000C7DB3 /* Groups */,
@@ -379,6 +395,10 @@
 			isa = PBXGroup;
 			children = (
 				F44BFD5621496431003DBAC9 /* TaskVC.swift */,
+				F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */,
+				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
+				F424BA8F21656F3700DD753B /* GroupTaskVC.swift */,
+				F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -705,6 +725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F424BA8C21656D9000DD753B /* TaskUIPageVC.swift in Sources */,
 				F424BA632164DADE00DD753B /* DataClass.swift in Sources */,
 				F424BA842165593700DD753B /* UserTo.swift in Sources */,
 				F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */,
@@ -718,8 +739,10 @@
 				F4DB79D9216018A6000C7DB3 /* MoreVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */,
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
+				F424BA8E21656F1E00DD753B /* UserTaskVC.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
 				F4DB79CF215E5118000C7DB3 /* UserGroups.swift in Sources */,
+				F424BA9021656F3700DD753B /* GroupTaskVC.swift in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
 				F424BA692164DB3000DD753B /* Project.swift in Sources */,
 				F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */,
@@ -741,6 +764,7 @@
 				F424BA7E2165593700DD753B /* Tasks_Base.swift in Sources */,
 				F4DB79CB215E3A7E000C7DB3 /* LoginsGroups.swift in Sources */,
 				F424BA652164DAFE00DD753B /* Customer.swift in Sources */,
+				F424BA9221656F4A00DD753B /* ProjectTaskVC.swift in Sources */,
 				F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */,
 				F4DB79C9215E3A7E000C7DB3 /* Owners.swift in Sources */,
 			);
