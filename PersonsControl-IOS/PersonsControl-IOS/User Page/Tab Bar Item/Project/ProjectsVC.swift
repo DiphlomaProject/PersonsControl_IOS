@@ -21,6 +21,38 @@ class ProjectsVC: UIViewController {
         button.setTitle("Crash", for: [])
         button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
         view.addSubview(button)
+        
+        ServiceApiPost.GetProjectsUser(Complete: { (success, loginError) in
+            if success {
+                
+                
+                
+                
+                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).title ?? "error" )
+                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).desc ?? "error" )
+                //      print((SingletonManager.sharedCenter.contentGroup.object(forKey: "25") as! Group).ownerInfo?.displayName ?? "error" )
+                //                for key in SingletonManager.sharedCenter.contentGroup
+                //                {
+                //
+                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).title ?? "error" )
+                //
+                //
+                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).desc ?? "error" )
+                //                    print((SingletonManager.sharedCenter.contentGroup.object(forKey: key.key) as! Group).ownerInfo?.displayName ?? "error" )
+                //                    }
+                ////
+                
+                // self.ReloadData()
+              
+                
+            } else {
+                DispatchQueue.main.async {
+                   
+                    
+                }
+            }
+        })
+
     }
     @IBAction func crashButtonTapped(_ sender: AnyObject) {
       fatalError("CRASH")

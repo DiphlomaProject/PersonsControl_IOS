@@ -311,6 +311,81 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             }.resume()
     }//getgroups
     
+    static  func GetProjectsUser(Complete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        
+        let token = SingletonManager.sharedCenter.UserClass?.token
+        let idUser = SingletonManager.sharedCenter.UserClass?.id
+        let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(token, forKey: "token")
+        jsonDictionary.setValue(idUser, forKey: "userId")
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        
+        let url = URL(string: SingletonManager.sharedCenter.base_URL + SingletonManager.sharedCenter.GetUserProject_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                Complete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                Complete(false, error)
+                return
+            }
+            
+            do {
+               // let jsonData = try JSONDecoder().decode(Groups_Base.self, from: data)
+                let jsonData = try? JSONDecoder().decode(Project_base.self, from: data)
+                DispatchQueue.main.async {
+//                    print(jsonData)
+                    print(jsonData?.data.groups as Any)
+                    print(jsonData?.data.customers as Any)
+                    print(jsonData?.data.projects as Any)
+                    //  print(jsonData.groups_model?.groups?)
+//                    if(jsonData.groups_model != nil)
+//                    {
+//                        for result in (jsonData.groups_model?.groups)!
+//                        {
+//                            var group : Group = Group()
+//                            group.id = result.id
+//                            group.title = result.title
+//                            group.desc = result.description
+//
+//                            for owners in (jsonData.groups_model?.owners)!
+//                            {
+//                                if(owners.id == result.owner)
+//                                {
+//                                    group.ownerInfo = owners
+//                                }
+//
+//                            }
+//                            resultDictionary.setValue(group, forKey: String (group.id!))
+//
+//                        }
+//                        SingletonManager.sharedCenter.contentGroup = resultDictionary
+//
+//                        //                    print((resultDictionary.object(forKey: "25") as! Group).title)
+//
+//                        Complete(true, nil)
+//                    }
+                    Complete(true, nil)
+                }
+            } catch let jsonError {
+                Complete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+    }//getgroups
+    
     
     static  func GetImageUser(regComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
         

@@ -31,6 +31,7 @@ class SingletonManager {
     let SignUp_URL = "api/Users/SignUp"
     let GetUserImg_URL = "api/Users/getUserImg?email="
     let GetUserGroups_URL = "api/Groups/GetGroups"
+    let GetUserProject_URL = "api/Projects/GetProjects"
     // Configurations Microsoft Identity
     let AUTHORITY_URL = "https://login.microsoftonline.com/common/oauth2/nativeclient" //COMMON OR YOUR TENANT ID
     let CLIENT_ID = "a4b7974c-4a7c-475e-91b8-a82d67b0d9a8" //This is your client ID
