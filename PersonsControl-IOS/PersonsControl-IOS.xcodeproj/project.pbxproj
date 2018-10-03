@@ -23,6 +23,7 @@
 		F424BA672164DB1700DD753B /* Group_Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA662164DB1700DD753B /* Group_Project.swift */; };
 		F424BA692164DB3000DD753B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA682164DB3000DD753B /* Project.swift */; };
 		F424BA6C2164E2B500DD753B /* UserProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA6B2164E2B500DD753B /* UserProject.swift */; };
+		F424BA6E216510B800DD753B /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA6D216510B800DD753B /* ProjectCell.swift */; };
 		F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2921225F8300EB0600 /* AppDelegate.swift */; };
 		F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4449F2B21225F8300EB0600 /* LoginVC.swift */; };
 		F4449F2F21225F8300EB0600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4449F2D21225F8300EB0600 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		F424BA662164DB1700DD753B /* Group_Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_Project.swift; sourceTree = "<group>"; };
 		F424BA682164DB3000DD753B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		F424BA6B2164E2B500DD753B /* UserProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProject.swift; sourceTree = "<group>"; };
+		F424BA6D216510B800DD753B /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		F4449F2621225F8300EB0600 /* PersonsControl-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PersonsControl-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4449F2921225F8300EB0600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4449F2B21225F8300EB0600 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				F44BFD5421496421003DBAC9 /* ProjectsVC.swift */,
+				F424BA6D216510B800DD753B /* ProjectCell.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				F4DB79CC215E3A7E000C7DB3 /* RolesGroups.swift in Sources */,
 				F4DB79DB21601912000C7DB3 /* GroupCell.swift in Sources */,
 				F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */,
+				F424BA6E216510B800DD753B /* ProjectCell.swift in Sources */,
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F40AE0662143F6B200766EF5 /* User.swift in Sources */,
 				F424BA5F2164D05B00DD753B /* Project_base.swift in Sources */,

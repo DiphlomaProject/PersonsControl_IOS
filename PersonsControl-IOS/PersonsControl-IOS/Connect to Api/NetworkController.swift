@@ -399,14 +399,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         SingletonManager.sharedCenter.contentProject = resultDictionary
                         Complete(true, nil)
                     }
-                    
-//                        SingletonManager.sharedCenter.contentGroup = resultDictionary
-//
-//                        //                    print((resultDictionary.object(forKey: "25") as! Group).title)
-//
-//                        Complete(true, nil)
-//                    }
-                   // Complete(true, nil)
+                    Complete(false,nil)
                 }
             } catch let jsonError {
                 Complete(false, error)
