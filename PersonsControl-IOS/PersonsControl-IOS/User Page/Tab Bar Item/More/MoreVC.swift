@@ -17,13 +17,13 @@ class MoreVC:UITableViewController
     override func viewWillAppear(_ animated: Bool) {
        // self.navigationController?.isNavigationBarHidden = false
         // self.navigationItem.title = "More"
-         self.navigationController?.isNavigationBarHidden = true
+        // self.navigationController?.isNavigationBarHidden = true
     }
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationController?.isNavigationBarHidden = true
+        // self.navigationController?.isNavigationBarHidden = true
         
     }
     

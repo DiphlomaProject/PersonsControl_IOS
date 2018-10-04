@@ -25,8 +25,7 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController!.navigationBar.topItem!.title = "Groups";
-         self.navigationController?.isNavigationBarHidden = true
+        
         customActivityIndicatory(self.view)
         LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
@@ -35,9 +34,6 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = false
-        //self.navigationController!.navigationBar.topItem!.title = "Groups";
-         self.navigationController?.isNavigationBarHidden = true
         self.ReloadData()
         self.tableview.addSubview(self.refreshControl)
        
