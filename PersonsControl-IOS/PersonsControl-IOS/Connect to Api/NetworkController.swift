@@ -453,6 +453,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         let token = SingletonManager.sharedCenter.UserClass?.token
         let idUser = SingletonManager.sharedCenter.UserClass?.id
         let resultDictionary = NSMutableDictionary()
+        let resultDictionaryGroupTask = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
         jsonDictionary.setValue(token, forKey: "token")
         jsonDictionary.setValue(idUser, forKey: "userId")
@@ -499,6 +500,32 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                             resultDictionary.setValue(task, forKey: String(task.id!))
                         }
                         SingletonManager.sharedCenter.contentPersonalTask = resultDictionary
+                        
+                        
+                        
+                        
+                        for resultG in (jsonData?.data?.tasksGroups)!
+                        {
+                            let groupTask : GroupTask = GroupTask()
+                            groupTask.id = resultG.id
+                            groupTask.title = resultG.title
+                            groupTask.desc = resultG.description
+                            groupTask.dateTimeBegin = resultG.dateTimeBegin
+                            groupTask.dateTimeEnd = resultG.dateTimeEnd
+                            groupTask.userFrom = resultG.userFrom?.displayName
+                            groupTask.isComplite = resultG.isComplite
+                            for groupName in ((jsonData?.data?.groups)!)
+                            {
+                                if(groupName.id == resultG.toGroupId)
+                                {
+                                    groupTask.groupName = groupName.title
+                                }
+                                
+                            }
+                            resultDictionaryGroupTask.setValue(groupTask, forKey: String(groupTask.id!))
+                            
+                        }
+                        SingletonManager.sharedCenter.contentGroupTask = resultDictionaryGroupTask
                         Complete(true, nil)
                     }else{
                         Complete(false,nil)

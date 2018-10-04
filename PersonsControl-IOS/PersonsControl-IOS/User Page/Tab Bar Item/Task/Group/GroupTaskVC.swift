@@ -1,5 +1,5 @@
 //
-//  UserTaskVC.swift
+//  GroupTaskVC.swift
 //  PersonsControl-IOS
 //
 //  Created by Валерий Мельников on 10/4/18.
@@ -7,37 +7,27 @@
 //
 
 import UIKit
-import Foundation
-import Firebase
-import GoogleSignIn
-import LocalAuthentication
-class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
+
+class GroupTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableview: UITableView!
-    var customView = UIView()
     lazy var refreshControl:UIRefreshControl =
         {
             let refreshControl = UIRefreshControl()
-            refreshControl.addTarget(self, action: #selector(UserTaskVC.actualData(_:)), for: .valueChanged)
+            refreshControl.addTarget(self, action: #selector(GroupTaskVC.actualData(_:)), for: .valueChanged)
             refreshControl.tintColor = UIColor.white
             return refreshControl
             
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         customActivityIndicatory(self.view, startAnimate: false)
         LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
         tableview.delegate = self
         tableview.dataSource = self
-        
-        
-        
         // Do any additional setup after loading the view.
     }
-    
     
     func LoadingNewData()
     {
@@ -58,12 +48,12 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
                 }
             }
         })
-    
+        
     }
     
     @objc func actualData(_ refreshControl:UIRefreshControl)
     {
-        SingletonManager.sharedCenter.contentPersonalTask.removeAllObjects()
+        SingletonManager.sharedCenter.contentGroupTask.removeAllObjects()
         LoadingNewData()
         self.tableview.reloadData()
         refreshControl.endRefreshing()
@@ -82,16 +72,16 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTaskCell", for: indexPath) as! UserTaskCell
-        let key =  SingletonManager.sharedCenter.contentPersonalTask.allKeys[indexPath.row]
-        cell.title.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).title
-        cell.desc.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).desc
-        cell.from_user.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).userFrom
-        cell.time_begin.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeBegin
-         cell.until_time.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTaskCell", for: indexPath) as! GroupTaskCell
+        let key =  SingletonManager.sharedCenter.contentGroupTask.allKeys[indexPath.row]
+        cell.title.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).title
+        cell.decs.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).desc
+        cell.grom_user.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).userFrom
+        cell.begin_time.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).dateTimeBegin
+        cell.until_time.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).dateTimeEnd
+        cell.group_name.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).groupName
+        cell.status.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).isComplite?.description
         
-        cell.status.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description
-       
         return cell
         
         
@@ -105,8 +95,8 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(SingletonManager.sharedCenter.contentPersonalTask.count)
-        return SingletonManager.sharedCenter.contentPersonalTask.count
+        print(SingletonManager.sharedCenter.contentGroupTask.count)
+        return SingletonManager.sharedCenter.contentGroupTask.count
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,41 +104,10 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         self.ReloadData()
         self.tableview.addSubview(self.refreshControl)
     }
-    
-    func setFaceID_TouchID(_ flag: Bool) {
-        TouchID()
-    }
-  
-    func TouchID()
-    {
-        let context : LAContext = LAContext()
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-        {
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate to proceed.", reply: { ( wasCorrect, error) in
-                if wasCorrect
-                {
-                    print("access")
-                   
-                   
-                }else
-                {
-                    print("error")
-                    let home =  UserTaskVC()
-                    home.setFaceID_TouchID(true)
-                }
-            })
-        }else
-        {
-            //else
-            print("no used")
-        
-        }
-    }
-    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let key =  SingletonManager.sharedCenter.contentPersonalTask.allKeys[indexPath.row]
-        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+        let key =  SingletonManager.sharedCenter.contentGroupTask.allKeys[indexPath.row]
+        print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id as Any)
         
     }
     
@@ -212,5 +171,4 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         }
         return activityIndicatorView
     }
-
 }

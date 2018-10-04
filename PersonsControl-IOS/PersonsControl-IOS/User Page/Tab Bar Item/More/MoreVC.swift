@@ -29,10 +29,7 @@ class MoreVC:UITableViewController
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
         //self.navigationController?.popToViewController(nextVC!, animated: true)
          self.navigationController?.pushViewController(nextVC!, animated: true)
-//        for key in SingletonManager.sharedCenter.contentGroup
-//        {
-//            SingletonManager.sharedCenter.contentGroup.setNilValueForKey(key.key as! String)
-//        }
+        
         SingletonManager.sharedCenter.contentGroup.removeAllObjects()
         print(SingletonManager.sharedCenter.contentGroup)
         
@@ -41,9 +38,9 @@ class MoreVC:UITableViewController
         
         SingletonManager.sharedCenter.contentPersonalTask.removeAllObjects()
         print(SingletonManager.sharedCenter.contentPersonalTask)
-//        print(SingletonManager.sharedCenter.contentGroup)
-       // self.present(nextVC!, animated: true, completion: nil)
-    //   self.navigationController?.popToRootViewController(animated: true)
+        
+        SingletonManager.sharedCenter.contentGroupTask.removeAllObjects()
+        print(SingletonManager.sharedCenter.contentGroupTask)
         
         try! Auth.auth().signOut()
         print("logout")

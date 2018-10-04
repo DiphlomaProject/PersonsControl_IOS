@@ -51,6 +51,8 @@
 		F478213421400A1C0064E7BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478213321400A1C0064E7BC /* NetworkController.swift */; };
 		F49DD3DA215069FA00C982C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */; };
 		F49DD3DC21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json in Resources */ = {isa = PBXBuildFile; fileRef = F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */; };
+		F4C39E7821661382001DD58B /* GroupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7721661382001DD58B /* GroupTask.swift */; };
+		F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7921661E28001DD58B /* GroupTaskCell.swift */; };
 		F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C1215E3A7D000C7DB3 /* Groups.swift */; };
 		F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */; };
 		F4DB79C9215E3A7E000C7DB3 /* Owners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C3215E3A7E000C7DB3 /* Owners.swift */; };
@@ -135,6 +137,8 @@
 		F478213321400A1C0064E7BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json"; sourceTree = "<group>"; };
+		F4C39E7721661382001DD58B /* GroupTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTask.swift; sourceTree = "<group>"; };
+		F4C39E7921661E28001DD58B /* GroupTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTaskCell.swift; sourceTree = "<group>"; };
 		F4DB79C1215E3A7D000C7DB3 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups_Base.swift; sourceTree = "<group>"; };
 		F4DB79C3215E3A7E000C7DB3 /* Owners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owners.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				F424BA93216577AC00DD753B /* UserTask.swift */,
+				F4C39E7721661382001DD58B /* GroupTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -365,6 +370,32 @@
 			path = "Connect to Api";
 			sourceTree = "<group>";
 		};
+		F4C39E7B21661FA5001DD58B /* Personal  */ = {
+			isa = PBXGroup;
+			children = (
+				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
+				F424BA95216588D800DD753B /* UserTaskCell.swift */,
+			);
+			path = "Personal ";
+			sourceTree = "<group>";
+		};
+		F4C39E7C21661FB8001DD58B /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				F424BA8F21656F3700DD753B /* GroupTaskVC.swift */,
+				F4C39E7921661E28001DD58B /* GroupTaskCell.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		F4C39E7D21661FCD001DD58B /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		F4DB79C0215E3A67000C7DB3 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,11 +428,10 @@
 		F4DB79D3216017D8000C7DB3 /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
-				F424BA8F21656F3700DD753B /* GroupTaskVC.swift */,
-				F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */,
+				F4C39E7B21661FA5001DD58B /* Personal  */,
+				F4C39E7C21661FB8001DD58B /* Group */,
+				F4C39E7D21661FCD001DD58B /* Project */,
 				F424BA8B21656D9000DD753B /* TaskUIPageVC.swift */,
-				F424BA95216588D800DD753B /* UserTaskCell.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -730,6 +760,7 @@
 			files = (
 				F424BA8C21656D9000DD753B /* TaskUIPageVC.swift in Sources */,
 				F424BA632164DADE00DD753B /* DataClass.swift in Sources */,
+				F4C39E7821661382001DD58B /* GroupTask.swift in Sources */,
 				F424BA842165593700DD753B /* UserTo.swift in Sources */,
 				F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */,
 				F4449F3221225F8300EB0600 /* PersonsControl_IOS.xcdatamodeld in Sources */,
@@ -764,6 +795,7 @@
 				F424BA672164DB1700DD753B /* Group_Project.swift in Sources */,
 				F424BA802165593700DD753B /* UserFrom.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,
+				F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */,
 				F4DB79CA215E3A7E000C7DB3 /* Groups_model.swift in Sources */,
 				F424BA7E2165593700DD753B /* Tasks_Base.swift in Sources */,
 				F4DB79CB215E3A7E000C7DB3 /* LoginsGroups.swift in Sources */,
