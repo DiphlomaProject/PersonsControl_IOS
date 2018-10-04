@@ -17,7 +17,7 @@ target 'PersonsControl-IOS' do
     pod 'GooglePlaces'
     pod 'Fabric'
     pod 'Crashlytics'
-   
+    pod 'SideMenu'
     
   target 'PersonsControl-IOSTests' do
     inherit! :search_paths
