@@ -454,7 +454,9 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         let idUser = SingletonManager.sharedCenter.UserClass?.id
         let resultDictionary = NSMutableDictionary()
         let resultDictionaryGroupTask = NSMutableDictionary()
+        let resultDictionaryProjectTask = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
+        
         jsonDictionary.setValue(token, forKey: "token")
         jsonDictionary.setValue(idUser, forKey: "userId")
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
@@ -526,6 +528,31 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                             
                         }
                         SingletonManager.sharedCenter.contentGroupTask = resultDictionaryGroupTask
+                        
+                        
+                        for resultP in ((jsonData?.data?.tasksProjects)!)
+                        {
+                            let projectTask : ProjectTask = ProjectTask()
+                            projectTask.id = resultP.id
+                            projectTask.title = resultP.title
+                            projectTask.desc = resultP.description
+                            projectTask.dateTimeBegin = resultP.dateTimeBegin
+                            projectTask.dateTimeEnd = resultP.dateTimeEnd
+                            projectTask.userFrom = resultP.userFrom?.displayName
+                            projectTask.isComplite = resultP.isComplite
+                            
+                            for projectName in ((jsonData?.data?.projects)!)
+                            {
+                                if(projectName.id == resultP.toProjectId)
+                                {
+                                    projectTask.projectName = projectName.title
+                                }
+                            }
+                            
+                            resultDictionaryProjectTask.setValue(projectTask, forKey: String(projectTask.id!))
+                        }
+                        
+                        SingletonManager.sharedCenter.contentProjectTask = resultDictionaryProjectTask
                         Complete(true, nil)
                     }else{
                         Complete(false,nil)

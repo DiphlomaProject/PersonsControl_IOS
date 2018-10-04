@@ -53,6 +53,8 @@
 		F49DD3DC21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json in Resources */ = {isa = PBXBuildFile; fileRef = F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */; };
 		F4C39E7821661382001DD58B /* GroupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7721661382001DD58B /* GroupTask.swift */; };
 		F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7921661E28001DD58B /* GroupTaskCell.swift */; };
+		F4C39E7F21662A2F001DD58B /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7E21662A2F001DD58B /* ProjectTask.swift */; };
+		F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E8021663306001DD58B /* ProjectTaskCell.swift */; };
 		F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C1215E3A7D000C7DB3 /* Groups.swift */; };
 		F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */; };
 		F4DB79C9215E3A7E000C7DB3 /* Owners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C3215E3A7E000C7DB3 /* Owners.swift */; };
@@ -139,6 +141,8 @@
 		F49DD3DB21506C9800C982C6 /* personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "personscontrol-firebase-crashreporting-g7o5l-95cdbd7177.json"; sourceTree = "<group>"; };
 		F4C39E7721661382001DD58B /* GroupTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTask.swift; sourceTree = "<group>"; };
 		F4C39E7921661E28001DD58B /* GroupTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTaskCell.swift; sourceTree = "<group>"; };
+		F4C39E7E21662A2F001DD58B /* ProjectTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
+		F4C39E8021663306001DD58B /* ProjectTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskCell.swift; sourceTree = "<group>"; };
 		F4DB79C1215E3A7D000C7DB3 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups_Base.swift; sourceTree = "<group>"; };
 		F4DB79C3215E3A7E000C7DB3 /* Owners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owners.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 			children = (
 				F424BA93216577AC00DD753B /* UserTask.swift */,
 				F4C39E7721661382001DD58B /* GroupTask.swift */,
+				F4C39E7E21662A2F001DD58B /* ProjectTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				F424BA9121656F4A00DD753B /* ProjectTaskVC.swift */,
+				F4C39E8021663306001DD58B /* ProjectTaskCell.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				F424BA692164DB3000DD753B /* Project.swift in Sources */,
 				F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */,
 				F424BA6C2164E2B500DD753B /* UserProject.swift in Sources */,
+				F4C39E7F21662A2F001DD58B /* ProjectTask.swift in Sources */,
 				F424BA822165593700DD753B /* TasksPerson.swift in Sources */,
 				F4DB79CC215E3A7E000C7DB3 /* RolesGroups.swift in Sources */,
 				F4DB79DB21601912000C7DB3 /* GroupCell.swift in Sources */,
@@ -795,6 +802,7 @@
 				F424BA672164DB1700DD753B /* Group_Project.swift in Sources */,
 				F424BA802165593700DD753B /* UserFrom.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,
+				F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */,
 				F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */,
 				F4DB79CA215E3A7E000C7DB3 /* Groups_model.swift in Sources */,
 				F424BA7E2165593700DD753B /* Tasks_Base.swift in Sources */,

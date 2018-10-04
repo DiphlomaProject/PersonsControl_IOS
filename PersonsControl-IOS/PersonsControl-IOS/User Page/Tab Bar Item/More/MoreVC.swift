@@ -42,6 +42,9 @@ class MoreVC:UITableViewController
         SingletonManager.sharedCenter.contentGroupTask.removeAllObjects()
         print(SingletonManager.sharedCenter.contentGroupTask)
         
+        
+        SingletonManager.sharedCenter.contentProjectTask.removeAllObjects()
+        print(SingletonManager.sharedCenter.contentProjectTask)
         try! Auth.auth().signOut()
         print("logout")
     }

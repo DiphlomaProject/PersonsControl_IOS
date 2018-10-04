@@ -25,6 +25,8 @@ class SingletonManager {
     var contentProject = NSMutableDictionary()
     var contentPersonalTask = NSMutableDictionary()
     var contentGroupTask = NSMutableDictionary()
+    var contentProjectTask = NSMutableDictionary()
+    
     //Configurations Api
     let base_URL  = "https://178.209.88.110:443/"
     let SignIn_URL =  "api/Users/SignIn"
