@@ -14,7 +14,7 @@ import LocalAuthentication
 class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var tableview: UITableView!
-    
+    var customView = UIView()
     lazy var refreshControl:UIRefreshControl =
         {
             let refreshControl = UIRefreshControl()
@@ -25,7 +25,9 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        customActivityIndicatory(self.view)
+        
+        
+        customActivityIndicatory(self.view, startAnimate: false)
         LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
         tableview.delegate = self
@@ -56,34 +58,7 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
                 }
             }
         })
-        
-        
-        
-//        ServiceApiPost.GetTasksUser(Complete: { (success, loginError) in
-//            if success {
-//
-//                print("tasks")
-//                for key in SingletonManager.sharedCenter.contentPersonalTask
-//                {
-//
-//                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key.key) as! UserTask).title ?? "error" )
-//                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key.key) as! UserTask).desc ?? "error" )
-//                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key.key) as! UserTask).userFrom ?? "error" )
-//
-//                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key.key) as! UserTask).dateTimeBegin ?? "error" )
-//                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key.key) as! UserTask).dateTimeEnd ?? "error" )
-//                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key.key) as! UserTask).isComplite ?? "error" )
-//
-//
-//                }
-//                //
-//
-//            } else {
-//                DispatchQueue.main.async {
-//                    print("error")
-//                }
-//            }
-//        })
+    
     }
     
     @objc func actualData(_ refreshControl:UIRefreshControl)
@@ -143,7 +118,7 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     func setFaceID_TouchID(_ flag: Bool) {
         TouchID()
     }
-    
+  
     func TouchID()
     {
         let context : LAContext = LAContext()
@@ -153,6 +128,8 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
                 if wasCorrect
                 {
                     print("access")
+                   
+                   
                 }else
                 {
                     print("error")
@@ -164,6 +141,7 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         {
             //else
             print("no used")
+        
         }
     }
     
