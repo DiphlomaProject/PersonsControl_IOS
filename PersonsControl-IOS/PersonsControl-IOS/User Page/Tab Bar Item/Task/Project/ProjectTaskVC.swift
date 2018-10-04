@@ -102,7 +102,7 @@ class ProjectTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
+       // self.navigationController?.isNavigationBarHidden = true
         self.ReloadData()
         self.tableview.addSubview(self.refreshControl)
     }

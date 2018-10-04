@@ -30,6 +30,8 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var imgProf: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationController!.navigationBar.topItem!.title = "Profile";
+         self.navigationController?.isNavigationBarHidden = true
         self.email.delegate = self
         self.Role.delegate = self
         self.displayName.delegate = self
@@ -70,7 +72,9 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     }
    
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+       // self.navigationController?.isNavigationBarHidden = false
+        // self.navigationController!.navigationBar.topItem!.title = "Profile";
+         self.navigationController?.isNavigationBarHidden = true
     }
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)

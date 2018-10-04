@@ -26,6 +26,8 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         super.viewDidLoad()
         
         
+        //self.navigationController!.navigationBar.topItem!.title = "My Task's";
+         self.navigationController?.isNavigationBarHidden = true
         customActivityIndicatory(self.view, startAnimate: false)
         LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
@@ -110,6 +112,7 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+      //  self.navigationController!.navigationBar.topItem!.title = "My Task's";
         self.ReloadData()
         self.tableview.addSubview(self.refreshControl)
     }

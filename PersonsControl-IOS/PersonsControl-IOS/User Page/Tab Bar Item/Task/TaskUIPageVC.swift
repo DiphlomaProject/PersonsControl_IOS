@@ -24,6 +24,7 @@ class TaskUIPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.navigationController!.navigationBar.topItem!.title = "My Task's";
         self.dataSource = self
         self.delegate = self
         
@@ -40,6 +41,12 @@ class TaskUIPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageVi
         configurePageControl()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // self.navigationController?.isNavigationBarHidden = true
+      //   self.navigationController!.navigationBar.topItem!.title = "My Task's";
+        
     }
     
     func configurePageControl() {
