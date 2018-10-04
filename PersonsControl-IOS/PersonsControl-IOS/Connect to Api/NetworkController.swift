@@ -448,7 +448,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             }.resume()
     }//getimege
     
-    static  func GetTasksUser(Complete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+    static  func GetTasksUser(taskPerson: Bool , taskGroup: Bool , taskProject: Bool ,Complete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
         
         let token = SingletonManager.sharedCenter.UserClass?.token
         let idUser = SingletonManager.sharedCenter.UserClass?.id
@@ -456,7 +456,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
         let resultDictionaryGroupTask = NSMutableDictionary()
         let resultDictionaryProjectTask = NSMutableDictionary()
         let jsonDictionary = NSMutableDictionary()
-        
+        let flagTaskPersonal : Bool = true
         jsonDictionary.setValue(token, forKey: "token")
         jsonDictionary.setValue(idUser, forKey: "userId")
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
@@ -488,8 +488,10 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                 DispatchQueue.main.async {
                     if(jsonData?.code == 202)
                     {
-                        for result in (jsonData?.data?.tasksPerson)!
+                        if(String(flagTaskPersonal) == String (taskPerson))
                         {
+                        for result in (jsonData?.data?.tasksPerson)!
+                            {
                             let task : UserTask = UserTask()
                             task.id = result.id
                             task.title = result.title
@@ -500,12 +502,13 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                             task.userFrom = result.userFrom?.displayName
                             
                             resultDictionary.setValue(task, forKey: String(task.id!))
-                        }
+                            }
                         SingletonManager.sharedCenter.contentPersonalTask = resultDictionary
                         
+                    }
                         
-                        
-                        
+                         if(String(flagTaskPersonal) == String (taskGroup))
+                         {
                         for resultG in (jsonData?.data?.tasksGroups)!
                         {
                             let groupTask : GroupTask = GroupTask()
@@ -529,7 +532,9 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         }
                         SingletonManager.sharedCenter.contentGroupTask = resultDictionaryGroupTask
                         
-                        
+                        }
+                         if(String(flagTaskPersonal) == String (taskProject))
+                         {
                         for resultP in ((jsonData?.data?.tasksProjects)!)
                         {
                             let projectTask : ProjectTask = ProjectTask()
@@ -553,6 +558,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         }
                         
                         SingletonManager.sharedCenter.contentProjectTask = resultDictionaryProjectTask
+                        }
                         Complete(true, nil)
                     }else{
                         Complete(false,nil)

@@ -42,7 +42,7 @@ class UserTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     {
         
         customActivityIndicatory(self.view, startAnimate: true)
-        ServiceApiPost.GetTasksUser(Complete: { (success, loginError)  in
+        ServiceApiPost.GetTasksUser(taskPerson: true , taskGroup: true , taskProject: true, Complete: { (success, loginError)  in
             if success {
                 self.customActivityIndicatory(self.view, startAnimate: false)
                 self.tableview.reloadData()

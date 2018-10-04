@@ -22,7 +22,7 @@ class ProjectTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         customActivityIndicatory(self.view, startAnimate: false)
-        LoadingNewData()
+        //LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
         tableview.delegate = self
         tableview.dataSource = self
@@ -35,7 +35,7 @@ class ProjectTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     {
         
         customActivityIndicatory(self.view, startAnimate: true)
-        ServiceApiPost.GetTasksUser(Complete: { (success, loginError)  in
+        ServiceApiPost.GetTasksUser(taskPerson: false , taskGroup: false , taskProject: true,Complete: { (success, loginError)  in
             if success {
                 self.customActivityIndicatory(self.view, startAnimate: false)
                 self.tableview.reloadData()
