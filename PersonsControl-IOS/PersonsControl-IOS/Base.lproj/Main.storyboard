@@ -18,11 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_1" translatesAutoresizingMaskIntoConstraints="NO" id="Fi1-HN-ZNP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_1" translatesAutoresizingMaskIntoConstraints="NO" id="Fi1-HN-ZNP">
+                                <rect key="frame" x="0.0" y="42" width="414" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="1vX-Zw-K1z">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="1vX-Zw-K1z">
                                 <rect key="frame" x="28" y="283" width="366" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Allan Patrick" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m9b-dh-IJt">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
@@ -152,27 +154,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="face15" translatesAutoresizingMaskIntoConstraints="NO" id="LNJ-OM-Wep">
-                                <rect key="frame" x="132" y="125" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="2TZ-Sf-3I4"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="255" verticalHuggingPriority="255" fixedFrame="YES" image="face15" translatesAutoresizingMaskIntoConstraints="NO" id="LNJ-OM-Wep">
+                                <rect key="frame" x="149" y="114" width="124" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1061849334" green="0.071494746440000007" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="1vX-Zw-K1z" firstAttribute="leading" secondItem="c7N-Gd-RYL" secondAttribute="leading" constant="28" id="2co-QS-Wrp"/>
-                            <constraint firstItem="1vX-Zw-K1z" firstAttribute="top" secondItem="LNJ-OM-Wep" secondAttribute="bottom" constant="8" symbolic="YES" id="2fI-3C-SMu"/>
-                            <constraint firstItem="Fi1-HN-ZNP" firstAttribute="centerX" secondItem="LNJ-OM-Wep" secondAttribute="centerX" id="7IW-9b-xHU"/>
-                            <constraint firstItem="LNJ-OM-Wep" firstAttribute="leading" secondItem="c7N-Gd-RYL" secondAttribute="leading" constant="132" id="Ajn-qj-xxL"/>
-                            <constraint firstItem="1vX-Zw-K1z" firstAttribute="trailing" secondItem="l0n-CY-vrh" secondAttribute="trailingMargin" id="C9d-LC-bkx"/>
-                            <constraint firstItem="Fi1-HN-ZNP" firstAttribute="leading" secondItem="l0n-CY-vrh" secondAttribute="leading" id="VwN-5c-QbY"/>
-                            <constraint firstItem="LNJ-OM-Wep" firstAttribute="top" secondItem="c7N-Gd-RYL" secondAttribute="top" constant="61" id="XDz-lG-yDD"/>
-                            <constraint firstAttribute="trailing" secondItem="Fi1-HN-ZNP" secondAttribute="trailing" id="awc-S0-34U"/>
-                            <constraint firstItem="Fi1-HN-ZNP" firstAttribute="top" secondItem="l0n-CY-vrh" secondAttribute="top" id="jZv-g9-Zkq"/>
-                            <constraint firstItem="1vX-Zw-K1z" firstAttribute="top" secondItem="Fi1-HN-ZNP" secondAttribute="bottom" constant="49" id="yf6-eV-0U0"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="c7N-Gd-RYL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="T4V-7y-LLb"/>
@@ -207,7 +195,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aPa-mE-Fxi" firstAttribute="top" secondItem="BFf-kE-l4o" secondAttribute="top" id="MPz-Pp-cZC"/>
                             <constraint firstAttribute="trailing" secondItem="aPa-mE-Fxi" secondAttribute="trailing" id="ZhT-ZM-EmN"/>
@@ -410,6 +398,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="689-ce-KPo" secondAttribute="height" multiplier="414:623" id="ueP-Ya-IMm"/>
                                 </constraints>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="107" id="naA-h4-FRv" customClass="GroupCell" customModule="PersonsControl_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="107"/>
@@ -527,6 +516,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZZW-lC-fQq" secondAttribute="height" multiplier="138:223" id="ePb-Np-WmS"/>
                                 </constraints>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserTaskCell" rowHeight="257" id="1sF-nJ-Lee" customClass="UserTaskCell" customModule="PersonsControl_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="257"/>
@@ -741,6 +731,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sIk-Xe-PAB" secondAttribute="height" multiplier="138:223" id="SeM-Kz-r5x"/>
                                 </constraints>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProjectTaskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProjectTaskCell" rowHeight="273" id="glr-Do-VEq" customClass="ProjectTaskCell" customModule="PersonsControl_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="273"/>
@@ -959,6 +950,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w8g-Ya-9w4" secondAttribute="height" multiplier="138:223" id="Vn4-oJ-ZdP"/>
                                 </constraints>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GroupTaskCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroupTaskCell" rowHeight="283" id="pv5-hA-3gZ" customClass="GroupTaskCell" customModule="PersonsControl_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="283"/>
