@@ -10,10 +10,15 @@ import UIKit
 import SideMenu
 class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
  
-
     
+    var today : String! = ""
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        today = getTodayString()
+        SingletonManager.sharedCenter.time = today
+        print(SingletonManager.sharedCenter.time)
         ServiceApiPost.GetImageUser(regComplete: { (success, loginError) in
             if success {
                 print("image load")
@@ -120,29 +125,163 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
 //        cell.until_time.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd
 //
 //        cell.status.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description
+        
+        //2018-10-6 16T:59:11
+        //2018-10-06T00:00:00
+        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
+        print("time" + SingletonManager.sharedCenter.time)
+        
+//        if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd != SingletonManager.sharedCenter.time)
+//        {
+            if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description == "false")
+            {
+                if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd != SingletonManager.sharedCenter.time)
+                {
+                let fontSize: CGFloat = 14
+                let label = UILabel()
+                label.font = UIFont.systemFont(ofSize: fontSize)
+                label.textAlignment = .center
+                label.textColor = UIColor.white
+                label.backgroundColor = UIColor.orange
+                // Add count to label and size to fit
+                label.text = "\("In Progress")"
+                label.sizeToFit()
+                // Adjust frame to be square for single digits or elliptical for numbers > 9
+                var frame: CGRect = label.frame
+                frame.size.height += CGFloat(Int(0.4 * fontSize))
+                frame.size.width = (15 <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
+                label.frame = frame
+                // Set radius and clip to bounds
+                label.layer.cornerRadius = frame.size.height / 2.0
+                label.clipsToBounds = true
+                // Show label in accessory view and remove disclosure
+                cell.accessoryView = label
+                cell.accessoryType = .none
+                    
+                    let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
+                        self.MessagerAlert(mitTitel: "Done")
+                        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        return true
+                    })
+                    
+                    let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
+                        self.MessagerAlert(mitTitel: "Deteil")
+                        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        return true
+                    })
+                    cell.rightSwipeSettings.transition = .rotate3D
+                    
+                    rightButton.setPadding(30)
+                    cell.rightExpansion.buttonIndex = 0
+                    cell.rightButtons = [rightButton,right2Button]
+                    right2Button.setPadding(10)
+                } else
+                {
+                    let fontSize: CGFloat = 14
+                    let label = UILabel()
+                    label.font = UIFont.systemFont(ofSize: fontSize)
+                    label.textAlignment = .center
+                    label.textColor = UIColor.black
+                    label.backgroundColor = UIColor.red
+                    // Add count to label and size to fit
+                    label.text = "\("Missing time")"
+                    label.sizeToFit()
+                    // Adjust frame to be square for single digits or elliptical for numbers > 9
+                    var frame: CGRect = label.frame
+                    frame.size.height += CGFloat(Int(0.4 * fontSize))
+                    frame.size.width = (15 <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
+                    label.frame = frame
+                    // Set radius and clip to bounds
+                    label.layer.cornerRadius = frame.size.height / 2.0
+                    label.clipsToBounds = true
+                    // Show label in accessory view and remove disclosure
+                    cell.accessoryView = label
+                    cell.accessoryType = .none
+                   
+                    
+                    let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
+                        self.MessagerAlert(mitTitel: "Deteil")
+                        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        return true
+                    })
+                    cell.rightSwipeSettings.transition = .rotate3D
+                    
+                    rightButton.setPadding(30)
+                    cell.rightExpansion.buttonIndex = 0
+                    cell.rightButtons = [rightButton]
+                    rightButton.setPadding(10)
+                }
+            } else
+            {
+                let fontSize: CGFloat = 14
+                let label = UILabel()
+                label.font = UIFont.systemFont(ofSize: fontSize)
+                label.textAlignment = .center
+                label.textColor = UIColor.black
+                label.backgroundColor = UIColor.green
+                // Add count to label and size to fit
+                label.text = "\("Completed")"
+                label.sizeToFit()
+                // Adjust frame to be square for single digits or elliptical for numbers > 9
+                var frame: CGRect = label.frame
+                frame.size.height += CGFloat(Int(0.4 * fontSize))
+                frame.size.width = (15 <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
+                label.frame = frame
+                // Set radius and clip to bounds
+                label.layer.cornerRadius = frame.size.height / 2.0
+                label.clipsToBounds = true
+                // Show label in accessory view and remove disclosure
+                cell.accessoryView = label
+                cell.accessoryType = .none
+                
+                
+                let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
+                    self.MessagerAlert(mitTitel: "Deteil")
+                    print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                    return true
+                })
+                cell.rightSwipeSettings.transition = .rotate3D
+                
+                rightButton.setPadding(30)
+                cell.rightExpansion.buttonIndex = 0
+                cell.rightButtons = [rightButton]
+                rightButton.setPadding(10)
+            }
+
+        
+       
+     
+       // var test : String = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd!
+       
+//        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
+        
         cell.textLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).title
-        cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).desc
+        cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).userFrom
         
         
         //info
         /////////// custom
-                let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
-                    self.MessagerAlert(mitTitel: "Done")
-                    return true
-                })
         
-        let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
-            self.MessagerAlert(mitTitel: "Deteil")
-            return true
-        })
-        cell.rightSwipeSettings.transition = .rotate3D
-        
-                rightButton.setPadding(30)
-                cell.rightExpansion.buttonIndex = 0
-                cell.rightButtons = [rightButton,right2Button]
-                right2Button.setPadding(10)
         
         return cell
+    }
+    func getTodayString() -> String{
+        
+        let date = Date()
+        let calender = Calendar.current
+        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        
+        let year = components.year
+        let month = components.month
+        let day = components.day
+      //  let hour = components.hour
+      //  let minute = components.minute
+       // let second = components.second
+        
+        let today_string = String(year!) + "-"  + String(month!) + "-" + "0" + String(day!) + "T" + "00"  + ":" + "00" + ":" +  "00"
+        //2018-10-6 16T:59:11
+        //2018-10-06T00:00:00
+        return today_string
     }
     
     func MessagerAlert(mitTitel : String){
@@ -202,21 +341,11 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
     
     
 }
-extension TableViewController: UISideMenuNavigationControllerDelegate {
 
-    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Appearing! (animated: \(animated))")
-    }
-
-    func sideMenuDidAppear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Appeared! (animated: \(animated))")
-    }
-
-    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Disappearing! (animated: \(animated))")
-    }
-
-    func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Disappeared! (animated: \(animated))")
+extension String {
+    var lines: [String] {
+        var result: [String] = []
+        enumerateLines { line, _ in result.append(line) }
+        return result
     }
 }
