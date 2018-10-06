@@ -135,7 +135,7 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
 //        {
             if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description == "false")
             {
-                if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd != SingletonManager.sharedCenter.time)
+                if(SingletonManager.sharedCenter.time != (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd)
                 {
                 let fontSize: CGFloat = 14
                 let label = UILabel()
@@ -253,7 +253,7 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
      
        // var test : String = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd!
        
-//        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
+        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
         
         cell.textLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).title
         cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).userFrom

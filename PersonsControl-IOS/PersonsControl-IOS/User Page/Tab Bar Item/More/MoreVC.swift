@@ -56,6 +56,8 @@ class MoreVC:UITableViewController
         print(SingletonManager.sharedCenter.contentProjectTask)
         
         SingletonManager.sharedCenter.ImageProfile = nil
+        
+        SingletonManager.sharedCenter.time = nil
         try! Auth.auth().signOut()
         print("logout")
     }
