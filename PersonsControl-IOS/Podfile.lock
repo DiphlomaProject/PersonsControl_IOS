@@ -126,7 +126,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - GoogleSignIn
-  - SideMenu
+  - SideMenu (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -179,6 +179,6 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
 
-PODFILE CHECKSUM: 47009383a988578cc532b1ec7344f6f3a5331a42
+PODFILE CHECKSUM: f99fbd6dbe40ac587fad9d83542e5053fed46f04
 
 COCOAPODS: 1.5.3

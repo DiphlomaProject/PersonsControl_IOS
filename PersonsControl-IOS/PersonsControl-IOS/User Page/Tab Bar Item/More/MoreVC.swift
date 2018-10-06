@@ -13,7 +13,7 @@ import GoogleSignIn
 
 class MoreVC:UITableViewController
 {
-    
+     @IBOutlet weak var menubtn: UIBarButtonItem!
     override func viewWillAppear(_ animated: Bool) {
        // self.navigationController?.isNavigationBarHidden = false
         // self.navigationItem.title = "More"
@@ -24,6 +24,12 @@ class MoreVC:UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.navigationController?.isNavigationBarHidden = true
+        if self.revealViewController() != nil
+        {
+            menubtn.target = self.revealViewController()
+            menubtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
     }
     

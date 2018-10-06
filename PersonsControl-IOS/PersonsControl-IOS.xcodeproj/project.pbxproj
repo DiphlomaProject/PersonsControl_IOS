@@ -55,6 +55,12 @@
 		F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7921661E28001DD58B /* GroupTaskCell.swift */; };
 		F4C39E7F21662A2F001DD58B /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7E21662A2F001DD58B /* ProjectTask.swift */; };
 		F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E8021663306001DD58B /* ProjectTaskCell.swift */; };
+		F4C39E8E2167CF10001DD58B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E8D2167CF10001DD58B /* TableViewController.swift */; };
+		F4C39E942167CFD0001DD58B /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E902167CFD0001DD58B /* MGSwipeButton.m */; };
+		F4C39E952167CFD0001DD58B /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E932167CFD0001DD58B /* MGSwipeTableCell.m */; };
+		F4C39EA221681923001DD58B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA121681923001DD58B /* SWRevealViewController.m */; };
+		F4C39EA421681E3F001DD58B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA321681E3F001DD58B /* HomePage.swift */; };
+		F4C39EAA21683469001DD58B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA921683469001DD58B /* SettingsVC.swift */; };
 		F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C1215E3A7D000C7DB3 /* Groups.swift */; };
 		F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */; };
 		F4DB79C9215E3A7E000C7DB3 /* Owners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C3215E3A7E000C7DB3 /* Owners.swift */; };
@@ -143,6 +149,16 @@
 		F4C39E7921661E28001DD58B /* GroupTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTaskCell.swift; sourceTree = "<group>"; };
 		F4C39E7E21662A2F001DD58B /* ProjectTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
 		F4C39E8021663306001DD58B /* ProjectTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskCell.swift; sourceTree = "<group>"; };
+		F4C39E892167CD3C001DD58B /* PersonsControl-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PersonsControl-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4C39E8D2167CF10001DD58B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F4C39E902167CFD0001DD58B /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		F4C39E912167CFD0001DD58B /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		F4C39E922167CFD0001DD58B /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		F4C39E932167CFD0001DD58B /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		F4C39EA021681922001DD58B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		F4C39EA121681923001DD58B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F4C39EA321681E3F001DD58B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		F4C39EA921683469001DD58B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F4DB79C1215E3A7D000C7DB3 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups_Base.swift; sourceTree = "<group>"; };
 		F4DB79C3215E3A7E000C7DB3 /* Owners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owners.swift; sourceTree = "<group>"; };
@@ -309,6 +325,8 @@
 				F49DD3D9215069F900C982C6 /* GoogleService-Info.plist */,
 				F4449F2921225F8300EB0600 /* AppDelegate.swift */,
 				F4DB79D1215E7730000C7DB3 /* PersonsControl-IOS.entitlements */,
+				F4C39E892167CD3C001DD58B /* PersonsControl-IOS-Bridging-Header.h */,
+				F4C39E8F2167CFAE001DD58B /* Objective-c support file */,
 			);
 			path = "PersonsControl-IOS";
 			sourceTree = "<group>";
@@ -348,6 +366,7 @@
 			children = (
 				F4449F2B21225F8300EB0600 /* LoginVC.swift */,
 				F46CD77F2148728E00EC4675 /* RegistrationVC.swift */,
+				F4C39EA321681E3F001DD58B /* HomePage.swift */,
 				F46CD783214886CA00EC4675 /* Tab Bar Item */,
 			);
 			path = "User Page";
@@ -378,6 +397,7 @@
 		F4C39E7B21661FA5001DD58B /* Personal  */ = {
 			isa = PBXGroup;
 			children = (
+				F4C39E8D2167CF10001DD58B /* TableViewController.swift */,
 				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
 				F424BA95216588D800DD753B /* UserTaskCell.swift */,
 			);
@@ -400,6 +420,19 @@
 				F4C39E8021663306001DD58B /* ProjectTaskCell.swift */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		F4C39E8F2167CFAE001DD58B /* Objective-c support file */ = {
+			isa = PBXGroup;
+			children = (
+				F4C39EA021681922001DD58B /* SWRevealViewController.h */,
+				F4C39EA121681923001DD58B /* SWRevealViewController.m */,
+				F4C39E912167CFD0001DD58B /* MGSwipeButton.h */,
+				F4C39E902167CFD0001DD58B /* MGSwipeButton.m */,
+				F4C39E922167CFD0001DD58B /* MGSwipeTableCell.h */,
+				F4C39E932167CFD0001DD58B /* MGSwipeTableCell.m */,
+			);
+			path = "Objective-c support file";
 			sourceTree = "<group>";
 		};
 		F4DB79C0215E3A67000C7DB3 /* Groups */ = {
@@ -472,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DB79D8216018A6000C7DB3 /* MoreVC.swift */,
+				F4C39EA921683469001DD58B /* SettingsVC.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -551,6 +585,7 @@
 				TargetAttributes = {
 					F4449F2521225F8300EB0600 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -777,6 +812,7 @@
 				F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */,
 				F424BA7F2165593700DD753B /* TasksProjects.swift in Sources */,
 				F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */,
+				F4C39EA221681923001DD58B /* SWRevealViewController.m in Sources */,
 				F44BFD52214963FB003DBAC9 /* GroupsVC.swift in Sources */,
 				F4DB79D9216018A6000C7DB3 /* MoreVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */,
@@ -784,8 +820,10 @@
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
 				F424BA8E21656F1E00DD753B /* UserTaskVC.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
+				F4C39EA421681E3F001DD58B /* HomePage.swift in Sources */,
 				F4DB79CF215E5118000C7DB3 /* UserGroups.swift in Sources */,
 				F424BA9021656F3700DD753B /* GroupTaskVC.swift in Sources */,
+				F4C39E942167CFD0001DD58B /* MGSwipeButton.m in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
 				F424BA692164DB3000DD753B /* Project.swift in Sources */,
 				F46CD7802148728E00EC4675 /* RegistrationVC.swift in Sources */,
@@ -804,11 +842,14 @@
 				F424BA672164DB1700DD753B /* Group_Project.swift in Sources */,
 				F424BA802165593700DD753B /* UserFrom.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,
+				F4C39E952167CFD0001DD58B /* MGSwipeTableCell.m in Sources */,
+				F4C39EAA21683469001DD58B /* SettingsVC.swift in Sources */,
 				F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */,
 				F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */,
 				F4DB79CA215E3A7E000C7DB3 /* Groups_model.swift in Sources */,
 				F424BA7E2165593700DD753B /* Tasks_Base.swift in Sources */,
 				F4DB79CB215E3A7E000C7DB3 /* LoginsGroups.swift in Sources */,
+				F4C39E8E2167CF10001DD58B /* TableViewController.swift in Sources */,
 				F424BA652164DAFE00DD753B /* Customer.swift in Sources */,
 				F424BA9221656F4A00DD753B /* ProjectTaskVC.swift in Sources */,
 				F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */,
@@ -986,6 +1027,7 @@
 			baseConfigurationReference = FE2EA38EC11B4AB9EE288EEF /* Pods-PersonsControl-IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "PersonsControl-IOS/PersonsControl-IOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -998,6 +1040,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "DiphlomaProject.PersonsControl-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PersonsControl-IOS/PersonsControl-IOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1008,6 +1052,7 @@
 			baseConfigurationReference = 2608A22237878D93EABCF821 /* Pods-PersonsControl-IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "PersonsControl-IOS/PersonsControl-IOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VRTL65JL49;
@@ -1019,6 +1064,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "DiphlomaProject.PersonsControl-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PersonsControl-IOS/PersonsControl-IOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

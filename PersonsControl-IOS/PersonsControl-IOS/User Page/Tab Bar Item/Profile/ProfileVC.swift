@@ -12,7 +12,7 @@ import Firebase
 import GoogleSignIn
 
 class ProfileVC: UIViewController,UITextFieldDelegate {
-
+ @IBOutlet weak var menubtn: UIBarButtonItem!
     @IBOutlet weak var displayName: UITextField!
     
     @IBOutlet weak var email: UITextField!
@@ -30,6 +30,12 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var imgProf: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.revealViewController() != nil
+        {
+            menubtn.target = self.revealViewController()
+            menubtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         self.email.delegate = self
         self.Role.delegate = self
         self.displayName.delegate = self

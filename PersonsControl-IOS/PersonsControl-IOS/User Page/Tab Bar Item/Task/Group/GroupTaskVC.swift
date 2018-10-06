@@ -9,7 +9,7 @@
 import UIKit
 
 class GroupTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+@IBOutlet weak var menubtn: UIBarButtonItem!
     @IBOutlet weak var tableview: UITableView!
     lazy var refreshControl:UIRefreshControl =
         {
@@ -21,6 +21,12 @@ class GroupTaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.revealViewController() != nil
+        {
+            menubtn.target = self.revealViewController()
+            menubtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         customActivityIndicatory(self.view, startAnimate: false)
        // LoadingNewData()
         self.tableview.addSubview(self.refreshControl)

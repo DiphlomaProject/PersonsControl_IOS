@@ -14,7 +14,7 @@ import GoogleSignIn
 class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableview: UITableView!
-    
+    @IBOutlet weak var menubtn: UIBarButtonItem!
     lazy var refreshControl:UIRefreshControl =
         {
             let refreshControl = UIRefreshControl()
@@ -25,7 +25,12 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if self.revealViewController() != nil
+        {
+            menubtn.target = self.revealViewController()
+            menubtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         customActivityIndicatory(self.view)
         LoadingNewData()
         self.tableview.addSubview(self.refreshControl)
