@@ -54,6 +54,9 @@ class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFie
             //neeed fix
            print("error")
         }
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

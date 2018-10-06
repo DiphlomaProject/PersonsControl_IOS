@@ -45,10 +45,7 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
         self.Country.delegate = self
         
         
-        ServiceApiPost.GetImageUser(regComplete: { (success, loginError) in
-            if success {
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+       
                     self.imgProf.layer.cornerRadius = self.imgProf.frame.size.width/2
                     self.imgProf.clipsToBounds = true
                     self.displayName.text = SingletonManager.sharedCenter.UserClass?.DisplayName
@@ -59,19 +56,11 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
                     self.city.text = SingletonManager.sharedCenter.UserClass?.City
                     self.Country.text = SingletonManager.sharedCenter.UserClass?.Country
                     self.imgProf.image = SingletonManager.sharedCenter.ImageProfile
-                    //self.myactivityindecator.startAnimating()
+                   
                     
                     
                     
-                    
-                }
-                
-            } else {
-                DispatchQueue.main.async {
-                    print("error")
-                }
-            }
-        })
+        
       
     }
    

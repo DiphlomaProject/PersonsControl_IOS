@@ -1867,21 +1867,44 @@
             </objects>
             <point key="canvasLocation" x="-9074" y="3448"/>
         </scene>
-        <!--Side Menu Table View Controller-->
+        <!--MenuVC-->
         <scene sceneID="A89-qq-Jq4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXE-FG-c46" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="RkO-Rv-iCb" customClass="SideMenuTableViewController" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="RkO-Rv-iCb" customClass="MenuVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pV7-c9-vyX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="8" maxY="0.0"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="1ZQ-cj-UAo">
-                            <rect key="frame" x="0.0" y="308" width="414" height="0.0"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="8pA-j3-F7j">
+                            <rect key="frame" x="0.0" y="308" width="414" height="192"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user" translatesAutoresizingMaskIntoConstraints="NO" id="dvp-84-poR">
+                                    <rect key="frame" x="68" y="46" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Xgw-gp-MyU"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQI-93-Zet">
+                                    <rect key="frame" x="51" y="150" width="134" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="dvp-84-poR" firstAttribute="centerX" secondItem="PQI-93-Zet" secondAttribute="centerX" id="4ZJ-8q-CbU"/>
+                                <constraint firstItem="PQI-93-Zet" firstAttribute="leading" secondItem="8pA-j3-F7j" secondAttribute="leading" constant="51" id="RDk-be-Yq0"/>
+                                <constraint firstAttribute="bottom" secondItem="PQI-93-Zet" secondAttribute="bottom" constant="21" id="WmQ-8c-oLI"/>
+                                <constraint firstItem="dvp-84-poR" firstAttribute="top" secondItem="8pA-j3-F7j" secondAttribute="top" constant="46" id="c57-iS-ZPp"/>
+                                <constraint firstItem="dvp-84-poR" firstAttribute="centerY" secondItem="8pA-j3-F7j" secondAttribute="centerY" id="iWT-7X-cl4"/>
+                                <constraint firstItem="dvp-84-poR" firstAttribute="leading" secondItem="8pA-j3-F7j" secondAttribute="leading" constant="68" id="lsD-V3-x1N"/>
+                                <constraint firstItem="PQI-93-Zet" firstAttribute="top" secondItem="dvp-84-poR" secondAttribute="bottom" constant="4" id="y6N-pg-4Vj"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="OPy-uG-3Fo">
@@ -2042,9 +2065,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="OsB-GK-xop"/>
+                    <connections>
+                        <outlet property="imageUser" destination="dvp-84-poR" id="8BN-Xo-eA8"/>
+                        <outlet property="userName" destination="PQI-93-Zet" id="6r8-P4-PkS"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-7104" y="3448"/>
+            <point key="canvasLocation" x="-7104.347826086957" y="3447.554347826087"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="EhJ-aZ-KzJ">
@@ -2067,6 +2094,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default-user" width="165" height="165"/>
         <image name="face15" width="300" height="300"/>
         <image name="glaz" width="1467" height="879"/>
         <image name="login_1" width="5163" height="3675"/>
@@ -2074,6 +2102,6 @@
         <image name="menu" width="20" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8ZH-lp-rmK"/>
+        <segue reference="9Ga-qt-6La"/>
     </inferredMetricsTieBreakers>
 </document>

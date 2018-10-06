@@ -61,6 +61,7 @@
 		F4C39EA221681923001DD58B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA121681923001DD58B /* SWRevealViewController.m */; };
 		F4C39EA421681E3F001DD58B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA321681E3F001DD58B /* HomePage.swift */; };
 		F4C39EAA21683469001DD58B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA921683469001DD58B /* SettingsVC.swift */; };
+		F4C39EAC216846C2001DD58B /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EAB216846C2001DD58B /* MenuVC.swift */; };
 		F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C1215E3A7D000C7DB3 /* Groups.swift */; };
 		F4DB79C8215E3A7E000C7DB3 /* Groups_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */; };
 		F4DB79C9215E3A7E000C7DB3 /* Owners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB79C3215E3A7E000C7DB3 /* Owners.swift */; };
@@ -159,6 +160,7 @@
 		F4C39EA121681923001DD58B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		F4C39EA321681E3F001DD58B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		F4C39EA921683469001DD58B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		F4C39EAB216846C2001DD58B /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F4DB79C1215E3A7D000C7DB3 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F4DB79C2215E3A7E000C7DB3 /* Groups_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups_Base.swift; sourceTree = "<group>"; };
 		F4DB79C3215E3A7E000C7DB3 /* Owners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owners.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				F4449F2B21225F8300EB0600 /* LoginVC.swift */,
 				F46CD77F2148728E00EC4675 /* RegistrationVC.swift */,
 				F4C39EA321681E3F001DD58B /* HomePage.swift */,
+				F4C39EAB216846C2001DD58B /* MenuVC.swift */,
 				F46CD783214886CA00EC4675 /* Tab Bar Item */,
 			);
 			path = "User Page";
@@ -842,6 +845,7 @@
 				F424BA672164DB1700DD753B /* Group_Project.swift in Sources */,
 				F424BA802165593700DD753B /* UserFrom.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,
+				F4C39EAC216846C2001DD58B /* MenuVC.swift in Sources */,
 				F4C39E952167CFD0001DD58B /* MGSwipeTableCell.m in Sources */,
 				F4C39EAA21683469001DD58B /* SettingsVC.swift in Sources */,
 				F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */,

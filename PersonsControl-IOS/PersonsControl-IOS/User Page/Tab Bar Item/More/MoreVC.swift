@@ -54,6 +54,8 @@ class MoreVC:UITableViewController
         
         SingletonManager.sharedCenter.contentProjectTask.removeAllObjects()
         print(SingletonManager.sharedCenter.contentProjectTask)
+        
+        SingletonManager.sharedCenter.ImageProfile = nil
         try! Auth.auth().signOut()
         print("logout")
     }

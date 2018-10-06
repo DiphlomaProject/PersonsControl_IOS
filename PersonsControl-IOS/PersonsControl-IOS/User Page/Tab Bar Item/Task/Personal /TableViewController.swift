@@ -14,7 +14,16 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ServiceApiPost.GetImageUser(regComplete: { (success, loginError) in
+            if success {
+                print("image load")
+                
+            } else {
+                DispatchQueue.main.async {
+                    print("error")
+                }
+            }
+        })
          refreshControl = UIRefreshControl()
         refreshControl =
             {
