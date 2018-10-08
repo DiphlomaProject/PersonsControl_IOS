@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="JhF-77-Brd" kind="relationship" relationship="rootViewController" id="DAG-Xh-iE3"/>
@@ -34,7 +37,15 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="are-oF-Tjd">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="rzv-04-Liy" kind="relationship" relationship="rootViewController" id="GpP-RX-BCI"/>
@@ -55,6 +66,8 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfO-Fo-BF0">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="UTm-hc-DvV" kind="embed" id="EV6-9N-C7e"/>
                                 </connections>
@@ -64,7 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="0XW-01-gSO"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Project Task's" id="Qro-zl-ueW">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="PQn-sn-fbX">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="PQn-sn-fbX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -84,6 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyProjectTaskCell" textLabel="89i-l5-fC5" detailTextLabel="soD-TD-Yqj" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="2Zv-Ce-43c" customClass="MGSwipeTableCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="65"/>
@@ -326,6 +340,9 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="kbI-lY-RvW" kind="relationship" relationship="rootViewController" id="yJQ-GD-CIp"/>
@@ -344,6 +361,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ghQ-D9-Srb" kind="relationship" relationship="rootViewController" id="iah-o6-e3P"/>
@@ -361,6 +384,9 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="olV-Y3-sYY" kind="relationship" relationship="rootViewController" id="LHd-Ai-GD4"/>
@@ -421,6 +447,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="gcj-Zd-Ssz" kind="relationship" relationship="rootViewController" id="Vwn-Gp-FSG"/>
@@ -1150,6 +1179,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="hkO-LA-BUb" kind="relationship" relationship="rootViewController" id="7rZ-3P-4ed"/>
@@ -2610,6 +2645,171 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5FW-jx-nI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3084" y="4255"/>
+        </scene>
+        <!--My Project Task DetailVC-->
+        <scene sceneID="HOa-Up-z1o">
+            <objects>
+                <viewController storyboardIdentifier="MyProjectTaskDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W6c-NH-dIs" customClass="MyProjectTaskDetailVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Czj-Va-SkT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="nAq-Hx-vAL">
+                                <rect key="frame" x="16" y="100" width="374" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="fof-sb-Kdx"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="wPu-64-ylo">
+                                <rect key="frame" x="20" y="44" width="374" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UC6-zk-sf2">
+                                <rect key="frame" x="60" y="661" width="294" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="uF3-gW-je4"/>
+                                </constraints>
+                                <state key="normal" title="ok">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="JLO-5n-eSE">
+                                <rect key="frame" x="16" y="130" width="366" height="319"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5XV-1J-4yU" customClass="MDCTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="topSide" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomSide" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rbw-h3-qpp" customClass="MDCIntrinsicHeightTextView">
+                                        <rect key="frame" x="0.0" y="52" width="366" height="59"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="3cW-7k-MRg">
+                                        <rect key="frame" x="0.0" y="146" width="366" height="17"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="userFrom" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kD4-SI-odw" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="cAO-fY-TtT">
+                                        <rect key="frame" x="0.0" y="198" width="366" height="17"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data start" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qp7-pf-XYi" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="YHw-JQ-OYb">
+                                        <rect key="frame" x="0.0" y="250" width="366" height="17"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data end" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXx-qZ-gOv" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="s0V-rO-WJ6">
+                                        <rect key="frame" x="0.0" y="302" width="366" height="17"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Status" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09U-RY-aRB" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UC6-zk-sf2" firstAttribute="leading" secondItem="GdL-wv-lh2" secondAttribute="leading" constant="60" id="0HF-Iv-KsD"/>
+                            <constraint firstItem="wPu-64-ylo" firstAttribute="top" secondItem="GdL-wv-lh2" secondAttribute="top" constant="24" id="3in-bn-TTj"/>
+                            <constraint firstItem="wPu-64-ylo" firstAttribute="centerX" secondItem="UC6-zk-sf2" secondAttribute="centerX" id="5YO-gZ-wQd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nAq-Hx-vAL" secondAttribute="trailing" constant="4" id="6Hd-eO-4Sy"/>
+                            <constraint firstItem="nAq-Hx-vAL" firstAttribute="top" secondItem="GdL-wv-lh2" secondAttribute="top" constant="80" id="7gY-Oa-Mc1"/>
+                            <constraint firstItem="wPu-64-ylo" firstAttribute="leading" secondItem="Czj-Va-SkT" secondAttribute="leadingMargin" id="C8x-94-WiM"/>
+                            <constraint firstItem="wPu-64-ylo" firstAttribute="trailing" secondItem="Czj-Va-SkT" secondAttribute="trailingMargin" id="H3P-4z-693"/>
+                            <constraint firstItem="GdL-wv-lh2" firstAttribute="bottom" secondItem="UC6-zk-sf2" secondAttribute="bottom" constant="30" id="HA3-k0-feg"/>
+                            <constraint firstItem="JLO-5n-eSE" firstAttribute="top" secondItem="nAq-Hx-vAL" secondAttribute="bottom" constant="28" id="QdV-fe-J2u"/>
+                            <constraint firstItem="GdL-wv-lh2" firstAttribute="trailing" secondItem="JLO-5n-eSE" secondAttribute="trailing" constant="32" id="R0L-qB-fZs"/>
+                            <constraint firstItem="JLO-5n-eSE" firstAttribute="leading" secondItem="GdL-wv-lh2" secondAttribute="leading" constant="16" id="elc-ZS-Wwh"/>
+                            <constraint firstItem="nAq-Hx-vAL" firstAttribute="bottom" secondItem="wPu-64-ylo" secondAttribute="bottom" id="o1Y-sr-7Ja"/>
+                            <constraint firstItem="nAq-Hx-vAL" firstAttribute="leading" secondItem="JLO-5n-eSE" secondAttribute="leading" id="s73-tv-ceJ"/>
+                            <constraint firstAttribute="bottom" secondItem="JLO-5n-eSE" secondAttribute="bottom" constant="287" id="wbb-Bt-TR0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GdL-wv-lh2"/>
+                    </view>
+                    <connections>
+                        <outlet property="data_end" destination="EXx-qZ-gOv" id="rVq-F6-vhR"/>
+                        <outlet property="data_start" destination="Qp7-pf-XYi" id="n4a-8G-mNh"/>
+                        <outlet property="desc_area" destination="rbw-h3-qpp" id="WIS-Av-XUL"/>
+                        <outlet property="status" destination="09U-RY-aRB" id="LEA-B0-o5p"/>
+                        <outlet property="title_label" destination="5XV-1J-4yU" id="eny-Vz-bFv"/>
+                        <outlet property="userFrom" destination="kD4-SI-odw" id="Bxs-Qt-UHh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzP-1D-WUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3084" y="5012"/>
         </scene>
     </scenes>
     <resources>

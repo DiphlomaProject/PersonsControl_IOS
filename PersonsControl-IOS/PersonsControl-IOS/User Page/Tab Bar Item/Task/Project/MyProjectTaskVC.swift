@@ -109,7 +109,7 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
         let key =  SingletonManager.sharedCenter.contentProjectTask.allKeys[indexPath.row]
         let selelectrow : Int = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id!
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyProjectTaskDetailVC") as! MyProjectTaskDetailVC
         valueToPass = String (selelectrow)
         newViewController.contentText = valueToPass
         self.show(newViewController, sender: nil)
@@ -165,11 +165,11 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
                 
                 let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
                     //  self.MessagerAlert(mitTitel: "Deteil")
-                    print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! ProjectTask).id as Any)
+                    print((SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id as Any)
                     let selelectrow : Int = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id!
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyProjectTaskDetailVC") as! MyProjectTaskDetailVC
                     self.valueToPass = String (selelectrow)
                     newViewController.contentText = self.valueToPass
                     self.show(newViewController, sender: nil)
@@ -212,7 +212,7 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
                     let selelectrow : Int = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id!
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyProjectTaskDetailVC") as! MyProjectTaskDetailVC
                     self.valueToPass = String (selelectrow)
                     newViewController.contentText = self.valueToPass
                     self.show(newViewController, sender: nil)
@@ -256,7 +256,7 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
                 let selelectrow : Int = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id!
                 
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyProjectTaskDetailVC") as! MyProjectTaskDetailVC
                 self.valueToPass = String (selelectrow)
                 newViewController.contentText = self.valueToPass
                 self.show(newViewController, sender: nil)
