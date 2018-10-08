@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupTaskCell: UITableViewCell {
+class GroupTaskCell: UITableViewCell,MGSwipeTableCellDelegate {
 
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var begin_time: UILabel!

@@ -18,6 +18,7 @@
 		F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* ProfileVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F4219F69216B4DBE007288AC /* MyTaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */; };
+		F4219F6B216B8CF7007288AC /* MyTaskGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */; };
 		F424BA5F2164D05B00DD753B /* Project_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA572164D05B00DD753B /* Project_base.swift */; };
 		F424BA632164DADE00DD753B /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA622164DADE00DD753B /* DataClass.swift */; };
 		F424BA652164DAFE00DD753B /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA642164DAFE00DD753B /* Customer.swift */; };
@@ -108,6 +109,7 @@
 		F415C0D62123176500F30D66 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskDetailVC.swift; sourceTree = "<group>"; };
+		F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskGroupVC.swift; sourceTree = "<group>"; };
 		F424BA572164D05B00DD753B /* Project_base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project_base.swift; sourceTree = "<group>"; };
 		F424BA622164DADE00DD753B /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		F424BA642164DAFE00DD753B /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			children = (
 				F424BA8F21656F3700DD753B /* GroupTaskVC.swift */,
 				F4C39E7921661E28001DD58B /* GroupTaskCell.swift */,
+				F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				F424BA6C2164E2B500DD753B /* UserProject.swift in Sources */,
 				F4C39E7F21662A2F001DD58B /* ProjectTask.swift in Sources */,
 				F424BA822165593700DD753B /* TasksPerson.swift in Sources */,
+				F4219F6B216B8CF7007288AC /* MyTaskGroupVC.swift in Sources */,
 				F4DB79CC215E3A7E000C7DB3 /* RolesGroups.swift in Sources */,
 				F4DB79DB21601912000C7DB3 /* GroupCell.swift in Sources */,
 				F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */,

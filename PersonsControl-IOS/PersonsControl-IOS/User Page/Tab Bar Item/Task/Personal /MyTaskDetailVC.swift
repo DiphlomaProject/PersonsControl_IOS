@@ -37,7 +37,7 @@ var contentText: String?
 //
 //    }
     override func viewWillAppear(_ animated: Bool) {
-    //self.labeltest.text = contentText
+
         
         if(Int(contentText!) != nil)
         {

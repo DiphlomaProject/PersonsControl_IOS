@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TaskUIPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class TaskUIPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
     
     
     var pageControl = UIPageControl()

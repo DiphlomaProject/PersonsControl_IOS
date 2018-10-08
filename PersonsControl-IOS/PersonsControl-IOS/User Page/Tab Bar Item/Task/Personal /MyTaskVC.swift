@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
  
+
     
     var today : String!
     var valueToPass : String!
@@ -283,6 +284,11 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
         
         cell.textLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).title
         cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).userFrom
+//        let newLabel = UILabel(frame: CGRect(x: 0, y: 14.0, width: 300.0, height: 30.0))
+//        newLabel.text = "tesxt"
+//        newLabel.tag = 1
+//        cell.addSubview(newLabel)
+        
         return cell
     }
     func getTodayString() -> String{
