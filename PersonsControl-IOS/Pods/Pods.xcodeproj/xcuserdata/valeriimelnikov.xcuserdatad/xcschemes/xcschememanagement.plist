@@ -44,6 +44,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MDFInternationalization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MaterialComponents.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PersonsControl-IOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>

@@ -107,9 +107,9 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let key =  SingletonManager.sharedCenter.contentGroupTask.allKeys[indexPath.row]
-        let selelectrow : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! TasksGroups).id!
+        let selelectrow : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id!
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyGroupTaskDetailVC") as! MyGroupTaskDetail
         valueToPass = String (selelectrow)
         newViewController.contentText = valueToPass
         self.show(newViewController, sender: nil)
@@ -166,10 +166,10 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                 let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
                     //  self.MessagerAlert(mitTitel: "Deteil")
                     print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id as Any)
-                    let selelectrow : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! UserTask).id!
+                    let selelectrow : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id!
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyGroupTaskDetailVC") as! MyGroupTaskDetail
                     self.valueToPass = String (selelectrow)
                     newViewController.contentText = self.valueToPass
                     self.show(newViewController, sender: nil)
@@ -212,7 +212,7 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                     let selelectrow : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id!
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyGroupTaskDetailVC") as! MyGroupTaskDetail
                     self.valueToPass = String (selelectrow)
                     newViewController.contentText = self.valueToPass
                     self.show(newViewController, sender: nil)
@@ -256,7 +256,7 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                 let selelectrow : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id!
                 
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyGroupTaskDetailVC") as! MyGroupTaskDetail
                 self.valueToPass = String (selelectrow)
                 newViewController.contentText = self.valueToPass
                 self.show(newViewController, sender: nil)
