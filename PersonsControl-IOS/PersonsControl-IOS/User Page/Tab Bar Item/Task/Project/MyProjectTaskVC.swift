@@ -271,8 +271,8 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
         }
         print((SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).dateTimeEnd as Any)
         
-        cell.textLabel!.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).title
-        cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).desc
+        cell.textLabel!.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).projectName
+        cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).userFrom
         
         //        let newLabel = UILabel(frame: CGRect(x: 0, y: 14.0, width: 300.0, height: 30.0))
         //        newLabel.text = "tesxt"

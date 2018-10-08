@@ -271,7 +271,7 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
         }
         print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).dateTimeEnd as Any)
         
-        cell.textLabel!.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).title
+        cell.textLabel!.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).groupName
         cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).userFrom
         
         //        let newLabel = UILabel(frame: CGRect(x: 0, y: 14.0, width: 300.0, height: 30.0))
