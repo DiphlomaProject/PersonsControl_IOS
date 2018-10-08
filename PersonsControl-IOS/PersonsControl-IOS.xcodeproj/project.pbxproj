@@ -17,6 +17,7 @@
 		F40AE0662143F6B200766EF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0652143F6B200766EF5 /* User.swift */; };
 		F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* ProfileVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
+		F4219F69216B4DBE007288AC /* MyTaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */; };
 		F424BA5F2164D05B00DD753B /* Project_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA572164D05B00DD753B /* Project_base.swift */; };
 		F424BA632164DADE00DD753B /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA622164DADE00DD753B /* DataClass.swift */; };
 		F424BA652164DAFE00DD753B /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424BA642164DAFE00DD753B /* Customer.swift */; };
@@ -55,7 +56,7 @@
 		F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7921661E28001DD58B /* GroupTaskCell.swift */; };
 		F4C39E7F21662A2F001DD58B /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E7E21662A2F001DD58B /* ProjectTask.swift */; };
 		F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E8021663306001DD58B /* ProjectTaskCell.swift */; };
-		F4C39E8E2167CF10001DD58B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E8D2167CF10001DD58B /* TableViewController.swift */; };
+		F4C39E8E2167CF10001DD58B /* MyTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E8D2167CF10001DD58B /* MyTaskVC.swift */; };
 		F4C39E942167CFD0001DD58B /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E902167CFD0001DD58B /* MGSwipeButton.m */; };
 		F4C39E952167CFD0001DD58B /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39E932167CFD0001DD58B /* MGSwipeTableCell.m */; };
 		F4C39EA221681923001DD58B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C39EA121681923001DD58B /* SWRevealViewController.m */; };
@@ -106,6 +107,7 @@
 		F40AE0652143F6B200766EF5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F415C0D62123176500F30D66 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
+		F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskDetailVC.swift; sourceTree = "<group>"; };
 		F424BA572164D05B00DD753B /* Project_base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project_base.swift; sourceTree = "<group>"; };
 		F424BA622164DADE00DD753B /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		F424BA642164DAFE00DD753B /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 		F4C39E7E21662A2F001DD58B /* ProjectTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
 		F4C39E8021663306001DD58B /* ProjectTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskCell.swift; sourceTree = "<group>"; };
 		F4C39E892167CD3C001DD58B /* PersonsControl-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PersonsControl-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4C39E8D2167CF10001DD58B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F4C39E8D2167CF10001DD58B /* MyTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskVC.swift; sourceTree = "<group>"; };
 		F4C39E902167CFD0001DD58B /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		F4C39E912167CFD0001DD58B /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		F4C39E922167CFD0001DD58B /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -400,9 +402,10 @@
 		F4C39E7B21661FA5001DD58B /* Personal  */ = {
 			isa = PBXGroup;
 			children = (
-				F4C39E8D2167CF10001DD58B /* TableViewController.swift */,
+				F4C39E8D2167CF10001DD58B /* MyTaskVC.swift */,
 				F424BA8D21656F1E00DD753B /* UserTaskVC.swift */,
 				F424BA95216588D800DD753B /* UserTaskCell.swift */,
+				F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */,
 			);
 			path = "Personal ";
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				F4DB79C7215E3A7E000C7DB3 /* Groups.swift in Sources */,
 				F424BA6E216510B800DD753B /* ProjectCell.swift in Sources */,
 				F424BA7D2165593700DD753B /* TasksGroups.swift in Sources */,
+				F4219F69216B4DBE007288AC /* MyTaskDetailVC.swift in Sources */,
 				F424BA812165593700DD753B /* DataTasks.swift in Sources */,
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F40AE0662143F6B200766EF5 /* User.swift in Sources */,
@@ -853,7 +857,7 @@
 				F4DB79CA215E3A7E000C7DB3 /* Groups_model.swift in Sources */,
 				F424BA7E2165593700DD753B /* Tasks_Base.swift in Sources */,
 				F4DB79CB215E3A7E000C7DB3 /* LoginsGroups.swift in Sources */,
-				F4C39E8E2167CF10001DD58B /* TableViewController.swift in Sources */,
+				F4C39E8E2167CF10001DD58B /* MyTaskVC.swift in Sources */,
 				F424BA652164DAFE00DD753B /* Customer.swift in Sources */,
 				F424BA9221656F4A00DD753B /* ProjectTaskVC.swift in Sources */,
 				F4449F2A21225F8300EB0600 /* AppDelegate.swift in Sources */,

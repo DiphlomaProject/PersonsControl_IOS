@@ -8,10 +8,11 @@
 
 import UIKit
 import SideMenu
-class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
+class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
  
     
-    var today : String! = ""
+    var today : String!
+    var valueToPass : String!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
         refreshControl =
             {
                 let refreshControl = UIRefreshControl()
-                refreshControl.addTarget(self, action: #selector(TableViewController.actualData(_:)), for: .valueChanged)
+                refreshControl.addTarget(self, action: #selector(MyTaskVC.actualData(_:)), for: .valueChanged)
                // refreshControl.tintColor = UIColor.white
                 return refreshControl
                 
@@ -45,11 +46,20 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
         
         customActivityIndicatory(self.view, startAnimate: false)
         LoadingNewData()
-       // tableView.addSubview(self.refreshControl)
         tableView.addSubview(self.refreshControl!)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.ReloadData()
+        tableView.addSubview(self.refreshControl!)
+    }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let detailVC: MyTaskDetailVC? = segue.destination as? MyTaskDetailVC
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+//            detailVC?.LoadData(label: self.valueToPass)
+//        }
+//}
     
     func LoadingNewData()
     {
@@ -108,31 +118,30 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let key =  SingletonManager.sharedCenter.contentPersonalTask.allKeys[indexPath.row]
-        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
-        
+        let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+        valueToPass = String (selelectrow)
+        newViewController.contentText = valueToPass
+        self.show(newViewController, sender: nil)
+        print(valueToPass)
+       
     }
+    
+   
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PresonalTask", for: indexPath) as! MGSwipeTableCell
-        //info
         let key =  SingletonManager.sharedCenter.contentPersonalTask.allKeys[indexPath.row]
-//        cell.title.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).title
-//        cell.desc.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).desc
-//        cell.from_user.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).userFrom
-//        cell.time_begin.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeBegin
-//        cell.until_time.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd
-//
-//        cell.status.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description
-        
+
+       
         //2018-10-6 16T:59:11
         //2018-10-06T00:00:00
         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
         print("time" + SingletonManager.sharedCenter.time)
         
-//        if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd != SingletonManager.sharedCenter.time)
-//        {
             if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description == "false")
             {
                 if(SingletonManager.sharedCenter.time != (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd)
@@ -165,8 +174,15 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
                     })
                     
                     let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
-                        self.MessagerAlert(mitTitel: "Deteil")
+                      //  self.MessagerAlert(mitTitel: "Deteil")
                         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
+                        
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                        self.valueToPass = String (selelectrow)
+                        newViewController.contentText = self.valueToPass
+                        self.show(newViewController, sender: nil)
                         return true
                     })
                     cell.rightSwipeSettings.transition = .rotate3D
@@ -200,8 +216,16 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
                    
                     
                     let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
-                        self.MessagerAlert(mitTitel: "Deteil")
+                       // self.MessagerAlert(mitTitel: "Deteil")
                         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        
+                        let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
+                        
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                        self.valueToPass = String (selelectrow)
+                        newViewController.contentText = self.valueToPass
+                        self.show(newViewController, sender: nil)
                         return true
                     })
                     cell.rightSwipeSettings.transition = .rotate3D
@@ -236,8 +260,16 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
                 
                 
                 let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
-                    self.MessagerAlert(mitTitel: "Deteil")
+                   // self.MessagerAlert(mitTitel: "Deteil")
                     print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                    
+                    let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
+                    
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                    self.valueToPass = String (selelectrow)
+                    newViewController.contentText = self.valueToPass
+                    self.show(newViewController, sender: nil)
                     return true
                 })
                 cell.rightSwipeSettings.transition = .rotate3D
@@ -247,22 +279,10 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
                 cell.rightButtons = [rightButton]
                 rightButton.setPadding(10)
             }
-
-        
-       
-     
-       // var test : String = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd!
-       
         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
         
         cell.textLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).title
         cell.detailTextLabel!.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).userFrom
-        
-        
-        //info
-        /////////// custom
-        
-        
         return cell
     }
     func getTodayString() -> String{
@@ -293,17 +313,11 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.ReloadData()
-        tableView.addSubview(self.refreshControl!)
-    }
     
     @discardableResult
     func customActivityIndicatory(_ viewContainer: UIView, startAnimate:Bool? = true) -> UIActivityIndicatorView {
         let mainContainer: UIView = UIView(frame: viewContainer.frame)
         mainContainer.center = viewContainer.center
-        // mainContainer.backgroundColor = UIColor.init(hexString: "0xFFFFFF")
         mainContainer.backgroundColor = UIColor.init(hexString: "#007AFF")
         
         mainContainer.alpha = 0.5
@@ -312,7 +326,6 @@ class TableViewController: UITableViewController,MGSwipeTableCellDelegate {
         
         let viewBackgroundLoading: UIView = UIView(frame: CGRect(x:0,y: 0,width: 80,height: 80))
         viewBackgroundLoading.center = viewContainer.center
-        //        viewBackgroundLoading.backgroundColor = UIColor.init(hexString: "0x444444")
         viewBackgroundLoading.backgroundColor = UIColor.init(hexString: "#000000")
         viewBackgroundLoading.alpha = 0.5
         viewBackgroundLoading.clipsToBounds = true
