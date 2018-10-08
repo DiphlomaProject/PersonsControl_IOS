@@ -249,22 +249,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Project/ProjectsVC.swift"
-            timestampString = "560486800.238806"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "LoadingNewData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/UserTaskVC.swift"
             timestampString = "560306767.686799"
             startingColumnNumber = "9223372036854775807"
@@ -320,22 +304,6 @@
             startingLineNumber = "14"
             endingLineNumber = "14"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/Project/ProjectTaskVC.swift"
-            timestampString = "560696005.102493"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -458,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/Personal /MyTaskDetailVC.swift"
-            timestampString = "560703188.238436"
+            timestampString = "560706060.4476269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -474,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/Group/MyTaskGroupVC.swift"
-            timestampString = "560703188.238513"
+            timestampString = "560706060.447692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -490,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/Group/MyTaskGroupVC.swift"
-            timestampString = "560703188.239288"
+            timestampString = "560706060.448121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -506,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/Group/MyTaskGroupVC.swift"
-            timestampString = "560703188.239823"
+            timestampString = "560706060.448457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -522,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PersonsControl-IOS/User Page/Tab Bar Item/Task/Group/MyTaskGroupVC.swift"
-            timestampString = "560703188.24035"
+            timestampString = "560706060.44876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"

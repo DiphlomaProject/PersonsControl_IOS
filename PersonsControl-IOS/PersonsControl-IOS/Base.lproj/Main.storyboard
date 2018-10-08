@@ -37,12 +37,88 @@
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bhk-xB-NA7" kind="relationship" relationship="rootViewController" id="dxF-bK-mLj"/>
+                        <segue destination="rzv-04-Liy" kind="relationship" relationship="rootViewController" id="GpP-RX-BCI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7u-0q-B0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5859" y="5011"/>
+        </scene>
+        <!--My Project Task's-->
+        <scene sceneID="6GN-xQ-2oo">
+            <objects>
+                <viewController storyboardIdentifier="ProjectTaskVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rzv-04-Liy" customClass="ProjectTaskVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gnw-Mi-jnn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfO-Fo-BF0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="UTm-hc-DvV" kind="embed" id="EV6-9N-C7e"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0XW-01-gSO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Project Task's" id="Qro-zl-ueW">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="PQn-sn-fbX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menubtn" destination="PQn-sn-fbX" id="Kr9-Ad-mh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOn-W6-Ef6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4907.2463768115949" y="5011.9565217391309"/>
+        </scene>
+        <!--My Project TaskVC-->
+        <scene sceneID="IKy-Jl-0iu">
+            <objects>
+                <tableViewController storyboardIdentifier="MyProjectTaskVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UTm-hc-DvV" customClass="MyProjectTaskVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ovk-OB-DPo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyProjectTaskCell" textLabel="89i-l5-fC5" detailTextLabel="soD-TD-Yqj" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="2Zv-Ce-43c" customClass="MGSwipeTableCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Zv-Ce-43c" id="j66-9P-9e2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="89i-l5-fC5">
+                                            <rect key="frame" x="20.000000000000004" y="12.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="soD-TD-Yqj">
+                                            <rect key="frame" x="19.999999999999996" y="36.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UTm-hc-DvV" id="xcs-gz-hRr"/>
+                            <outlet property="delegate" destination="UTm-hc-DvV" id="HpI-G7-k9b"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYB-r8-kBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3981.1594202898555" y="5011.9565217391309"/>
         </scene>
         <!--Profile-->
         <scene sceneID="62s-Li-Ycf">
@@ -826,7 +902,7 @@
         <!--Task Project-->
         <scene sceneID="Dyc-wI-Xxc">
             <objects>
-                <viewController storyboardIdentifier="ProjectTaskVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bhk-xB-NA7" customClass="ProjectTaskVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="bhk-xB-NA7" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5g7-K7-fV5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1034,7 +1110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVi-K0-FgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4972" y="5010"/>
+            <point key="canvasLocation" x="-2233" y="5596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7XV-Gt-k2k">
