@@ -12,15 +12,15 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
     
     
     
-    var today : String!
+    //var today : String!
     var valueToPass : String!
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        today = getTodayString()
-        SingletonManager.sharedCenter.time = today
-        print(SingletonManager.sharedCenter.time)
+//        today = getTodayString()
+//        SingletonManager.sharedCenter.time = today
+      //  print(SingletonManager.sharedCenter.time)
         refreshControl = UIRefreshControl()
         refreshControl =
             {
@@ -157,7 +157,7 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
         let date = Date()
         let dateString2 = dateFormatter.string(from: date)
         let datecurrent = dateFormatter.date(from: dateString2)
-        print(datecurrent)
+       // print(datecurrent)
         if((SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).isComplite?.description == "false")
         {
 //            if(SingletonManager.sharedCenter.time != (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).dateTimeEnd)
@@ -360,24 +360,24 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
         
         return cell
     }
-    func getTodayString() -> String{
-        
-        let date = Date()
-        let calender = Calendar.current
-        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-        
-        let year = components.year
-        let month = components.month
-        let day = components.day
-        //  let hour = components.hour
-        //  let minute = components.minute
-        // let second = components.second
-        
-        let today_string = String(year!) + "-"  + String(month!) + "-" + "0" + String(day!) + "T" + "00"  + ":" + "00" + ":" +  "00"
-        //2018-10-6 16T:59:11
-        //2018-10-06T00:00:00
-        return today_string
-    }
+//    func getTodayString() -> String{
+//        
+//        let date = Date()
+//        let calender = Calendar.current
+//        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+//        
+//        let year = components.year
+//        let month = components.month
+//        let day = components.day
+//        //  let hour = components.hour
+//        //  let minute = components.minute
+//        // let second = components.second
+//        
+//        let today_string = String(year!) + "-"  + String(month!) + "-" + "0" + String(day!) + "T" + "00"  + ":" + "00" + ":" +  "00"
+//        //2018-10-6 16T:59:11
+//        //2018-10-06T00:00:00
+//        return today_string
+//    }
     
     func MessagerAlert(mitTitel : String){
         let alert =  UIAlertController(title: mitTitel, message: "", preferredStyle: .alert)

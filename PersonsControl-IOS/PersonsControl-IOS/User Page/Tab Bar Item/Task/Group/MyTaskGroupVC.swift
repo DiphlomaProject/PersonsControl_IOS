@@ -12,7 +12,7 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
 
 
     
-    var today : String!
+   // var today : String!
     var valueToPass : String!
     override func viewDidLoad() {
         
@@ -155,7 +155,7 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
         let date = Date()
         let dateString2 = dateFormatter.string(from: date)
         let datecurrent = dateFormatter.date(from: dateString2)
-        print(datecurrent)
+       // print(datecurrent)
         
         
         if((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).isComplite?.description == "false")
