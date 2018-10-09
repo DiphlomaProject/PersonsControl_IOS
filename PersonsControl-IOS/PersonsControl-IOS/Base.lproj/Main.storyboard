@@ -188,7 +188,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Admin" placeholder="Role" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pff-vf-z6u">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
-                                                        <color key="textColor" red="1" green="0.065431795060000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -314,6 +314,9 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="xMP-0E-zY6">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pmq-bD-5DU">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -401,14 +404,11 @@
             <objects>
                 <viewController storyboardIdentifier="MoreVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JhF-77-Brd" customClass="SettingsVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SP2-DL-DMD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPa-mE-Fxi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="aPa-mE-Fxi" secondAttribute="height" multiplier="9:16" id="Uc9-Ae-tR4"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <connections>
                                     <segue destination="VIr-nq-WBS" kind="embed" id="AF9-g1-YFh"/>
                                 </connections>
@@ -416,13 +416,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="aPa-mE-Fxi" secondAttribute="bottom" id="Gwg-ce-mi9"/>
-                            <constraint firstItem="aPa-mE-Fxi" firstAttribute="trailing" secondItem="BFf-kE-l4o" secondAttribute="trailing" id="Njt-ZD-EcZ"/>
-                            <constraint firstItem="aPa-mE-Fxi" firstAttribute="top" secondItem="SP2-DL-DMD" secondAttribute="top" id="Nri-v0-DQ9"/>
-                            <constraint firstItem="aPa-mE-Fxi" firstAttribute="leading" secondItem="BFf-kE-l4o" secondAttribute="leading" id="tuT-cn-QhE"/>
+                            <constraint firstItem="aPa-mE-Fxi" firstAttribute="trailing" secondItem="BFf-kE-l4o" secondAttribute="trailing" id="1oS-tK-Pnm"/>
+                            <constraint firstItem="aPa-mE-Fxi" firstAttribute="top" secondItem="BFf-kE-l4o" secondAttribute="top" id="OPt-pL-a2j"/>
+                            <constraint firstItem="aPa-mE-Fxi" firstAttribute="leading" secondItem="BFf-kE-l4o" secondAttribute="leading" id="k4f-DV-u6b"/>
+                            <constraint firstAttribute="bottom" secondItem="aPa-mE-Fxi" secondAttribute="bottom" id="sOC-PX-suy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BFf-kE-l4o"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Settings Center" id="e83-ku-fVv">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="1Qc-IB-nWs">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -435,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3id-6N-1ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6620" y="5027"/>
+            <point key="canvasLocation" x="-6620.289855072464" y="5026.630434782609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hbz-b0-PZ5">
@@ -1589,7 +1590,7 @@
             <objects>
                 <tableViewController id="VIr-nq-WBS" customClass="MoreVC" customModule="PersonsControl_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Sjm-5y-TUs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.98864007139999999" green="0.97925576999999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1758,12 +1759,16 @@
                                         <color key="textColor" red="1" green="0.37795525720000001" blue="0.40116114650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glaz" translatesAutoresizingMaskIntoConstraints="NO" id="D8h-Fl-kkB">
+                                    <imageView alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glaz" translatesAutoresizingMaskIntoConstraints="NO" id="D8h-Fl-kkB">
                                         <rect key="frame" x="256.66666666666669" y="82.666666666666657" width="25" height="25"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="LWw-97-SuW"/>
                                             <constraint firstAttribute="height" constant="25" id="TX9-XH-po6"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Xg2-AC-zsd" appends="YES" id="Nl2-3B-ok7"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1905,6 +1910,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiJ-PL-7Yi" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Xg2-AC-zsd">
+                    <connections>
+                        <action selector="tapGlaz:" destination="NKE-i0-cRl" id="zhf-k6-kLd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-9865" y="3448"/>
         </scene>

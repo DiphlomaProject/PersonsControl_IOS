@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenu
+import Foundation
 class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
  
 
@@ -136,37 +137,58 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PresonalTask", for: indexPath) as! MGSwipeTableCell
         let key =  SingletonManager.sharedCenter.contentPersonalTask.allKeys[indexPath.row]
-
+        
+        
+       
        
         //2018-10-6 16T:59:11
         //2018-10-06T00:00:00
         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
         print("time" + SingletonManager.sharedCenter.time)
         
+        let dateString : String = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any as! String // change to your date format
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+        dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC")
+        let dateTask = dateFormatter.date(from: dateString)
+    
+        print(dateTask as Any)
+        
+        
+        let dateCurrent =  Date()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+     //   dateFormatter.timeZone = TimeZone.init(abbreviation: "GSM")
+        dateFormatter.timeZone = TimeZone.current
+        let dateNow = dateFormatter.string(from: dateCurrent)
+        let datecurrent = dateFormatter.date(from: dateNow)
+        print(datecurrent as Any)
+        //let isSmaler = dateTask?.compare(datecurrent!)
+       
             if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description == "false")
             {
-                if(SingletonManager.sharedCenter.time != (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd)
-                {
-                let fontSize: CGFloat = 14
-                let label = UILabel()
-                label.font = UIFont.systemFont(ofSize: fontSize)
-                label.textAlignment = .center
-                label.textColor = UIColor.white
-                label.backgroundColor = UIColor.orange
-                // Add count to label and size to fit
-                label.text = "\("In Progress")"
-                label.sizeToFit()
-                // Adjust frame to be square for single digits or elliptical for numbers > 9
-                var frame: CGRect = label.frame
-                frame.size.height += CGFloat(Int(0.4 * fontSize))
-                frame.size.width = (15 <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
-                label.frame = frame
-                // Set radius and clip to bounds
-                label.layer.cornerRadius = frame.size.height / 2.0
-                label.clipsToBounds = true
-                // Show label in accessory view and remove disclosure
-                cell.accessoryView = label
-                cell.accessoryType = .none
+                switch datecurrent!.compare(dateTask!) {
+                case .orderedAscending:
+                    let fontSize: CGFloat = 14
+                    let label = UILabel()
+                    label.font = UIFont.systemFont(ofSize: fontSize)
+                    label.textAlignment = .center
+                    label.textColor = UIColor.white
+                    label.backgroundColor = UIColor.orange
+                    // Add count to label and size to fit
+                    label.text = "\("In Progress")"
+                    label.sizeToFit()
+                    // Adjust frame to be square for single digits or elliptical for numbers > 9
+                    var frame: CGRect = label.frame
+                    frame.size.height += CGFloat(Int(0.4 * fontSize))
+                    frame.size.width = (15 <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
+                    label.frame = frame
+                    // Set radius and clip to bounds
+                    label.layer.cornerRadius = frame.size.height / 2.0
+                    label.clipsToBounds = true
+                    // Show label in accessory view and remove disclosure
+                    cell.accessoryView = label
+                    cell.accessoryType = .none
                     
                     let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
                         self.MessagerAlert(mitTitel: "Done")
@@ -175,7 +197,7 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                     })
                     
                     let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
-                      //  self.MessagerAlert(mitTitel: "Deteil")
+                        //  self.MessagerAlert(mitTitel: "Deteil")
                         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
                         let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
                         
@@ -192,8 +214,10 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                     cell.rightExpansion.buttonIndex = 0
                     cell.rightButtons = [rightButton,right2Button]
                     right2Button.setPadding(10)
-                } else
-                {
+                    break
+                    
+                case .orderedDescending:
+                    
                     let fontSize: CGFloat = 14
                     let label = UILabel()
                     label.font = UIFont.systemFont(ofSize: fontSize)
@@ -214,10 +238,10 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                     // Show label in accessory view and remove disclosure
                     cell.accessoryView = label
                     cell.accessoryType = .none
-                   
+                    
                     
                     let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
-                       // self.MessagerAlert(mitTitel: "Deteil")
+                        // self.MessagerAlert(mitTitel: "Deteil")
                         print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
                         
                         let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
@@ -235,8 +259,62 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                     cell.rightExpansion.buttonIndex = 0
                     cell.rightButtons = [rightButton]
                     rightButton.setPadding(10)
+                    print("POTRACHENO")
+                    break
+                    
+                    
+                case .orderedSame:
+                    let fontSize: CGFloat = 14
+                    let label = UILabel()
+                    label.font = UIFont.systemFont(ofSize: fontSize)
+                    label.textAlignment = .center
+                    label.textColor = UIColor.white
+                    label.backgroundColor = UIColor.orange
+                    // Add count to label and size to fit
+                    label.text = "\("In Progress")"
+                    label.sizeToFit()
+                    // Adjust frame to be square for single digits or elliptical for numbers > 9
+                    var frame: CGRect = label.frame
+                    frame.size.height += CGFloat(Int(0.4 * fontSize))
+                    frame.size.width = (15 <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
+                    label.frame = frame
+                    // Set radius and clip to bounds
+                    label.layer.cornerRadius = frame.size.height / 2.0
+                    label.clipsToBounds = true
+                    // Show label in accessory view and remove disclosure
+                    cell.accessoryView = label
+                    cell.accessoryType = .none
+                    
+                    let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
+                        self.MessagerAlert(mitTitel: "Done")
+                        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        return true
+                    })
+                    
+                    let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
+                        //  self.MessagerAlert(mitTitel: "Deteil")
+                        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id as Any)
+                        let selelectrow : Int = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).id!
+                        
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyTaskDetailVC") as! MyTaskDetailVC
+                        self.valueToPass = String (selelectrow)
+                        newViewController.contentText = self.valueToPass
+                        self.show(newViewController, sender: nil)
+                        return true
+                    })
+                    cell.rightSwipeSettings.transition = .rotate3D
+                    
+                    rightButton.setPadding(30)
+                    cell.rightExpansion.buttonIndex = 0
+                    cell.rightButtons = [rightButton,right2Button]
+                    right2Button.setPadding(10)
+                    break
                 }
-            } else
+                
+                
+            }
+            else
             {
                 let fontSize: CGFloat = 14
                 let label = UILabel()
@@ -291,6 +369,7 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
         
         return cell
     }
+ 
     func getTodayString() -> String{
         
         let date = Date()

@@ -14,6 +14,16 @@ import Crashlytics
 class LoginVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate,UITextFieldDelegate {
     
     
+    @IBAction func tapGlaz(_ sender: Any) {
+        
+        if(passwordLabel.isSecureTextEntry == true )
+        {
+        passwordLabel.isSecureTextEntry = false
+        }else
+        {
+            passwordLabel.isSecureTextEntry = true
+        }
+    }
     @IBOutlet weak var GoogleSignIn: GIDSignInButton!
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var passwordLabel: UITextField!
