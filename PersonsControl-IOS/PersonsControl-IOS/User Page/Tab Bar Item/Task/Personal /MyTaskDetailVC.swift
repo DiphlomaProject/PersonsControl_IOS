@@ -19,6 +19,9 @@ var contentText: String?
     @IBOutlet weak var date_end: UITextField!
     @IBOutlet weak var status: UITextField!
     
+    @IBAction func returnBtn(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,9 @@ var contentText: String?
         self.date_end.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: contentText as Any) as! UserTask).dateTimeEnd
         
         self.status.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey:  contentText as Any) as! UserTask).isComplite?.description
+            
+            
+            
     }
     
     }

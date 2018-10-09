@@ -17,6 +17,7 @@
 		F40AE0662143F6B200766EF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40AE0652143F6B200766EF5 /* User.swift */; };
 		F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* ProfileVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
+		F418B297216CD5080089475C /* GroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B296216CD5080089475C /* GroupDetailVC.swift */; };
 		F4219F69216B4DBE007288AC /* MyTaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */; };
 		F4219F6B216B8CF7007288AC /* MyTaskGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */; };
 		F4219F6D216BADC5007288AC /* MyProjectTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6C216BADC5007288AC /* MyProjectTaskVC.swift */; };
@@ -111,6 +112,7 @@
 		F40AE0652143F6B200766EF5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F415C0D62123176500F30D66 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
+		F418B296216CD5080089475C /* GroupDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailVC.swift; sourceTree = "<group>"; };
 		F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskDetailVC.swift; sourceTree = "<group>"; };
 		F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskGroupVC.swift; sourceTree = "<group>"; };
 		F4219F6C216BADC5007288AC /* MyProjectTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectTaskVC.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			children = (
 				F44BFD51214963FB003DBAC9 /* GroupsVC.swift */,
 				F4DB79DA21601912000C7DB3 /* GroupCell.swift */,
+				F418B296216CD5080089475C /* GroupDetailVC.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				F4C39EAA21683469001DD58B /* SettingsVC.swift in Sources */,
 				F4C39E8121663306001DD58B /* ProjectTaskCell.swift in Sources */,
 				F4C39E7A21661E28001DD58B /* GroupTaskCell.swift in Sources */,
+				F418B297216CD5080089475C /* GroupDetailVC.swift in Sources */,
 				F4DB79CA215E3A7E000C7DB3 /* Groups_model.swift in Sources */,
 				F424BA7E2165593700DD753B /* Tasks_Base.swift in Sources */,
 				F4DB79CB215E3A7E000C7DB3 /* LoginsGroups.swift in Sources */,

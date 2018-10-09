@@ -279,7 +279,6 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                         group.id = result.id
                         group.title = result.title
                         group.desc = result.description
-                        
                         for owners in (jsonData.groups_model?.owners)!
                         {
                             if(owners.id == result.owner)

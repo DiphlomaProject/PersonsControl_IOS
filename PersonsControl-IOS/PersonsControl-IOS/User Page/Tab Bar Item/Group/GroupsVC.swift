@@ -12,7 +12,7 @@ import Firebase
 import GoogleSignIn
 
 class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+      var valueToPass : String!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var menubtn: UIBarButtonItem!
     lazy var refreshControl:UIRefreshControl =
@@ -144,6 +144,15 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let key =  SingletonManager.sharedCenter.contentGroup.allKeys[indexPath.row]
         print((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).id as Any)
+        
+        //GroupDetailVC
+        let selelectrow : Int = (SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).id!
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "GroupDetailVC") as! GroupDetailVC
+        valueToPass = String (selelectrow)
+        newViewController.contentText = valueToPass
+        self.show(newViewController, sender: nil)
+        print(valueToPass)
 
         }
     

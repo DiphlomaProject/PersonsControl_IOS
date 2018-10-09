@@ -25,7 +25,9 @@ class MyProjectTaskDetailVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func returnBtn(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         
         

@@ -170,7 +170,7 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
         let date = Date()
         let dateString2 = dateFormatter.string(from: date)
         let datecurrent = dateFormatter.date(from: dateString2)
-        print(datecurrent)
+        //print(datecurrent)
         //let interval = date.timeIntervalSince1970
        
             if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description == "false")
