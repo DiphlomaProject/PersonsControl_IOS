@@ -19,8 +19,8 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
         
         super.viewDidLoad()
         
-        today = getTodayString()
-        SingletonManager.sharedCenter.time = today
+       // today = getTodayString()
+        //SingletonManager.sharedCenter.time = today
         print(SingletonManager.sharedCenter.time)
         ServiceApiPost.GetImageUser(regComplete: { (success, loginError) in
             if success {
@@ -143,8 +143,8 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
        
         //2018-10-6 16T:59:11
         //2018-10-06T00:00:00
-        print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
-        print("time" + SingletonManager.sharedCenter.time)
+      //  print((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any)
+     //   print("time" + SingletonManager.sharedCenter.time)
         
         let dateString : String = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).dateTimeEnd as Any as! String // change to your date format
         
