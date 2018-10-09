@@ -153,17 +153,25 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
         dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC")
         let dateTask = dateFormatter.date(from: dateString)
     
-        print(dateTask as Any)
+      //  print(dateTask as Any)
         
+//
+//        let dateCurrent =  Date()
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+//     //   dateFormatter.timeZone = TimeZone.init(abbreviation: "GSM")
+//        dateFormatter.timeZone = TimeZone.current
+//        let dateNow = dateFormatter.string(from: dateCurrent)
+//        //let datecurrent = dateFormatter.date(from: dateNow)
+      
         
-        let dateCurrent =  Date()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
-     //   dateFormatter.timeZone = TimeZone.init(abbreviation: "GSM")
-        dateFormatter.timeZone = TimeZone.current
-        let dateNow = dateFormatter.string(from: dateCurrent)
-        let datecurrent = dateFormatter.date(from: dateNow)
-        print(datecurrent as Any)
-        //let isSmaler = dateTask?.compare(datecurrent!)
+        let dateFormatter2 : DateFormatter = DateFormatter()
+        //        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter2.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+        let date = Date()
+        let dateString2 = dateFormatter.string(from: date)
+        let datecurrent = dateFormatter.date(from: dateString2)
+        print(datecurrent)
+        //let interval = date.timeIntervalSince1970
        
             if((SingletonManager.sharedCenter.contentPersonalTask.object(forKey: key) as! UserTask).isComplite?.description == "false")
             {
