@@ -2336,10 +2336,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="5oE-6L-zOi">
-                                <rect key="frame" x="16" y="100" width="374" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="5oE-6L-zOi">
+                                <rect key="frame" x="20" y="80.666666666666671" width="374" height="2"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="cOf-ZR-q7y"/>
+                                    <constraint firstAttribute="height" constant="2" id="XDU-H9-V5a"/>
                                 </constraints>
                                 <color key="progressTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -2356,7 +2356,10 @@
                                 </userDefinedRuntimeAttributes>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="KPC-Qh-4Fc">
-                                <rect key="frame" x="20" y="44" width="374" height="58"/>
+                                <rect key="frame" x="20" y="44" width="374" height="28.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28.670000000000002" id="PXW-u5-eUn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2365,7 +2368,7 @@
                                 <rect key="frame" x="60" y="661" width="294" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="X4t-dx-FYS"/>
+                                    <constraint firstAttribute="height" constant="45" id="VDM-f7-nDi"/>
                                 </constraints>
                                 <state key="normal" title="ok">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2388,10 +2391,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="raa-lC-qmR">
-                                <rect key="frame" x="16" y="130" width="366" height="319"/>
+                                <rect key="frame" x="41.333333333333343" y="198" width="331.33333333333326" height="340"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cXl-m2-XoZ" customClass="MDCTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="jjC-Kp-1DM"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2407,28 +2413,37 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kaZ-YH-9nw" customClass="MDCIntrinsicHeightTextView">
-                                        <rect key="frame" x="0.0" y="52" width="366" height="59"/>
+                                        <rect key="frame" x="0.0" y="52" width="331.33333333333331" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="clx-Jw-Ze8">
-                                        <rect key="frame" x="0.0" y="146" width="366" height="17"/>
+                                        <rect key="frame" x="0.0" y="167" width="331.33333333333331" height="17"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="userFrom" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-Nw-mxG" customClass="MDCTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="MoG-j8-6hC"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="YiR-c1-VlK"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="COK-n7-GIV">
-                                        <rect key="frame" x="0.0" y="198" width="366" height="17"/>
+                                        <rect key="frame" x="0.0" y="219" width="331.33333333333331" height="17"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data start" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXo-4m-SVG" customClass="MDCTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="RKu-8X-udl"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2436,21 +2451,27 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="jgS-mm-Lkh">
-                                        <rect key="frame" x="0.0" y="250" width="366" height="17"/>
+                                        <rect key="frame" x="0.0" y="271" width="331.33333333333331" height="17"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data end" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gul-oF-meG" customClass="MDCTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="Ec6-3f-UYE"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="DWa-6E-YxZ">
-                                        <rect key="frame" x="0.0" y="302" width="366" height="17"/>
+                                        <rect key="frame" x="0.0" y="323" width="331.33333333333331" height="17"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Status" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-81-WRN" customClass="MDCTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="ewX-72-w9I"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2458,24 +2479,29 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="clx-Jw-Ze8" firstAttribute="top" secondItem="kaZ-YH-9nw" secondAttribute="bottom" constant="35" id="ZPn-vZ-wj7"/>
+                                    <constraint firstItem="kaZ-YH-9nw" firstAttribute="top" secondItem="cXl-m2-XoZ" secondAttribute="bottom" constant="35" id="hg7-Rg-kW5"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KPC-Qh-4Fc" firstAttribute="leading" secondItem="Xqr-m3-aab" secondAttribute="leadingMargin" id="27e-EM-Or0"/>
-                            <constraint firstItem="5oE-6L-zOi" firstAttribute="top" secondItem="uld-j9-PcO" secondAttribute="top" constant="80" id="4Li-N5-xJ9"/>
-                            <constraint firstItem="KPC-Qh-4Fc" firstAttribute="centerX" secondItem="ESZ-z1-fDb" secondAttribute="centerX" id="I8Y-kR-TO1"/>
-                            <constraint firstItem="KPC-Qh-4Fc" firstAttribute="top" secondItem="uld-j9-PcO" secondAttribute="top" constant="24" id="NyW-Nf-SC4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5oE-6L-zOi" secondAttribute="trailing" constant="4" id="O7a-uf-Eep"/>
-                            <constraint firstItem="5oE-6L-zOi" firstAttribute="leading" secondItem="raa-lC-qmR" secondAttribute="leading" id="OxO-ve-oaL"/>
-                            <constraint firstItem="raa-lC-qmR" firstAttribute="leading" secondItem="uld-j9-PcO" secondAttribute="leading" constant="16" id="QTE-FW-tUf"/>
-                            <constraint firstAttribute="bottom" secondItem="raa-lC-qmR" secondAttribute="bottom" constant="287" id="SJP-PQ-83E"/>
-                            <constraint firstItem="uld-j9-PcO" firstAttribute="trailing" secondItem="raa-lC-qmR" secondAttribute="trailing" constant="32" id="Yt5-ZB-iHJ"/>
-                            <constraint firstItem="raa-lC-qmR" firstAttribute="top" secondItem="5oE-6L-zOi" secondAttribute="bottom" constant="28" id="hnF-i5-QKb"/>
-                            <constraint firstItem="ESZ-z1-fDb" firstAttribute="leading" secondItem="uld-j9-PcO" secondAttribute="leading" constant="60" id="jQD-kc-4Q2"/>
-                            <constraint firstItem="KPC-Qh-4Fc" firstAttribute="trailing" secondItem="Xqr-m3-aab" secondAttribute="trailingMargin" id="p9m-OM-4ST"/>
-                            <constraint firstItem="5oE-6L-zOi" firstAttribute="bottom" secondItem="KPC-Qh-4Fc" secondAttribute="bottom" id="vJg-V9-03u"/>
-                            <constraint firstItem="uld-j9-PcO" firstAttribute="bottom" secondItem="ESZ-z1-fDb" secondAttribute="bottom" constant="30" id="vpa-j1-DaS"/>
+                            <constraint firstItem="raa-lC-qmR" firstAttribute="height" relation="lessThanOrEqual" secondItem="Xqr-m3-aab" secondAttribute="height" multiplier="0.8" id="0Ln-Ae-gWG"/>
+                            <constraint firstItem="uld-j9-PcO" firstAttribute="bottom" secondItem="ESZ-z1-fDb" secondAttribute="bottom" constant="30" id="1Cb-2V-TgN"/>
+                            <constraint firstItem="uld-j9-PcO" firstAttribute="trailing" secondItem="KPC-Qh-4Fc" secondAttribute="trailing" constant="20" id="3CX-y2-BP2"/>
+                            <constraint firstItem="raa-lC-qmR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5oE-6L-zOi" secondAttribute="bottom" constant="5" id="OGy-vt-t8B"/>
+                            <constraint firstItem="KPC-Qh-4Fc" firstAttribute="top" secondItem="uld-j9-PcO" secondAttribute="top" constant="24" id="RN3-s5-o3b"/>
+                            <constraint firstItem="ESZ-z1-fDb" firstAttribute="leading" secondItem="uld-j9-PcO" secondAttribute="leading" constant="60" id="TVQ-2X-cLC"/>
+                            <constraint firstItem="KPC-Qh-4Fc" firstAttribute="leading" secondItem="uld-j9-PcO" secondAttribute="leading" constant="20" id="TtQ-lJ-IT7"/>
+                            <constraint firstItem="uld-j9-PcO" firstAttribute="trailing" secondItem="ESZ-z1-fDb" secondAttribute="trailing" constant="60" id="U3G-bC-vQP"/>
+                            <constraint firstItem="ESZ-z1-fDb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="raa-lC-qmR" secondAttribute="bottom" constant="8" id="ZKj-ZI-90I"/>
+                            <constraint firstItem="raa-lC-qmR" firstAttribute="centerX" secondItem="Xqr-m3-aab" secondAttribute="centerX" id="swY-5B-PMf"/>
+                            <constraint firstItem="5oE-6L-zOi" firstAttribute="trailing" secondItem="KPC-Qh-4Fc" secondAttribute="trailing" id="szw-aQ-pLF"/>
+                            <constraint firstItem="raa-lC-qmR" firstAttribute="width" secondItem="Xqr-m3-aab" secondAttribute="width" multiplier="0.8" id="wqT-Ax-T7L"/>
+                            <constraint firstItem="5oE-6L-zOi" firstAttribute="top" secondItem="KPC-Qh-4Fc" secondAttribute="bottom" constant="8" id="yhg-wb-aQ8"/>
+                            <constraint firstItem="raa-lC-qmR" firstAttribute="centerY" secondItem="Xqr-m3-aab" secondAttribute="centerY" id="yqn-jd-Cw0"/>
+                            <constraint firstItem="5oE-6L-zOi" firstAttribute="leading" secondItem="KPC-Qh-4Fc" secondAttribute="leading" id="yw9-Mx-8n9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uld-j9-PcO"/>
                     </view>
