@@ -29,8 +29,9 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var Country: UITextField!
     @IBOutlet weak var imgProf: UIImageView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    
+     let resultDictionary = NSMutableDictionary()
     
     
     override func viewDidLoad() {
@@ -62,7 +63,32 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
         self.city.text = SingletonManager.sharedCenter.UserClass?.City
         self.Country.text = SingletonManager.sharedCenter.UserClass?.Country
         self.imgProf.image = SingletonManager.sharedCenter.ImageProfile
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
        
+    }
+    
+    private func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
@@ -91,12 +117,18 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
         
         ServiceApiPost.UpdateInfoUser(id:(SingletonManager.sharedCenter.UserClass?.id)!,token:(SingletonManager.sharedCenter.UserClass?.token)!,DisplayName: name!,Address: address!,phone : phone!, Country: country!, City: city! ,UpdateComplete: { (success, loginError) in
             if success {
-//                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-//                self.present(nextVC!, animated: true, completion: nil)
-//                print("Login access")
-//                self.myActivityIndicator.stopAnimating()
-//                let home =  UserTaskVC()
-//                home.setFaceID_TouchID(true)
+                let data = UserDefaults.standard.data(forKey: "User")
+                let dataUser  = (NSKeyedUnarchiver.unarchiveObject(with: data!) as! User)
+                dataUser.DisplayName = name!
+                dataUser.Address = address!
+                dataUser.PhoneNumber = phone!
+                dataUser.City = city!
+                dataUser.Country = country!
+                let encodedData = NSKeyedArchiver.archivedData(withRootObject: dataUser)
+                UserDefaults.standard.set(encodedData, forKey: "User")
+               SingletonManager.sharedCenter.UserClass = dataUser
+               
+             
                 print("okay")
             } else {
                 DispatchQueue.main.async {

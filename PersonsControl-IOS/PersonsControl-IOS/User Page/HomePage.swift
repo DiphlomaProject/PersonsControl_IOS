@@ -20,6 +20,16 @@ class HomePage: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         // Do any additional setup after loading the view.
+        
+        ServiceApiPost.GoogleSingIn(email: (SingletonManager.sharedCenter.UserClass?.Email!)!, phone: "", name: "",loginComplete: { (success, loginError) in
+            if success {
+                print("loading data")
+            } else {
+                DispatchQueue.main.async {
+                    
+                }
+            }
+        })
     }
     
 

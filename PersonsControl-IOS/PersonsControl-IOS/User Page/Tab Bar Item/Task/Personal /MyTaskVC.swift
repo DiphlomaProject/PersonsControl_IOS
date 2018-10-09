@@ -54,6 +54,8 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.ReloadData()
         tableView.addSubview(self.refreshControl!)
+        
+        
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

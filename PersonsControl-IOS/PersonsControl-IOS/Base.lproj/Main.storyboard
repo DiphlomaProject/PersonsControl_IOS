@@ -340,6 +340,7 @@
                         <outlet property="email" destination="S1r-9y-LjI" id="ucx-Ee-zJE"/>
                         <outlet property="imgProf" destination="LNJ-OM-Wep" id="see-8b-i7K"/>
                         <outlet property="menubtn" destination="xMP-0E-zY6" id="Xkp-6K-VMj"/>
+                        <outlet property="scrollView" destination="Afi-06-jpN" id="2O7-cx-kPF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJ5-Gc-KDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
