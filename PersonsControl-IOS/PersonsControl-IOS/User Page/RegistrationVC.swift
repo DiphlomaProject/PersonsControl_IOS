@@ -15,6 +15,7 @@ class RegistrationVC: UIViewController,UITextFieldDelegate
     @IBOutlet weak var confrimPassword: UITextField!
     @IBOutlet weak var userName: UITextField!
     
+   
     //Create Activity Indicator
     let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     //userDefaults
@@ -33,6 +34,27 @@ class RegistrationVC: UIViewController,UITextFieldDelegate
        
         myActivityIndicator.center = view.center
         view.addSubview(myActivityIndicator)
+    }
+    @IBAction func show_password(_ sender: Any) {
+        
+        if(password.isSecureTextEntry == true )
+        {
+            password.isSecureTextEntry = false
+        }else
+        {
+            password.isSecureTextEntry = true
+        }
+        
+    }
+    @IBAction func showpassword_confrim(_ sender: Any) {
+        if(confrimPassword.isSecureTextEntry == true )
+        {
+            confrimPassword.isSecureTextEntry = false
+        }else
+        {
+            confrimPassword.isSecureTextEntry = true
+        }
+        
     }
     @IBAction func RegBtn(_ sender: Any) {
       
