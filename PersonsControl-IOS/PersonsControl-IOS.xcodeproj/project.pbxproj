@@ -18,6 +18,9 @@
 		F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D62123176500F30D66 /* ProfileVC.swift */; };
 		F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415C0D8212317B700F30D66 /* SingletonManager.swift */; };
 		F418B297216CD5080089475C /* GroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B296216CD5080089475C /* GroupDetailVC.swift */; };
+		F418B299216CE8F00089475C /* ProjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B298216CE8F00089475C /* ProjectDetailVC.swift */; };
+		F418B29D216D47430089475C /* SupportUser_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B29B216D47430089475C /* SupportUser_Base.swift */; };
+		F418B2A0216D47E00089475C /* UserSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B29F216D47DF0089475C /* UserSupport.swift */; };
 		F4219F69216B4DBE007288AC /* MyTaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */; };
 		F4219F6B216B8CF7007288AC /* MyTaskGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */; };
 		F4219F6D216BADC5007288AC /* MyProjectTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6C216BADC5007288AC /* MyProjectTaskVC.swift */; };
@@ -113,6 +116,9 @@
 		F415C0D62123176500F30D66 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F415C0D8212317B700F30D66 /* SingletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		F418B296216CD5080089475C /* GroupDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailVC.swift; sourceTree = "<group>"; };
+		F418B298216CE8F00089475C /* ProjectDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailVC.swift; sourceTree = "<group>"; };
+		F418B29B216D47430089475C /* SupportUser_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportUser_Base.swift; sourceTree = "<group>"; };
+		F418B29F216D47DF0089475C /* UserSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSupport.swift; sourceTree = "<group>"; };
 		F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskDetailVC.swift; sourceTree = "<group>"; };
 		F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskGroupVC.swift; sourceTree = "<group>"; };
 		F4219F6C216BADC5007288AC /* MyProjectTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectTaskVC.swift; sourceTree = "<group>"; };
@@ -240,6 +246,7 @@
 		F40AE05B21431FC300766EF5 /* struct json */ = {
 			isa = PBXGroup;
 			children = (
+				F418B29A216D47340089475C /* Support */,
 				F424BA6F2165553300DD753B /* Tasks */,
 				F424BA472164CCCF00DD753B /* Projects */,
 				F4DB79C0215E3A67000C7DB3 /* Groups */,
@@ -257,6 +264,15 @@
 				F40AE05D2143202700766EF5 /* Roles.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F418B29A216D47340089475C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F418B29B216D47430089475C /* SupportUser_Base.swift */,
+				F418B29F216D47DF0089475C /* UserSupport.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		F424BA472164CCCF00DD753B /* Projects */ = {
@@ -500,6 +516,7 @@
 			children = (
 				F44BFD5421496421003DBAC9 /* ProjectsVC.swift */,
 				F424BA6D216510B800DD753B /* ProjectCell.swift */,
+				F418B298216CE8F00089475C /* ProjectDetailVC.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -839,12 +856,14 @@
 				F44BFD5521496421003DBAC9 /* ProjectsVC.swift in Sources */,
 				F424BA7F2165593700DD753B /* TasksProjects.swift in Sources */,
 				F4219F71216BF81B007288AC /* MyProjectTaskDetailVC.swift in Sources */,
+				F418B29D216D47430089475C /* SupportUser_Base.swift in Sources */,
 				F415C0D72123176500F30D66 /* ProfileVC.swift in Sources */,
 				F4C39EA221681923001DD58B /* SWRevealViewController.m in Sources */,
 				F44BFD52214963FB003DBAC9 /* GroupsVC.swift in Sources */,
 				F4DB79D9216018A6000C7DB3 /* MoreVC.swift in Sources */,
 				F40AE0642143202700766EF5 /* SignIn_Base.swift in Sources */,
 				F424BA96216588D800DD753B /* UserTaskCell.swift in Sources */,
+				F418B2A0216D47E00089475C /* UserSupport.swift in Sources */,
 				F40AE0622143202700766EF5 /* Logins.swift in Sources */,
 				F424BA8E21656F1E00DD753B /* UserTaskVC.swift in Sources */,
 				F40AE0612143202700766EF5 /* Roles.swift in Sources */,
@@ -869,6 +888,7 @@
 				F415C0D9212317B700F30D66 /* SingletonManager.swift in Sources */,
 				F40AE0662143F6B200766EF5 /* User.swift in Sources */,
 				F424BA5F2164D05B00DD753B /* Project_base.swift in Sources */,
+				F418B299216CE8F00089475C /* ProjectDetailVC.swift in Sources */,
 				F424BA672164DB1700DD753B /* Group_Project.swift in Sources */,
 				F424BA802165593700DD753B /* UserFrom.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,

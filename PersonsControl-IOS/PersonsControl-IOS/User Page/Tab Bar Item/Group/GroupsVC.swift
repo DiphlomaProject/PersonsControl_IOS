@@ -12,7 +12,7 @@ import Firebase
 import GoogleSignIn
 
 class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
-      var valueToPass : String!
+    var valueToPass : String!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var menubtn: UIBarButtonItem!
     lazy var refreshControl:UIRefreshControl =

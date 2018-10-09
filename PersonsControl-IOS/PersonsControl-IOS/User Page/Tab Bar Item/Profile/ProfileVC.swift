@@ -28,6 +28,11 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var Country: UITextField!
     @IBOutlet weak var imgProf: UIImageView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.revealViewController() != nil
@@ -43,15 +48,6 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
         self.address.delegate = self
         self.city.delegate = self
         self.Country.delegate = self
-        
-        
-       
-                   
-                    
-                    
-                    
-        
-      
     }
    
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +81,35 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+
+    @IBAction func Save(_ sender: Any) {
+        let name = self.displayName.text
+        let address = self.address.text
+        let phone = self.Phone.text
+        let city = self.city.text
+        let country = self.Country.text
+        
+        ServiceApiPost.UpdateInfoUser(id:(SingletonManager.sharedCenter.UserClass?.id)!,token:(SingletonManager.sharedCenter.UserClass?.token)!,DisplayName: name!,Address: address!,phone : phone!, Country: country!, City: city! ,UpdateComplete: { (success, loginError) in
+            if success {
+//                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+//                self.present(nextVC!, animated: true, completion: nil)
+//                print("Login access")
+//                self.myActivityIndicator.stopAnimating()
+//                let home =  UserTaskVC()
+//                home.setFaceID_TouchID(true)
+                print("okay")
+            } else {
+                DispatchQueue.main.async {
+//
+//                    self.alertLabel.isHidden = false
+//                    self.myActivityIndicator.stopAnimating()
+//                    self.AlertMessage()
+                }
+            }
+        })
+        
+    }
+    
 
 }
 

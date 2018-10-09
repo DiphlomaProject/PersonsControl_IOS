@@ -572,6 +572,62 @@ class ServiceApiPost: NSObject, URLSessionDelegate
     }//getproject
     
   
+    
+    
+    static  func UpdateInfoUser(id:String,token:String,DisplayName: String,Address: String,phone : String, Country: String, City: String,UpdateComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+       // let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+         jsonDictionary.setValue(id, forKey: "id")
+         jsonDictionary.setValue(token, forKey: "token")
+         jsonDictionary.setValue(DisplayName, forKey: "DisplayName")
+         jsonDictionary.setValue(Address, forKey: "Address")
+         jsonDictionary.setValue(phone, forKey: "phone")
+         jsonDictionary.setValue(Country, forKey: "Country")
+         jsonDictionary.setValue(City, forKey: "City")
+        // prepare json data
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        let url = URL(string: SingletonManager.sharedCenter.base_URL + SingletonManager.sharedCenter.SendUpdateUserInfo_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(SupportUser_Base.self, from: data)
+                DispatchQueue.main.async {
+                    if(jsonData.code == 202)
+                    {
+                        print(jsonData)
+                        UpdateComplete(true,nil)
+                    }else
+                    {
+                        UpdateComplete(false,error)
+                    }
+                    
+                }
+            } catch let jsonError {
+                UpdateComplete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+        
+    }//singIn
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
         completionHandler(.useCredential, urlCredential)

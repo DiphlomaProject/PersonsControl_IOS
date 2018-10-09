@@ -12,6 +12,7 @@ import Firebase
 import GoogleSignIn
 
 class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var valueToPass : String!
     @IBOutlet weak var tableview: UITableView!
      @IBOutlet weak var menubtn: UIBarButtonItem!
     lazy var refreshControl:UIRefreshControl =
@@ -123,6 +124,16 @@ class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let key =  SingletonManager.sharedCenter.contentProject.allKeys[indexPath.row]
         print((SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).id as Any)
+        
+        
+        //GroupDetailVC
+        let selelectrow : Int = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).id!
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ProjectDetailVC") as! ProjectDetailVC
+        valueToPass = String (selelectrow)
+        newViewController.contentText = valueToPass
+        self.show(newViewController, sender: nil)
+        print(valueToPass)
         
     }
     
