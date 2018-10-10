@@ -207,7 +207,9 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                         
                         ServiceApiPost.CompletePersonalTask(id:taskID,token:(SingletonManager.sharedCenter.UserClass?.token)!,UpdateComplete: { (success, loginError) in
                             if success {
-                                
+                                self.customActivityIndicatory(self.view, startAnimate: false)
+                                self.LoadingNewData()
+                                self.tableView.addSubview(self.refreshControl!)
                                 print("okay")
                             } else {
                                 DispatchQueue.main.async {
@@ -318,7 +320,9 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                         
                         ServiceApiPost.CompletePersonalTask(id:taskID,token:(SingletonManager.sharedCenter.UserClass?.token)!,UpdateComplete: { (success, loginError) in
                             if success {
-                                
+                                self.customActivityIndicatory(self.view, startAnimate: false)
+                                self.LoadingNewData()
+                                self.tableView.addSubview(self.refreshControl!)
                                 print("okay")
                             } else {
                                 DispatchQueue.main.async {
