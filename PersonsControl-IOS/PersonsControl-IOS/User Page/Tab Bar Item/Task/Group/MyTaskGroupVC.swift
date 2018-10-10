@@ -196,10 +196,9 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                             print("okay")
                         } else {
                             DispatchQueue.main.async {
-                                //
-                                //                    self.alertLabel.isHidden = false
-                                //                    self.myActivityIndicator.stopAnimating()
-                                //                    self.AlertMessage()
+                                self.customActivityIndicatory(self.view, startAnimate: false)
+                                self.MessagerAlert(mitTitel: "Server connect 404")
+                                self.tableView.reloadData()
                             }
                         }
                     })
@@ -306,6 +305,9 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                                     print("okay")
                                 } else {
                                     DispatchQueue.main.async {
+                                        self.customActivityIndicatory(self.view, startAnimate: false)
+                                        self.MessagerAlert(mitTitel: "Server connect 404")
+                                        self.tableView.reloadData()
                                     }
                                 }
                             })
@@ -390,24 +392,6 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
         
         return cell
     }
-//    func getTodayString() -> String{
-//
-//        let date = Date()
-//        let calender = Calendar.current
-//        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-//
-//        let year = components.year
-//        let month = components.month
-//        let day = components.day
-//        //  let hour = components.hour
-//        //  let minute = components.minute
-//        // let second = components.second
-//
-//        let today_string = String(year!) + "-"  + String(month!) + "-" + "0" + String(day!) + "T" + "00"  + ":" + "00" + ":" +  "00"
-//        //2018-10-6 16T:59:11
-//        //2018-10-06T00:00:00
-//        return today_string
-//    }
     
     func MessagerAlert(mitTitel : String){
         let alert =  UIAlertController(title: mitTitel, message: "", preferredStyle: .alert)

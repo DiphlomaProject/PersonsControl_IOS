@@ -213,10 +213,10 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                                 print("okay")
                             } else {
                                 DispatchQueue.main.async {
-                                    //
-                                    //                    self.alertLabel.isHidden = false
-                                    //                    self.myActivityIndicator.stopAnimating()
-                                    //                    self.AlertMessage()
+                                    self.customActivityIndicatory(self.view, startAnimate: false)
+                                    self.MessagerAlert(mitTitel: "Server connect 404")
+                                    self.tableView.reloadData()
+                                   
                                 }
                             }
                         })
@@ -326,6 +326,9 @@ class MyTaskVC: UITableViewController,MGSwipeTableCellDelegate {
                                 print("okay")
                             } else {
                                 DispatchQueue.main.async {
+                                    self.customActivityIndicatory(self.view, startAnimate: false)
+                                    self.MessagerAlert(mitTitel: "Server connect 404")
+                                    self.tableView.reloadData()
                                 }
                             }
                         })
