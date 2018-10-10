@@ -628,6 +628,157 @@ class ServiceApiPost: NSObject, URLSessionDelegate
             }.resume()
         
     }//singIn
+    
+    
+    static  func CompletePersonalTask(id:Int,token:String,UpdateComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        // let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(id, forKey: "taskId")
+        jsonDictionary.setValue(token, forKey: "token")
+        // prepare json data
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        let url = URL(string: SingletonManager.sharedCenter.base_URL + SingletonManager.sharedCenter.CompleteTaskPersonal_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(SupportTask_Base.self, from: data)
+                DispatchQueue.main.async {
+                    if(jsonData.code == 202)
+                    {
+                        print(jsonData)
+                        UpdateComplete(true,nil)
+                    }else
+                    {
+                        UpdateComplete(false,error)
+                    }
+                    
+                }
+            } catch let jsonError {
+                UpdateComplete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+    }
+    
+    
+    
+    static  func CompleteGroupTask(id:Int,token:String,UpdateComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        // let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(id, forKey: "taskId")
+        jsonDictionary.setValue(token, forKey: "token")
+        // prepare json data
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        let url = URL(string: SingletonManager.sharedCenter.base_URL + SingletonManager.sharedCenter.CompleteTaskGroup_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(SupportTask_Base.self, from: data)
+                DispatchQueue.main.async {
+                    if(jsonData.code == 202)
+                    {
+                        print(jsonData)
+                        UpdateComplete(true,nil)
+                    }else
+                    {
+                        UpdateComplete(false,error)
+                    }
+                    
+                }
+            } catch let jsonError {
+                UpdateComplete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+    }
+    
+    
+    static  func CompleteProjectTask(id:Int,token:String,UpdateComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
+        // let resultDictionary = NSMutableDictionary()
+        let jsonDictionary = NSMutableDictionary()
+        jsonDictionary.setValue(id, forKey: "taskId")
+        jsonDictionary.setValue(token, forKey: "token")
+        // prepare json data
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary)
+        // create post request
+        let configuration = URLSessionConfiguration.default
+        let url = URL(string: SingletonManager.sharedCenter.base_URL + SingletonManager.sharedCenter.CompleteTaskProject_URL)! //change the url
+        var urlRequest: URLRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        // insert json data to the request
+        urlRequest.addValue("application/json",forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        
+        let session = URLSession(configuration: configuration, delegate: ServiceApiPost(), delegateQueue: nil)
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            guard let data = data else {
+                UpdateComplete(false, error)
+                return
+            }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(SupportTask_Base.self, from: data)
+                DispatchQueue.main.async {
+                    if(jsonData.code == 202)
+                    {
+                        print(jsonData)
+                        UpdateComplete(true,nil)
+                    }else
+                    {
+                        UpdateComplete(false,error)
+                    }
+                    
+                }
+            } catch let jsonError {
+                UpdateComplete(false, error)
+                print(jsonError)
+            }
+            }.resume()
+    }
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
         completionHandler(.useCredential, urlCredential)

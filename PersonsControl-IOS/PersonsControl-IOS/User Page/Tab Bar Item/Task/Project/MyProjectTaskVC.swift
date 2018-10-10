@@ -187,8 +187,24 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
                 cell.accessoryType = .none
                 
                 let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
-                    self.MessagerAlert(mitTitel: "Done")
+                   // self.MessagerAlert(mitTitel: "Done")
                     print((SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id as Any)
+                    let taskID : Int = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id!
+                    
+                    ServiceApiPost.CompleteProjectTask(id:taskID,token:(SingletonManager.sharedCenter.UserClass?.token)!,UpdateComplete: { (success, loginError) in
+                        if success {
+                            
+                            print("okay")
+                        } else {
+                            DispatchQueue.main.async {
+                                //
+                                //                    self.alertLabel.isHidden = false
+                                //                    self.myActivityIndicator.stopAnimating()
+                                //                    self.AlertMessage()
+                            }
+                        }
+                    })
+                    
                     return true
                 })
                 
@@ -277,8 +293,21 @@ class MyProjectTaskVC: UITableViewController ,MGSwipeTableCellDelegate {
                         cell.accessoryType = .none
                         
                         let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
-                            self.MessagerAlert(mitTitel: "Done")
+                            //self.MessagerAlert(mitTitel: "Done")
                             print((SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id as Any)
+                            let taskID : Int = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: key) as! ProjectTask).id!
+                            
+                            ServiceApiPost.CompleteProjectTask(id:taskID,token:(SingletonManager.sharedCenter.UserClass?.token)!,UpdateComplete: { (success, loginError) in
+                                if success {
+                                    
+                                    print("okay")
+                                } else {
+                                    DispatchQueue.main.async {
+                                        
+                                    }
+                                }
+                            })
+                            
                             return true
                         })
                         

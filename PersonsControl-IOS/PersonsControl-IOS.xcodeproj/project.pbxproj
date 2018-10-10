@@ -21,6 +21,8 @@
 		F418B299216CE8F00089475C /* ProjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B298216CE8F00089475C /* ProjectDetailVC.swift */; };
 		F418B29D216D47430089475C /* SupportUser_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B29B216D47430089475C /* SupportUser_Base.swift */; };
 		F418B2A0216D47E00089475C /* UserSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B29F216D47DF0089475C /* UserSupport.swift */; };
+		F418B2A3216E22840089475C /* SupportTask_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B2A1216E22830089475C /* SupportTask_Base.swift */; };
+		F418B2A4216E22840089475C /* TaskComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418B2A2216E22840089475C /* TaskComplete.swift */; };
 		F4219F69216B4DBE007288AC /* MyTaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */; };
 		F4219F6B216B8CF7007288AC /* MyTaskGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */; };
 		F4219F6D216BADC5007288AC /* MyProjectTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4219F6C216BADC5007288AC /* MyProjectTaskVC.swift */; };
@@ -119,6 +121,8 @@
 		F418B298216CE8F00089475C /* ProjectDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailVC.swift; sourceTree = "<group>"; };
 		F418B29B216D47430089475C /* SupportUser_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportUser_Base.swift; sourceTree = "<group>"; };
 		F418B29F216D47DF0089475C /* UserSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSupport.swift; sourceTree = "<group>"; };
+		F418B2A1216E22830089475C /* SupportTask_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportTask_Base.swift; sourceTree = "<group>"; };
+		F418B2A2216E22840089475C /* TaskComplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskComplete.swift; sourceTree = "<group>"; };
 		F4219F68216B4DBD007288AC /* MyTaskDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskDetailVC.swift; sourceTree = "<group>"; };
 		F4219F6A216B8CF7007288AC /* MyTaskGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskGroupVC.swift; sourceTree = "<group>"; };
 		F4219F6C216BADC5007288AC /* MyProjectTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectTaskVC.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 		F418B29A216D47340089475C /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				F418B2A1216E22830089475C /* SupportTask_Base.swift */,
+				F418B2A2216E22840089475C /* TaskComplete.swift */,
 				F418B29B216D47430089475C /* SupportUser_Base.swift */,
 				F418B29F216D47DF0089475C /* UserSupport.swift */,
 			);
@@ -870,6 +876,7 @@
 				F4C39EA421681E3F001DD58B /* HomePage.swift in Sources */,
 				F4DB79CF215E5118000C7DB3 /* UserGroups.swift in Sources */,
 				F424BA9021656F3700DD753B /* GroupTaskVC.swift in Sources */,
+				F418B2A3216E22840089475C /* SupportTask_Base.swift in Sources */,
 				F4C39E942167CFD0001DD58B /* MGSwipeButton.m in Sources */,
 				F478213421400A1C0064E7BC /* NetworkController.swift in Sources */,
 				F424BA692164DB3000DD753B /* Project.swift in Sources */,
@@ -890,6 +897,7 @@
 				F424BA5F2164D05B00DD753B /* Project_base.swift in Sources */,
 				F418B299216CE8F00089475C /* ProjectDetailVC.swift in Sources */,
 				F424BA672164DB1700DD753B /* Group_Project.swift in Sources */,
+				F418B2A4216E22840089475C /* TaskComplete.swift in Sources */,
 				F424BA802165593700DD753B /* UserFrom.swift in Sources */,
 				F4449F2C21225F8300EB0600 /* LoginVC.swift in Sources */,
 				F4C39EAC216846C2001DD58B /* MenuVC.swift in Sources */,

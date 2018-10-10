@@ -31,7 +31,6 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-     let resultDictionary = NSMutableDictionary()
     
     
     override func viewDidLoad() {

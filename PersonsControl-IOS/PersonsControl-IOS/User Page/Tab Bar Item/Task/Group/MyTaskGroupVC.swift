@@ -184,8 +184,24 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                 cell.accessoryType = .none
                 
                 let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
-                    self.MessagerAlert(mitTitel: "Done")
+                    //self.MessagerAlert(mitTitel: "Done")
                     print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id as Any)
+                    let taskID : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id!
+                    
+                    ServiceApiPost.CompleteGroupTask(id:taskID,token:(SingletonManager.sharedCenter.UserClass?.token)!,UpdateComplete: { (success, loginError) in
+                        if success {
+                            
+                            print("okay")
+                        } else {
+                            DispatchQueue.main.async {
+                                //
+                                //                    self.alertLabel.isHidden = false
+                                //                    self.myActivityIndicator.stopAnimating()
+                                //                    self.AlertMessage()
+                            }
+                        }
+                    })
+                    
                     return true
                 })
                 
@@ -275,11 +291,23 @@ class MyTaskGroupVC: UITableViewController,MGSwipeTableCellDelegate {
                         cell.accessoryType = .none
                         
                         let rightButton = MGSwipeButton(title: "", icon: UIImage(named:"check"), backgroundColor: .green , callback: { (sender: MGSwipeTableCell!) in
-                            self.MessagerAlert(mitTitel: "Done")
+                            //self.MessagerAlert(mitTitel: "Done")
                             print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id as Any)
+                            
+                            let taskID : Int = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id!
+                            
+                            ServiceApiPost.CompleteGroupTask(id:taskID,token:(SingletonManager.sharedCenter.UserClass?.token)!,UpdateComplete: { (success, loginError) in
+                                if success {
+                                    
+                                    print("okay")
+                                } else {
+                                    DispatchQueue.main.async {
+                                    }
+                                }
+                            })
+                            
                             return true
                         })
-                        
                         let right2Button = MGSwipeButton(title: "", icon: UIImage(named:"more"), backgroundColor: UIColor.orange, callback: { (sender: MGSwipeTableCell!) in
                             //  self.MessagerAlert(mitTitel: "Deteil")
                             print((SingletonManager.sharedCenter.contentGroupTask.object(forKey: key) as! GroupTask).id as Any)
