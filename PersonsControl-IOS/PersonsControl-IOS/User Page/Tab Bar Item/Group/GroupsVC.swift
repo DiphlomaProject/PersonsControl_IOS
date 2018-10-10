@@ -13,6 +13,7 @@ import GoogleSignIn
 
 class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var valueToPass : String!
+    let cellSpacingHeight: CGFloat = 10
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var menubtn: UIBarButtonItem!
     lazy var refreshControl:UIRefreshControl =
@@ -119,16 +120,38 @@ class GroupsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
         let key =  SingletonManager.sharedCenter.contentGroup.allKeys[indexPath.row]
         cell.title.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).title ?? "error" )
-        cell.owner.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).ownerInfo?.displayName ?? "error" )
+        if((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).ownerInfo?.displayName == SingletonManager.sharedCenter.UserClass?.DisplayName)
+        {
+            cell.owner.textColor = UIColor.init(hexString: "#4ae145")
+            cell.owner.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).ownerInfo?.displayName ?? "error" )
+        }else
+        {
+            cell.owner.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).ownerInfo?.displayName ?? "error" )
+        }
         
-        cell.desc.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).desc ?? "error" )
         
+       // cell.desc.text = ((SingletonManager.sharedCenter.contentGroup.object(forKey: key) as! Group).desc ?? "error" )
+        // cell.backgroundColor = UIColor.blue
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
         return cell
+        
 
         
     }
     
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
     func numberOfSections(in tableView:UITableView)-> Int
     {
         return 1

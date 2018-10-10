@@ -21,7 +21,7 @@ class MyGroupTaskDetail: UIViewController {
     
     @IBOutlet weak var timeEnd: MDCTextField!
     
-    @IBOutlet weak var statuds: MDCTextField!
+   // @IBOutlet weak var statuds: MDCTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +46,7 @@ class MyGroupTaskDetail: UIViewController {
             
             self.timeEnd.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeEnd
             
-            self.statuds.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey:  contentText as Any) as! GroupTask).isComplite?.description
+          //  self.statuds.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey:  contentText as Any) as! GroupTask).isComplite?.description
         }
 
 }

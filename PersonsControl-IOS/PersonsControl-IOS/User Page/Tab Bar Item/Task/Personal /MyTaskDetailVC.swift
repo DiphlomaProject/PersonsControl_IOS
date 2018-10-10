@@ -17,7 +17,7 @@ var contentText: String?
     @IBOutlet weak var user_from: UITextField!
     @IBOutlet weak var date_start: UITextField!
     @IBOutlet weak var date_end: UITextField!
-    @IBOutlet weak var status: UITextField!
+    //@IBOutlet weak var status: UITextField!
     
     @IBAction func returnBtn(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
@@ -54,7 +54,7 @@ var contentText: String?
         
         self.date_end.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey: contentText as Any) as! UserTask).dateTimeEnd
         
-        self.status.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey:  contentText as Any) as! UserTask).isComplite?.description
+       // self.status.text = (SingletonManager.sharedCenter.contentPersonalTask.object(forKey:  contentText as Any) as! UserTask).isComplite?.description
             
             
             

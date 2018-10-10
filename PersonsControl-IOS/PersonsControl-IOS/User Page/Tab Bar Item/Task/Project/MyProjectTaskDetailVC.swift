@@ -12,7 +12,7 @@ class MyProjectTaskDetailVC: UIViewController {
  var contentText: String?
     
     
-    @IBOutlet weak var status: MDCTextField!
+  //  @IBOutlet weak var status: MDCTextField!
     @IBOutlet weak var data_end: MDCTextField!
     @IBOutlet weak var data_start: MDCTextField!
     @IBOutlet weak var userFrom: MDCTextField!
@@ -43,7 +43,7 @@ class MyProjectTaskDetailVC: UIViewController {
             
             self.data_end.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeEnd
             
-            self.status.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey:  contentText as Any) as! ProjectTask).isComplite?.description
+           // self.status.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey:  contentText as Any) as! ProjectTask).isComplite?.description
         }
         
     }

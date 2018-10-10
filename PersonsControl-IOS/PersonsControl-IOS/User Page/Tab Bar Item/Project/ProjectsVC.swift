@@ -13,8 +13,10 @@ import GoogleSignIn
 
 class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var valueToPass : String!
+    let cellSpacingHeight: CGFloat = 8
     @IBOutlet weak var tableview: UITableView!
      @IBOutlet weak var menubtn: UIBarButtonItem!
+    
     lazy var refreshControl:UIRefreshControl =
         {
             let refreshControl = UIRefreshControl()
@@ -86,22 +88,39 @@ class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let key =  SingletonManager.sharedCenter.contentProject.allKeys[indexPath.row]
         cell.project_name.text = ((SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).title )
         
-        cell.customer_name.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).customerInfo?.contactPerson
+       // cell.customer_name.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).customerInfo?.contactPerson
         
         cell.company_name.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).customerInfo?.company
-        let arrayT = ((SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).GroupInfo)
-        
-        let stringRepresentation = arrayT.joined(separator: " | ")
-        
-        cell.groups_names.text = stringRepresentation
+//        let arrayT = ((SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).GroupInfo)
+//
+//        let stringRepresentation = arrayT.joined(separator: " | ")
+//
+//        cell.groups_names.text = stringRepresentation
         
      //  let stringRepresentation = "-".join(array) // "1-2-3"
         cell.data.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).untilTime
+        
+       // cell.backgroundColor = UIColor.blue
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
         return cell
         
         
     }
     
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+
     
     func numberOfSections(in tableView:UITableView)-> Int
     {
