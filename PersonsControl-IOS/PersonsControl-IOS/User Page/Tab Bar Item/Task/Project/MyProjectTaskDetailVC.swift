@@ -39,11 +39,37 @@ class MyProjectTaskDetailVC: UIViewController {
             
             self.userFrom.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).userFrom
             
-            self.data_start.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeBegin
+           // self.data_start.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeBegin
             
-            self.data_end.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeEnd
+         //   self.data_end.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeEnd
             
            // self.status.text = (SingletonManager.sharedCenter.contentProjectTask.object(forKey:  contentText as Any) as! ProjectTask).isComplite?.description
+            
+            
+            
+            let dateString : String = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeBegin!
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+            dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC")
+            let dateTask = dateFormatter.date(from: dateString)
+            // dateTask = Date()
+            let dateFormatter2 = DateFormatter()
+            dateFormatter2.dateFormat = "dd. MMMM yyyy"//"yyyy-MM-dd"
+            let datatime  = dateFormatter2.string(from: dateTask!)
+            //  print(datatime)
+            
+            //  self.date_start.text = datatime
+            
+            
+            let dateString2 : String = (SingletonManager.sharedCenter.contentProjectTask.object(forKey: contentText as Any) as! ProjectTask).dateTimeEnd!
+            let dateTask2 = dateFormatter.date(from: dateString2)
+            // dateTask = Date()
+            let datatime2  = dateFormatter2.string(from: dateTask2!)
+            //  print(datatime)
+            
+           self.data_start.text = datatime
+           self.data_end.text = datatime2
         }
         
     }

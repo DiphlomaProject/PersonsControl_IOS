@@ -42,11 +42,34 @@ class MyGroupTaskDetail: UIViewController {
             
             self.userFrom.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).userFrom
             
-            self.timeStart.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeBegin
-            
-            self.timeEnd.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeEnd
+//            self.timeStart.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeBegin
+//
+//            self.timeEnd.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeEnd
             
           //  self.statuds.text = (SingletonManager.sharedCenter.contentGroupTask.object(forKey:  contentText as Any) as! GroupTask).isComplite?.description
+            let dateString : String = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeBegin!
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+            dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC")
+            let dateTask = dateFormatter.date(from: dateString)
+            // dateTask = Date()
+            let dateFormatter2 = DateFormatter()
+            dateFormatter2.dateFormat = "dd. MMMM yyyy"//"yyyy-MM-dd"
+            let datatime  = dateFormatter2.string(from: dateTask!)
+            //  print(datatime)
+            
+            //  self.date_start.text = datatime
+            
+            
+            let dateString2 : String = (SingletonManager.sharedCenter.contentGroupTask.object(forKey: contentText as Any) as! GroupTask).dateTimeEnd!
+            let dateTask2 = dateFormatter.date(from: dateString2)
+            // dateTask = Date()
+            let datatime2  = dateFormatter2.string(from: dateTask2!)
+            //  print(datatime)
+            
+            self.timeStart.text = datatime
+            self.timeEnd.text = datatime2
         }
 
 }

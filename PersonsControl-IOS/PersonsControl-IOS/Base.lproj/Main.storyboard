@@ -3131,8 +3131,9 @@
                                     <constraint firstItem="L00-nT-PNn" firstAttribute="top" secondItem="yVz-4R-oL3" secondAttribute="top" constant="133" id="ywA-7L-5ra"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hk7-tP-xyH">
-                                <rect key="frame" x="60" y="598.33333333333337" width="294" height="44.666666666666629"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hk7-tP-xyH">
+                                <rect key="frame" x="60" y="610" width="294" height="44.666666666666629"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Return">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3161,14 +3162,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yVz-4R-oL3" firstAttribute="centerX" secondItem="Hk7-tP-xyH" secondAttribute="centerX" id="15h-o2-mbZ"/>
                             <constraint firstItem="rbp-NP-3G8" firstAttribute="top" secondItem="SsB-Ow-fyE" secondAttribute="top" constant="24" id="7pv-Om-lfo"/>
-                            <constraint firstItem="Hk7-tP-xyH" firstAttribute="top" secondItem="yVz-4R-oL3" secondAttribute="bottom" constant="35" id="Dlb-uD-WfP"/>
                             <constraint firstItem="yVz-4R-oL3" firstAttribute="top" secondItem="gCX-ro-HjO" secondAttribute="bottom" constant="90" id="PCt-Nv-Ilr"/>
                             <constraint firstItem="rbp-NP-3G8" firstAttribute="leading" secondItem="gCX-ro-HjO" secondAttribute="leading" id="Q4P-29-zVV"/>
                             <constraint firstItem="yVz-4R-oL3" firstAttribute="centerY" secondItem="qS8-IE-4FJ" secondAttribute="centerY" id="SUE-x9-g6b"/>
-                            <constraint firstItem="SsB-Ow-fyE" firstAttribute="bottom" secondItem="Hk7-tP-xyH" secondAttribute="bottom" constant="93" id="T1U-QU-pL2"/>
-                            <constraint firstItem="Hk7-tP-xyH" firstAttribute="leading" secondItem="SsB-Ow-fyE" secondAttribute="leading" constant="60" id="Vao-qi-5KV"/>
                             <constraint firstItem="yVz-4R-oL3" firstAttribute="centerX" secondItem="qS8-IE-4FJ" secondAttribute="centerX" id="gK8-3R-VlB"/>
                             <constraint firstItem="yVz-4R-oL3" firstAttribute="leading" secondItem="SsB-Ow-fyE" secondAttribute="leading" constant="24" id="ngU-Sc-m2x"/>
                             <constraint firstItem="gCX-ro-HjO" firstAttribute="centerX" secondItem="yVz-4R-oL3" secondAttribute="centerX" id="njJ-bg-4Hs"/>

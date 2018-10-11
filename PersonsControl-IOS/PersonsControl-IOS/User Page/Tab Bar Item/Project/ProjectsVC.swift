@@ -98,9 +98,21 @@ class ProjectsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 //        cell.groups_names.text = stringRepresentation
         
      //  let stringRepresentation = "-".join(array) // "1-2-3"
-        cell.data.text = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).untilTime
         
-       // cell.backgroundColor = UIColor.blue
+        
+        
+        let dateString : String = (SingletonManager.sharedCenter.contentProject.object(forKey: key) as! UserProject).untilTime! // change to your date format
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+        dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC")
+        let dateTask = dateFormatter.date(from: dateString)
+       // dateTask = Date()
+         let dateFormatter2 = DateFormatter()
+         dateFormatter2.dateFormat = "dd. MMMM yyyy"
+        let datatime  = dateFormatter2.string(from: dateTask!)
+     //  print(datatime)
+        cell.data.text = datatime
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8

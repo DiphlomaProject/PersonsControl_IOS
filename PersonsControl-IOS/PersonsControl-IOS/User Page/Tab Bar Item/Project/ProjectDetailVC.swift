@@ -52,8 +52,32 @@ class ProjectDetailVC: UIViewController {
                         let stringRepresentation = arrayT.joined(separator: " , ")
             
                         self.group_list.text = stringRepresentation
-            self.time_start.text = (SingletonManager.sharedCenter.contentProject.object(forKey: contentText as Any)as! UserProject).untilTime
-            self.time_end.text = (SingletonManager.sharedCenter.contentProject.object(forKey: contentText as Any)as! UserProject).beginTime
+           // self.time_start.text = (SingletonManager.sharedCenter.contentProject.object(forKey: contentText as Any)as! UserProject).untilTime
+           // self.time_end.text = (SingletonManager.sharedCenter.contentProject.object(forKey: contentText as Any)as! UserProject).beginTime
+            
+            let dateString : String = (SingletonManager.sharedCenter.contentProject.object(forKey: contentText as Any)as! UserProject).untilTime!
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+            dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC")
+            let dateTask = dateFormatter.date(from: dateString)
+            // dateTask = Date()
+            let dateFormatter2 = DateFormatter()
+            dateFormatter2.dateFormat = "dd. MMMM yyyy"//"yyyy-MM-dd"
+            let datatime  = dateFormatter2.string(from: dateTask!)
+            //  print(datatime)
+            
+            //  self.date_start.text = datatime
+            
+            
+            let dateString2 : String = (SingletonManager.sharedCenter.contentProject.object(forKey: contentText as Any)as! UserProject).beginTime!
+            let dateTask2 = dateFormatter.date(from: dateString2)
+            // dateTask = Date()
+            let datatime2  = dateFormatter2.string(from: dateTask2!)
+            //  print(datatime)
+            
+            self.time_start.text = datatime
+            self.time_end.text = datatime2
         }
         
     }
