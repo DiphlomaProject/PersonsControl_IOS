@@ -275,7 +275,7 @@ class ServiceApiPost: NSObject, URLSessionDelegate
                     {
                     for result in (jsonData.groups_model?.groups)!
                     {
-                        var group : Group = Group()
+                        let group : Group = Group()
                         group.id = result.id
                         group.title = result.title
                         group.desc = result.description

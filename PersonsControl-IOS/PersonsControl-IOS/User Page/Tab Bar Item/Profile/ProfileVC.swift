@@ -127,7 +127,7 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
                 UserDefaults.standard.set(encodedData, forKey: "User")
                SingletonManager.sharedCenter.UserClass = dataUser
                
-             
+              self.AlertMessage(message: "Personal data saved", title: "System message")
                 print("okay")
             } else {
                 DispatchQueue.main.async {
@@ -135,9 +135,31 @@ class ProfileVC: UIViewController,UITextFieldDelegate {
 //                    self.alertLabel.isHidden = false
 //                    self.myActivityIndicator.stopAnimating()
 //                    self.AlertMessage()
+                    self.AlertMessage(message: "Server connect 404", title: "Error")
                 }
             }
         })
+        
+    }
+    
+    
+    func AlertMessage(message: String , title : String )
+    {
+        let alert = UIAlertController(title: title, message: message , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
         
     }
     
