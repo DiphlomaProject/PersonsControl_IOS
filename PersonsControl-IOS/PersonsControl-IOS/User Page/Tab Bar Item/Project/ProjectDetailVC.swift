@@ -76,8 +76,8 @@ class ProjectDetailVC: UIViewController {
             let datatime2  = dateFormatter2.string(from: dateTask2!)
             //  print(datatime)
             
-            self.time_start.text = datatime
-            self.time_end.text = datatime2
+            self.time_start.text = datatime2
+            self.time_end.text = datatime
         }
         
     }
