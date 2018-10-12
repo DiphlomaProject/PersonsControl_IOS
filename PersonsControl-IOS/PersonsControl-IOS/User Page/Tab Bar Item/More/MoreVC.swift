@@ -32,7 +32,18 @@ class MoreVC:UITableViewController
         }
         
     }
+    @IBAction func about(_ sender: Any) {
+        
+        self.AlertMessage(message: "Developer version 1.0", title: "Melnikov Valerii and Artem Syritsa ECO14-P81")
+        
+    }
     
+    @IBAction func contact(_ sender: Any) {
+        
+        self.AlertMessage(message: "Web-site", title: "PersonControl.com")
+        
+        
+    }
     @IBAction func SignOut(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "User")
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
@@ -66,5 +77,23 @@ class MoreVC:UITableViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func AlertMessage(message: String , title: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
